@@ -4,21 +4,17 @@ debug ?= 0
 
 # Project and tool names ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-BSTD  	 ?= bstd
-JSON  	 ?= json
-EXAMPLES ?= examples
-TESTS    ?= tests
+BSTD_JSON ?= bstd_json
+EXAMPLES  ?= examples
+TESTS     ?= tests
 
 # Directory Layout ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
 $(shell mkdir -p bin)
 BIN_DIR ?= ./bin
-
-JSON_SRC  ?= ./src/json
-
-JSON_EXAMPLES_SRC  ?= ./examples/json
-
-JSON_TESTS_SRC  ?= ./test/json
+SRC  ?= ./src
+EXAMPLES_SRC  ?= ./examples
+TESTS_SRC  ?= ./test
 
 $(shell mkdir -p build/dependencies)
 BUILD_DIR      ?= ./build
@@ -26,12 +22,9 @@ DEPENDENCY_DIR := $(BUILD_DIR)/dependencies
 DEPENDENCIES   := $(DEPENDENCY_DIR)/dependencies
 D_FILES        := $(DEPENDENCY_DIR)/$*.d
 
-JSON_INC  ?= -Iinclude/json
 ERROR_INC ?= -I$(HOME)/Projects/bstd_error/include
 TEST_INC  ?= -I$(HOME)/Projects/bstd_test/include
-PROJ_INC  := -Iinclude $(JSON_INC) $(ERROR_INC) $(TEST_INC) -I$(JSON_SRC) \
-
-INC_DIRS ?= $(PROJ_INC)
+INC  := -Iinclude $(ERROR_INC) $(TEST_INC) -I$(SRC) \
 
 # Compiler Configuration ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
@@ -52,74 +45,49 @@ DEPS = -MMD -MF $(D_FILES)
 
 # File Configuration ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-BSTD_LIB := $(BIN_DIR)/libbstd.so
+SRCS := $(shell find $(SRC) -path "*.cpp")
+OBJS := $(SRCS:.cpp=.o)
+LIB  := $(BIN_DIR)/libbstdjson.so
 
-JSON_SRCS := $(shell find $(JSON_SRC) -path "*.cpp")
-JSON_OBJS := $(JSON_SRCS:.cpp=.o)
-JSON_LIB  := $(BIN_DIR)/libbstdjson.so
-
-JSON_EXAMPLE_SRCS := $(shell find $(JSON_EXAMPLES_SRC) -path "*.cpp")
-JSON_EXAMPLES     := $(basename $(JSON_EXAMPLE_SRCS))
-JSON_TEST_SRCS    := $(shell find $(JSON_TESTS_SRC) -path "*.cpp")
-JSON_TESTS        := $(basename $(JSON_TEST_SRCS))
-JSON_TEST_EXEC    := $(BIN_DIR)/$(JSON_TEST)
-
-SRCS := $(JSON_SRCS)
-OBJS := $(JSON_OBJS)
-LIBS := $(JSON_LIB)
+EXAMPLE_SRCS := $(shell find $(EXAMPLES_SRC) -path "*.cpp")
+EXAMPLES     := $(basename $(EXAMPLE_SRCS))
+TEST_SRCS    := $(shell find $(TESTS_SRC) -path "*.cpp")
+TESTS        := $(basename $(TEST_SRCS))
 
 # Object File Recipes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
 .cpp.o: $(SRCS)
 	@echo Compiling $<...
-	@$(CXX) -c $(CXXFLAGS) $(DEPS) $(INC_DIRS) $< -o $@
+	@$(CXX) -c $(CXXFLAGS) $(DEPS) $(INC) $< -o $@
 	@cat $(D_FILES) >> $(DEPENDENCIES)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
 # Executable Recipes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-all:	$(BSTD) $(EXAMPLES) $(TESTS)
-
-# Build bstd library.
-.PHONY: $(BSTD)
-$(BSTD):	$(BSTD_LIB)
-$(BSTD_LIB):    $(LIBS)
-		@echo Linking $@...
-		@$(CXX) $(LDFLAGS) $(LIBS) -o $@
-		@rm -f $(OBJS)
+all:	$(BSTD_JSON) $(EXAMPLES) $(TESTS)
 
 # Build bstd::json library.
-.PHONY: $(JSON)
-$(JSON):	$(JSON_LIB)
-$(JSON_LIB):	$(JSON_OBJS)
+.PHONY: $(BSTD_JSON)
+$(BSTD_JSON):	$(LIB)
+$(LIB):		$(OBJS)
 		@echo Linking $@...
 		@$(CXX) $(LDFLAGS) -o $@ $^
-		@rm -f $(JSON_OBJS)
+		@rm -f $(OBJS)
 
 # Build all examples.
 .PHONY: $(EXAMPLES)
-$(EXAMPLES): $(JSON_EXAMPLES)
-
-# Build bstd::json examples.
-.PHONY: json_examples
-json_examples:	   $(JSON_EXAMPLES)
-$(JSON_EXAMPLES):  %: %.cpp $(JSON_LIB)
-		   @echo Compiling $<...
-		   @$(CXX) $(CXXFLAGS) $(DEPS) $(LINK_JSON) $(INC_DIRS) $< -o $@
-		   @cat $(D_FILES) >> $(DEPENDENCIES)
+$(EXAMPLES):  %: %.cpp $(LIB)
+	      @echo Compiling $<...
+	      @$(CXX) $(CXXFLAGS) $(DEPS) $(LINK_JSON) $(INC) $< -o $@
+	      @cat $(D_FILES) >> $(DEPENDENCIES)
 
 # Build all tests.
-.PHONY: $(TESTS)
-$(TESTS):	$(JSON_TESTS)
-
 # TODO: fix not being able to run test executable from different directories.
-# Build bstd::json tests.
-.PHONY: json_tests
-json_tests:	$(JSON_TESTS)
-$(JSON_TESTS):	%: %.cpp $(JSON_LIB)
+.PHONY: $(TESTS)
+$(TESTS):	%: %.cpp $(LIB)
 		@echo Compiling $<...
-		@$(CXX) $(CXXFLAGS) $(DEPS) $(LINK_ALL) $(INC_DIRS) $< -o $@
+		@$(CXX) $(CXXFLAGS) $(DEPS) $(LINK_ALL) $(INC) $< -o $@
 		@cat $(D_FILES) >> $(DEPENDENCIES)
 
 # Cleanup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
@@ -129,8 +97,8 @@ clean:
 	@echo Cleaning...
 	@rm -f $(shell find $(DEPENDENCY_DIR) -path "*.d")
 	@rm -f $(shell find . -path "*.o")
-	@rm -f $(JSON_EXAMPLES) $(TEST_EXAMPLES)
-	@rm -f $(JSON_TESTS)
+	@rm -f $(EXAMPLES)
+	@rm -f $(TESTS)
 	@rm -f $(DEPENDENCIES)
 	@rm -rf $(BUILD_DIR)
 	@rm -rf $(BIN_DIR)

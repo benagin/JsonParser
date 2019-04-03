@@ -3,7 +3,7 @@
 
 // Contains all public header files within the json tool.
 
-#include "../../src/json/json.hpp"
-#include "../../src/json/parser/parser.hpp"
+#include "../src/json.hpp"
+#include "../src/parser/parser.hpp"
 
 #endif

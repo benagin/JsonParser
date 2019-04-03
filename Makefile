@@ -16,7 +16,7 @@ $(shell mkdir -p bin)
 BIN_DIR ?= ./bin
 
 JSON_SRC  ?= ./src/json
-ERROR_SRC ?= ./src/error
+#ERROR_SRC ?= ./src/error
 TEST_SRC  ?= ./src/test
 
 JSON_EXAMPLES_SRC  ?= ./examples/json
@@ -31,10 +31,10 @@ DEPENDENCIES   := $(DEPENDENCY_DIR)/dependencies
 D_FILES        := $(DEPENDENCY_DIR)/$*.d
 
 JSON_INC  ?= -Iinclude/json
-ERROR_INC ?= -Iinclude/error
+ERROR_INC ?= -I$(HOME)/Projects/bstd_error/include
 TEST_INC  ?= -Iinclude/test
 PROJ_INC  := -Iinclude $(JSON_INC) $(ERROR_INC) $(TEST_INC) -I$(JSON_SRC) \
-	     -I$(ERROR_SRC) -I$(TEST_SRC)
+	     -I$(TEST_SRC)
 
 INC_DIRS ?= $(PROJ_INC)
 

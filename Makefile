@@ -16,7 +16,6 @@ $(shell mkdir -p bin)
 BIN_DIR ?= ./bin
 
 JSON_SRC  ?= ./src/json
-#ERROR_SRC ?= ./src/error
 TEST_SRC  ?= ./src/test
 
 JSON_EXAMPLES_SRC  ?= ./examples/json

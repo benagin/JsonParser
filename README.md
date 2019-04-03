@@ -8,10 +8,6 @@ A library of tools for use in my other projects.
 
 Integrate JSON with C++.
 
-### bstd::error
-
-Throw more useful errors.
-
 ### bstd::test
 
 Unit testing framework.
@@ -39,15 +35,12 @@ Assuming the path to `bstd` is included with ```-I<path-to-bstd>``` or something
 
 * All public headers: ```#include "bstd/include/bstd.hpp"```
 * bstd::json public headers: ```#include "bstd/include/json/bstd_json.hpp"```
-* bstd::error public headers: ```#include "bstd/include/error/bstd_error.hpp"```
 * bstd::test public headers: ```#include "bstd/include/test/bstd_test.hpp"```
 
 Alternatively, include ```bstd/include``` or ```bstd/include/<tool>``` in gcc or equivalent:
 * ```-Ibstd/include```
-* ```-Ibstd/include/<tool>```
 
 Then use (depending on which headers you need):
 * ```#include <bstd.hpp>```
 * ```#include <bstd_json.hpp>```
-* ```#include <bstd_error.hpp>```
 * ```#include <bstd_test.hpp>```

@@ -25,9 +25,10 @@ TEST_EXAMPLES_SRC  ?= ./examples/test
 JSON_TESTS_SRC  ?= ./test/json
 
 $(shell mkdir -p build/dependencies)
-DEPENDENCY_DIR ?= ./build/dependencies
-DEPENDENCIES   := $(DEPENDENCY_DIR)/dependencies
-D_FILES        := $(DEPENDENCY_DIR)/$*.d
+BUILD_DIR      ?= ./build
+DEPENDENCY_DIR ?= $(BUILD_DIR)/dependencies
+DEPENDENCIES   ?= $(DEPENDENCY_DIR)/dependencies
+D_FILES        ?= $(DEPENDENCY_DIR)/$*.d
 
 JSON_INC  ?= -Iinclude/json
 ERROR_INC ?= -Iinclude/error
@@ -161,8 +162,8 @@ clean:
 	@rm -f $(shell find . -path "*.o")
 	@rm -f $(JSON_EXAMPLES) $(TEST_EXAMPLES)
 	@rm -f $(JSON_TESTS)
-	@rm -f $(DEPENDENCIES)
-	@rm -f $(BIN_DIR)/*
+	@rm -f $(BUILD_DIR)
+	@rm -f $(BIN_DIR)
 
 # Other stuff ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 

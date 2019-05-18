@@ -49,10 +49,10 @@ SRCS := $(shell find $(SRC) -path "*.cpp")
 OBJS := $(SRCS:.cpp=.o)
 LIB  := $(BIN_DIR)/libbstdjson.so
 
-EXAMPLE_SRCS := $(shell find $(EXAMPLES_SRC) -path "*.cpp")
-EXAMPLES     := $(basename $(EXAMPLE_SRCS))
-TEST_SRCS    := $(shell find $(TESTS_SRC) -path "*.cpp")
-TESTS        := $(basename $(TEST_SRCS))
+EXAMPLE_SRCS       := $(shell find $(EXAMPLES_SRC) -path "*.cpp")
+EXAMPLES_BASENAMES := $(basename $(EXAMPLE_SRCS))
+TEST_SRCS          := $(shell find $(TESTS_SRC) -path "*.cpp")
+TESTS_BASENAMES    := $(basename $(TEST_SRCS))
 
 # Object File Recipes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
@@ -77,18 +77,20 @@ $(LIB):		$(OBJS)
 
 # Build all examples.
 .PHONY: $(EXAMPLES)
-$(EXAMPLES):  %: %.cpp $(LIB)
-	      @echo Compiling $<...
-	      @$(CXX) $(CXXFLAGS) $(DEPS) $(LINK_JSON) $(INC) $< -o $@
-	      @cat $(D_FILES) >> $(DEPENDENCIES)
+$(EXAMPLES):	$(EXAMPLES_BASENAMES)
+$(EXAMPLES_BASENAMES):  %: %.cpp $(LIB)
+	@echo Compiling $<...
+	@$(CXX) $(CXXFLAGS) $(DEPS) $(LINK_JSON) $(INC) $< -o $@
+	@cat $(D_FILES) >> $(DEPENDENCIES)
 
 # Build all tests.
 # TODO: fix not being able to run test executable from different directories.
 .PHONY: $(TESTS)
-$(TESTS):	%: %.cpp $(LIB)
-		@echo Compiling $<...
-		@$(CXX) $(CXXFLAGS) $(DEPS) $(LINK_ALL) $(INC) $< -o $@
-		@cat $(D_FILES) >> $(DEPENDENCIES)
+$(TESTS):	$(TESTS_BASENAMES)
+$(TESTS_BASENAMES):	%: %.cpp $(LIB)
+	@echo Compiling $<...
+	@$(CXX) $(CXXFLAGS) $(DEPS) $(LINK_ALL) $(INC) $< -o $@
+	@cat $(D_FILES) >> $(DEPENDENCIES)
 
 # Cleanup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 

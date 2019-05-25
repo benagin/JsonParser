@@ -22,6 +22,7 @@ DEPENDENCY_DIR := $(BUILD_DIR)/dependencies
 DEPENDENCIES   := $(DEPENDENCY_DIR)/dependencies
 D_FILES        := $(DEPENDENCY_DIR)/$*.d
 
+# TODO: change this to work on other machines.
 ERROR_INC ?= -I$(HOME)/Projects/bstd_error/include
 TEST_INC  ?= -I$(HOME)/Projects/bstd_test/include
 INC       := -Iinclude $(ERROR_INC) $(TEST_INC) -I$(SRC) \
@@ -31,6 +32,7 @@ INC       := -Iinclude $(ERROR_INC) $(TEST_INC) -I$(SRC) \
 CXX 	  = g++
 CXXFLAGS  = -std=c++2a -Wall -Werror -pedantic -fPIC
 LDFLAGS   = -shared
+# TODO: change this to work on other machines.
 LINK      = -Lbin -L$(HOME)/Projects/bstd_test/bin
 LINK_JSON = $(LINK) -lbstdjson
 LINK_TEST = $(LINK) -lbstdtest
@@ -77,7 +79,7 @@ $(LIB):		$(OBJS)
 
 # Build all examples.
 .PHONY: $(EXAMPLES)
-$(EXAMPLES):	$(EXAMPLES_BASENAMES)
+$(EXAMPLES):	        $(EXAMPLES_BASENAMES)
 $(EXAMPLES_BASENAMES):  %: %.cpp $(LIB)
 	@echo Compiling $<...
 	@$(CXX) $(CXXFLAGS) $(DEPS) $(LINK_JSON) $(INC) $< -o $@
@@ -86,7 +88,7 @@ $(EXAMPLES_BASENAMES):  %: %.cpp $(LIB)
 # Build all tests.
 # TODO: fix not being able to run test executable from different directories.
 .PHONY: $(TESTS)
-$(TESTS):	$(TESTS_BASENAMES)
+$(TESTS):	        $(TESTS_BASENAMES)
 $(TESTS_BASENAMES):	%: %.cpp $(LIB)
 	@echo Compiling $<...
 	@$(CXX) $(CXXFLAGS) $(DEPS) $(LINK_ALL) $(INC) $< -o $@
@@ -99,8 +101,8 @@ clean:
 	@echo Cleaning...
 	@rm -f $(shell find $(DEPENDENCY_DIR) -path "*.d")
 	@rm -f $(shell find . -path "*.o")
-	@rm -f $(EXAMPLES)
-	@rm -f $(TESTS)
+	@rm -f $(EXAMPLES_BASENAMES)
+	@rm -f $(TESTS_BASENAMES)
 	@rm -f $(DEPENDENCIES)
 	@rm -rf $(BUILD_DIR)
 	@rm -rf $(BIN_DIR)

@@ -11,10 +11,10 @@ TESTS     ?= tests
 # Directory Layout ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
 $(shell mkdir -p bin)
-BIN_DIR ?= ./bin
-SRC  ?= ./src
+BIN_DIR       ?= ./bin
+SRC           ?= ./src
 EXAMPLES_SRC  ?= ./examples
-TESTS_SRC  ?= ./test
+TESTS_SRC     ?= ./test
 
 $(shell mkdir -p build/dependencies)
 BUILD_DIR      ?= ./build
@@ -24,7 +24,7 @@ D_FILES        := $(DEPENDENCY_DIR)/$*.d
 
 ERROR_INC ?= -I$(HOME)/Projects/bstd_error/include
 TEST_INC  ?= -I$(HOME)/Projects/bstd_test/include
-INC  := -Iinclude $(ERROR_INC) $(TEST_INC) -I$(SRC) \
+INC       := -Iinclude $(ERROR_INC) $(TEST_INC) -I$(SRC) \
 
 # Compiler Configuration ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
@@ -34,7 +34,7 @@ LDFLAGS   = -shared
 LINK      = -Lbin -L$(HOME)/Projects/bstd_test/bin
 LINK_JSON = $(LINK) -lbstdjson
 LINK_TEST = $(LINK) -lbstdtest
-LINK_ALL = $(LINK_JSON) $(LINK_TEST)
+LINK_ALL  = $(LINK_JSON) $(LINK_TEST)
 
 
 ifeq ($(debug), 1)

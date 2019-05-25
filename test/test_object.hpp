@@ -4,7 +4,7 @@
 #include <bstd_json.hpp>
 #include <bstd_test.hpp>
 
-class test_object final : public bstd::test::test {
+class test_object final : public bstd::test::unit_tester {
 
   public:
 

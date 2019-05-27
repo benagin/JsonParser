@@ -15,6 +15,7 @@ Integrate JSON with C++.
 2. Build bstd_json: ```make bstd_json```
 3. Build examples: ```make examples```
 4. Build tests: ```make tests```
+5. Build and install the library to ```/usr/local/lib```: ```make install```
 
 More specific build commands in their relavent directories.
 

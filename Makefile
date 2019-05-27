@@ -7,8 +7,12 @@ debug ?= 0
 BSTD_JSON ?= bstd_json
 EXAMPLES  ?= examples
 TESTS     ?= tests
+INSTALL   ?= install
 
 # Directory Layout ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+# TODO: make this configurable and/or work on other machines.
+INSTALL_DIR ?= /usr/local/lib
 
 $(shell mkdir -p bin)
 BIN_DIR       ?= ./bin
@@ -63,9 +67,7 @@ TESTS_BASENAMES    := $(basename $(TEST_SRCS))
 	@$(CXX) -c $(CXXFLAGS) $(DEPS) $(INC) $< -o $@
 	@cat $(D_FILES) >> $(DEPENDENCIES)
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-
-# Executable Recipes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# Target Recipes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
 all:	$(BSTD_JSON) $(EXAMPLES) $(TESTS)
 
@@ -76,6 +78,12 @@ $(LIB):		$(OBJS)
 		@echo Linking $@...
 		@$(CXX) $(LDFLAGS) -o $@ $^
 		@rm -f $(OBJS)
+
+# Install the library to $(INSTALL_DIR).
+.PHONY: $(INSTALL)
+$(INSTALL):	$(LIB)
+		@echo Installing...
+		@cp $(LIB) $(INSTALL_DIR)
 
 # Build all examples.
 .PHONY: $(EXAMPLES)
@@ -109,7 +117,7 @@ clean:
 
 # Other stuff ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-# include automatically generated dependencies
+# Include automatically generated dependencies.
 -include $(DEPENDENCIES)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#

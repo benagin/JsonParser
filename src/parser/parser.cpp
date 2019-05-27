@@ -93,8 +93,6 @@ trim_leading_ws(std::string& _string) {
     return _string;
   }
 
-  //_string.remove_prefix(index);
-
   return _string.substr(0, index);
 }
 

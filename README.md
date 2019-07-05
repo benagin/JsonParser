@@ -30,3 +30,7 @@ Alternatively, include ```bstd_json/include``` in gcc or equivalent:
 
 Then use (depending on which headers you need):
 * ```#include <bstd_json.hpp>```
+
+## Documentation
+
+See https://benagin.github.io/bstd_test for documentation.

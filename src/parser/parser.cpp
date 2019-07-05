@@ -16,7 +16,7 @@ parse(const std::string& _string) {
         std::istreambuf_iterator<char>());
   }
 
-  // Now we have a JSON string for sure.
+  // Now we are certain we have a JSON string.
 
   std::cout << json_as_string << std::endl;
 
@@ -29,7 +29,7 @@ parse(const std::string& _string) {
     if(i != tokens.size() - 1)
       std::cout << ',';
   }
-  std::cout << ']';
+  std::cout << ']' << std::endl;
 
   return parse(tokens);
 }
@@ -70,6 +70,7 @@ parse_array(const std::string _string) {
 
 std::shared_ptr<json_string>
 parse_json_string(const std::string _string) {
+  // TODO: implement.
   return std::make_shared<json_string>();
 }
 

@@ -7,6 +7,8 @@
 
 namespace bstd::json {
 
+using structures::object;
+
 /// \brief A C++ representation of a JSON object.
 /// A JSON object consists of objects, arrays, key, value pairs, and other
 /// values. These can be easily stored as C++ structures. This interface allows

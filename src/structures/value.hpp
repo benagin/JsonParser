@@ -5,7 +5,7 @@
 
 #include "json_base.hpp"
 
-namespace bstd::json {
+namespace bstd::json::structures {
 
 /// \brief This class represents a value from the grammar (https://www.json.org/).
 /// Different from the grammar, this class also acts as a member and an element.
@@ -27,8 +27,7 @@ class value : public json_base {
     /// \brief Get this value's name.
     /// \return this value's name if it represents a JSON member or an empty
     ///         string if this value represents a JSON element
-    virtual const std::string get_name() const
-        final;
+    virtual const std::string get_name() const final;
 
     /// TODO: inherit documentation?
     virtual const std::size_t size() const = 0;

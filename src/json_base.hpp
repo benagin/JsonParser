@@ -13,7 +13,13 @@
 
 namespace bstd::json {
 
+namespace structures {
+
 class value;
+
+}
+
+using structures::value;
 
 /// \brief Abstract class used as base for each json related structure.
 class json_base {

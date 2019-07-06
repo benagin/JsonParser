@@ -1,6 +1,6 @@
 #include "parser.hpp"
 
-namespace bstd::json {
+namespace bstd::json::parser {
 
 
 std::shared_ptr<json>

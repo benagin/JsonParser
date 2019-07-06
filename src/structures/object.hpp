@@ -6,7 +6,7 @@
 
 #include "value.hpp"
 
-namespace bstd::json {
+namespace bstd::json::structures {
 
 /// \brief Represents an object from the JSON grammar (https://www.json.org/).
 class object final : public value {

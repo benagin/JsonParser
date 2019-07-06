@@ -5,7 +5,7 @@
 
 #include "value.hpp"
 
-namespace bstd::json {
+namespace bstd::json::structures {
 
 /// \brief Represents an array from the JSON grammar (https://www.json.org/).
 class array final : public value {

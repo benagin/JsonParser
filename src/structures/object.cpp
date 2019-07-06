@@ -1,6 +1,6 @@
 #include "object.hpp"
 
-namespace bstd::json {
+namespace bstd::json::structures {
 
 
 const std::size_t

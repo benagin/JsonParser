@@ -20,6 +20,12 @@ namespace bstd::json {
 
 class json;
 
+namespace parser {
+
+using structures::array;
+using structures::json_string;
+using structures::object;
+
 /// \brief Parse JSON according to its grammar (https://www.json.org/).
 /// There is no need for a class here as no state is stored.
 
@@ -56,6 +62,8 @@ std::shared_ptr<array> parse_array(const std::string _string);
 /// \param _string the string to trim
 /// \return the trimmed whitespace if any exists
 const std::string trim_leading_ws(std::string& _string);
+
+}
 
 }
 

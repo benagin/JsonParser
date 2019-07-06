@@ -17,8 +17,8 @@ test_json() {
 const bstd::test::result
 test_json::
 json_size() const {
-  const auto empty_json = bstd::json::parse("");
-  const auto one_value = bstd::json::parse(m_json_string1);
+  const auto empty_json = bstd::json::parser::parse("");
+  const auto one_value = bstd::json::parser::parse(m_json_string1);
 
   const auto zero = empty_json->size();
   const auto one = one_value->size();
@@ -30,7 +30,7 @@ json_size() const {
 const bstd::test::result
 test_json::
 json_assignment_operator() const {
-  const auto json1 = bstd::json::parse(m_json_string1);
+  const auto json1 = bstd::json::parser::parse(m_json_string1);
   const auto copy = json1;
 
   // Check member variables.
@@ -44,9 +44,9 @@ json_assignment_operator() const {
 const bstd::test::result
 test_json::
 json_equal_operator() const {
-  const auto json1 = bstd::json::parse(m_json_string1);
-  const auto json1_copy = bstd::json::parse(m_json_string1);
-  const auto json2 = bstd::json::parse(m_json_string2);
+  const auto json1 = bstd::json::parser::parse(m_json_string1);
+  const auto json1_copy = bstd::json::parser::parse(m_json_string1);
+  const auto json2 = bstd::json::parser::parse(m_json_string2);
 
   const bool test1 = *json1 == *json1_copy;
   const bool test2 = *json1 != *json2;
@@ -59,9 +59,9 @@ json_equal_operator() const {
 const bstd::test::result
 test_json::
 json_addition_operator() const {
-  const auto json1 = bstd::json::parse(m_json_string1);
-  const auto json2 = bstd::json::parse(m_json_string2);
-  const auto json3 = bstd::json::parse(m_json_string1 + m_json_string2);
+  const auto json1 = bstd::json::parser::parse(m_json_string1);
+  const auto json2 = bstd::json::parser::parse(m_json_string2);
+  const auto json3 = bstd::json::parser::parse(m_json_string1 + m_json_string2);
 
   const auto result = *json1 + *json2;
 
@@ -73,7 +73,7 @@ json_addition_operator() const {
 const bstd::test::result
 test_json::
 json_to_string() const {
-  const auto json1 = bstd::json::parse(m_json_string1);
+  const auto json1 = bstd::json::parser::parse(m_json_string1);
 
   const auto test = json1->to_string() == m_json_string1;
 
@@ -84,9 +84,9 @@ json_to_string() const {
 const bstd::test::result
 test_json::
 json_add_value() const {
-  const auto json1 = bstd::json::parse(m_json_string1);
-  const auto json2 = bstd::json::parse(m_json_string2);
-  const auto json3 = bstd::json::parse(m_json_string1 + m_json_string2);
+  const auto json1 = bstd::json::parser::parse(m_json_string1);
+  const auto json2 = bstd::json::parser::parse(m_json_string2);
+  const auto json3 = bstd::json::parser::parse(m_json_string1 + m_json_string2);
 
   const auto result = json1->add_value(json2->get_value());
 

@@ -1,6 +1,6 @@
 #include "value.hpp"
 
-namespace bstd::json {
+namespace bstd::json::structures {
 
 
 value::

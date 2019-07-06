@@ -1,7 +1,7 @@
 #include "token.hpp"
 
 
-namespace bstd::json {
+namespace bstd::json::parser {
 
 
 token::type

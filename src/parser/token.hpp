@@ -4,7 +4,7 @@
 #include <ostream>
 #include <string>
 
-namespace bstd::json {
+namespace bstd::json::parser {
 
 /// \brief Token object used by the parser.
 class token final {

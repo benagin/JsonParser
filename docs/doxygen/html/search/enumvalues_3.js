@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['no_5ftype',['no_type',['../classbstd_1_1json_1_1token.html#ac27a361d6295d10ed8ff0df6201c2892a21c6f14f978c031ce1a3f6807541d58b',1,'bstd::json::token']]],
-  ['null_5fliteral',['null_literal',['../classbstd_1_1json_1_1token.html#ac27a361d6295d10ed8ff0df6201c2892ab52939548ae400fff10d09aba42e7a06',1,'bstd::json::token']]],
-  ['number',['number',['../classbstd_1_1json_1_1token.html#ac27a361d6295d10ed8ff0df6201c2892ae8c316856289dfed01c9412bf7cddfd3',1,'bstd::json::token']]]
+  ['no_5ftype',['no_type',['../classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da440899b12502cbe3bad5609430f7eb53',1,'bstd::json::parser::token']]],
+  ['null_5fliteral',['null_literal',['../classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da6ee269bea0cd54abb5e8989b9b1ac46c',1,'bstd::json::parser::token']]],
+  ['number',['number',['../classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da2ed12a3c50d1060534912c3c3dd81bc9',1,'bstd::json::parser::token']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['true_5fliteral',['true_literal',['../classbstd_1_1json_1_1token.html#ac27a361d6295d10ed8ff0df6201c2892a3a5b73bfd32165e5cd257eccb5538c9d',1,'bstd::json::token']]]
+  ['true_5fliteral',['true_literal',['../classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720dab7096827f35a131935b0bfc5fba97009',1,'bstd::json::parser::token']]]
 ];

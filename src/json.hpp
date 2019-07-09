@@ -2,7 +2,6 @@
 #define BSTD_JSON_HPP_
 
 #include "json_base.hpp"
-#include "parser/parser.hpp"
 #include "structures/object.hpp"
 
 namespace bstd::json {
@@ -26,7 +25,9 @@ class json final : public json_base {
     json(const bool _debug = false) : json_base(_debug),
         m_value(std::make_shared<object>()) {}
 
-    /// \brief
+    // TODO: copy constructor.
+
+    /// \brief Copy assignment operator.
     /// \param _rhs the json object on the right hand side of the operator
     json& operator=(json _rhs);
 

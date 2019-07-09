@@ -18,63 +18,22 @@ parse(const std::string& _string) {
 
   // Now we are certain we have a JSON string.
 
+  // TODO: setup debug flag for output like this.
   std::cout << json_as_string << std::endl;
 
-  auto tokens = scan(json_as_string);
-
-  std::cout << '[';
-  for(int i = 0; i < tokens.size(); ++i) {
-    std::cout << tokens.at(i) << ' ';
-
-    if(i != tokens.size() - 1)
-      std::cout << ',';
-  }
-  std::cout << ']' << std::endl;
-
-  return parse(tokens);
+  // TODO: change this to store the lexer in the parser once parser is a class.
+  lexer l;
+  l.lex(json_as_string);
+  return parse(l);
 }
 
 std::shared_ptr<json>
-parse(const std::vector<token> _tokens) {
+parse(const lexer& _lexer) {
   // TODO: implement.
   return std::make_shared<json>();
 }
 
-
-std::vector<token>
-scan(const std::string& _json_as_string) {
-  std::vector<token> tokens;
-
-  for(auto& c : _json_as_string)
-    tokens.push_back(token(token::no_type, c));
-  // TODO: implement.
-
-  return tokens;
-}
-
-
-
-std::shared_ptr<object>
-parse_object(const std::string _string) {
-  // TODO: implement.
-  return std::make_shared<object>();
-}
-
-
-std::shared_ptr<array>
-parse_array(const std::string _string) {
-  // TODO: implement.
-  return std::make_shared<array>();
-}
-
-
-std::shared_ptr<json_string>
-parse_json_string(const std::string _string) {
-  // TODO: implement.
-  return std::make_shared<json_string>();
-}
-
-
+// TODO: Figure out what to do with this. It's dead code right now.
 const std::string
 trim_leading_ws(std::string& _string) {
   // Whitespace characters supported by JSON.

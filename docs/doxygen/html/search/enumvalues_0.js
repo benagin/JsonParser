@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['closed_5fcurly_5fbracket',['closed_curly_bracket',['../classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da63bf61b0ec9afb7f0ced5a2fdf506c75',1,'bstd::json::parser::token']]],
-  ['closed_5fsquare_5fbracket',['closed_square_bracket',['../classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720dada782b0aa00f6a876ca0d413f5219c30',1,'bstd::json::parser::token']]],
-  ['colon',['colon',['../classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da2dbd58c1b5ec9858b2a6a545680fadc2',1,'bstd::json::parser::token']]],
-  ['comma',['comma',['../classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da98692557a50957f595a91180901a8aff',1,'bstd::json::parser::token']]]
+  ['begin_5farray',['begin_array',['../classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720dae8dadccc0bc43a5b2fa3018a83fd8d3d',1,'bstd::json::parser::token']]],
+  ['begin_5fobject',['begin_object',['../classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da6c92275074db93bff50b0cf5f6450dfc',1,'bstd::json::parser::token']]],
+  ['begin_5fstring',['begin_string',['../classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720dafa49b3a9b2fdb3c8e45ef831c81033a6',1,'bstd::json::parser::token']]]
 ];

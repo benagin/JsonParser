@@ -77,29 +77,26 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenize a JSON string.  <a href="classbstd_1_1json_1_1parser_1_1lexer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parse__error.html">parse_error</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO: implement this.  <a href="classbstd_1_1json_1_1parser_1_1parse__error.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Token object used by the parser.  <a href="classbstd_1_1json_1_1parser_1_1token.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:af6f9b51a33137d436a15c5fd2ed5a6f9"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#af6f9b51a33137d436a15c5fd2ed5a6f9">operator&lt;&lt;</a> (std::ostream &amp;_os, const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a> &amp;_lexer)</td></tr>
+<tr class="separator:af6f9b51a33137d436a15c5fd2ed5a6f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83db42618d8826c853638da0cb4e4b61"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1json.html">json</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a83db42618d8826c853638da0cb4e4b61">parse</a> (const std::string &amp;_string)</td></tr>
 <tr class="memdesc:a83db42618d8826c853638da0cb4e4b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse JSON according to its grammar (<a href="https://www.json.org/">https://www.json.org/</a>). There is no need for a class here as no state is stored.  <a href="#a83db42618d8826c853638da0cb4e4b61">More...</a><br /></td></tr>
 <tr class="separator:a83db42618d8826c853638da0cb4e4b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1681b73f530c348972415807dc6e1b04"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1json.html">json</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a1681b73f530c348972415807dc6e1b04">parse</a> (const std::vector&lt; <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a> &gt; _tokens)</td></tr>
-<tr class="memdesc:a1681b73f530c348972415807dc6e1b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a tokenized JSON string.  <a href="#a1681b73f530c348972415807dc6e1b04">More...</a><br /></td></tr>
-<tr class="separator:a1681b73f530c348972415807dc6e1b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af324457bb05cf63b3584396f734e29f7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#af324457bb05cf63b3584396f734e29f7">scan</a> (const std::string &amp;_string)</td></tr>
-<tr class="memdesc:af324457bb05cf63b3584396f734e29f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scan a JSON string and return a tokenized version.  <a href="#af324457bb05cf63b3584396f734e29f7">More...</a><br /></td></tr>
-<tr class="separator:af324457bb05cf63b3584396f734e29f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1d00be1c5fdb3caed2d1dd0ac12d41e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1structures_1_1object.html">object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#ae1d00be1c5fdb3caed2d1dd0ac12d41e">parse_object</a> (const std::string _string)</td></tr>
-<tr class="memdesc:ae1d00be1c5fdb3caed2d1dd0ac12d41e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a JSON object.  <a href="#ae1d00be1c5fdb3caed2d1dd0ac12d41e">More...</a><br /></td></tr>
-<tr class="separator:ae1d00be1c5fdb3caed2d1dd0ac12d41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c01fb37e6dae107337fc9579d204841"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1structures_1_1array.html">array</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a9c01fb37e6dae107337fc9579d204841">parse_array</a> (const std::string _string)</td></tr>
-<tr class="memdesc:a9c01fb37e6dae107337fc9579d204841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a JSON array.  <a href="#a9c01fb37e6dae107337fc9579d204841">More...</a><br /></td></tr>
-<tr class="separator:a9c01fb37e6dae107337fc9579d204841"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa606f86cc41abe75cb2eb8f70f293d7a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1structures_1_1json__string.html">json_string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#aa606f86cc41abe75cb2eb8f70f293d7a">parse_json_string</a> (const std::string _string)</td></tr>
-<tr class="separator:aa606f86cc41abe75cb2eb8f70f293d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36e397bbe297263d56b6164d7a93d0bf"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1json.html">json</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a36e397bbe297263d56b6164d7a93d0bf">parse</a> (const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a> &amp;_lexer)</td></tr>
+<tr class="memdesc:a36e397bbe297263d56b6164d7a93d0bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a tokenized JSON string.  <a href="#a36e397bbe297263d56b6164d7a93d0bf">More...</a><br /></td></tr>
+<tr class="separator:a36e397bbe297263d56b6164d7a93d0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a278e09e08641f7d0e1df3119bf9cf100"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a278e09e08641f7d0e1df3119bf9cf100">trim_leading_ws</a> (std::string &amp;_string)</td></tr>
 <tr class="memdesc:a278e09e08641f7d0e1df3119bf9cf100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove and return the leading whitespace from _string. Example: Given "\t  \nexample string" as _string, _string will become "example string" and "\t  \n" will be returned.  <a href="#a278e09e08641f7d0e1df3119bf9cf100">More...</a><br /></td></tr>
 <tr class="separator:a278e09e08641f7d0e1df3119bf9cf100"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,7 +105,7 @@ Functions</h2></td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a580292e4710668a05d916ca8dfe27c1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a580292e4710668a05d916ca8dfe27c1b">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a580292e4710668a05d916ca8dfe27c1b">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -132,7 +129,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Output operator overload. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">_os</td><td>std::ostream </td></tr>
     <tr><td class="paramname">_token</td><td>the calling token </td></tr>
@@ -141,7 +138,45 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::ostream </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="token_8cpp_source.html#l00022">22</a> of file <a class="el" href="token_8cpp_source.html">token.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="token_8cpp_source.html#l00050">50</a> of file <a class="el" href="token_8cpp_source.html">token.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af6f9b51a33137d436a15c5fd2ed5a6f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f9b51a33137d436a15c5fd2ed5a6f9">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; bstd::json::parser::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>_os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a> &amp;&#160;</td>
+          <td class="paramname"><em>_lexer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_os</td><td>std::ostream </td></tr>
+    <tr><td class="paramname">_lexer</td><td>the calling lexer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::ostream </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00061">61</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>
@@ -162,7 +197,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Parse JSON according to its grammar (<a href="https://www.json.org/">https://www.json.org/</a>). There is no need for a class here as no state is stored. </p>
-<p>Parse a .json file or a JSON string and return the result as a json object. The type of object depends on the contents of the file or string. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Parse a .json file or a JSON string and return the result as a json element. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">_string</td><td>the .json file or JSON string </td></tr>
   </table>
@@ -174,8 +209,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1681b73f530c348972415807dc6e1b04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1681b73f530c348972415807dc6e1b04">&#9670;&nbsp;</a></span>parse() <span class="overload">[2/2]</span></h2>
+<a id="a36e397bbe297263d56b6164d7a93d0bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36e397bbe297263d56b6164d7a93d0bf">&#9670;&nbsp;</a></span>parse() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,8 +218,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1json.html">json</a> &gt; bstd::json::parser::parse </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a> &gt;&#160;</td>
-          <td class="paramname"><em>_tokens</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a> &amp;&#160;</td>
+          <td class="paramname"><em>_lexer</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -193,120 +228,13 @@ Functions</h2></td></tr>
 <p>Parse a tokenized JSON string. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">_tokens</td><td>a vector of tokens </td></tr>
+    <tr><td class="paramname">_lexer</td><td>a lexer object which contains a tokenized version of a JSON string </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a shared_ptr to a json object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00038">38</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a9c01fb37e6dae107337fc9579d204841"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c01fb37e6dae107337fc9579d204841">&#9670;&nbsp;</a></span>parse_array()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1structures_1_1array.html">array</a> &gt; bstd::json::parser::parse_array </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>_string</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Parse a JSON array. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">_string</td><td>the JSON array string </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a shared_ptr to an array </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00065">65</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
-
-</div>
-</div>
-<a id="aa606f86cc41abe75cb2eb8f70f293d7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa606f86cc41abe75cb2eb8f70f293d7a">&#9670;&nbsp;</a></span>parse_json_string()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="classbstd_1_1json_1_1structures_1_1json__string.html">json_string</a>&gt; bstd::json::parser::parse_json_string </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>_string</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00072">72</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ae1d00be1c5fdb3caed2d1dd0ac12d41e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1d00be1c5fdb3caed2d1dd0ac12d41e">&#9670;&nbsp;</a></span>parse_object()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1structures_1_1object.html">object</a> &gt; bstd::json::parser::parse_object </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>_string</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Parse a JSON object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">_string</td><td>the JSON object string </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a shared_ptr to an object </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00058">58</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
-
-</div>
-</div>
-<a id="af324457bb05cf63b3584396f734e29f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af324457bb05cf63b3584396f734e29f7">&#9670;&nbsp;</a></span>scan()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a> &gt; bstd::json::parser::scan </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>_string</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Scan a JSON string and return a tokenized version. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">_string</td><td>the .json file or JSON string </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a vector of tokens </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00045">45</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00031">31</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
 
 </div>
 </div>
@@ -335,7 +263,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the trimmed whitespace if any exists </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00079">79</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00038">38</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
 
 </div>
 </div>

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['get_5fname',['get_name',['../classbstd_1_1json_1_1structures_1_1value.html#adc1aa7d5175edcb14040090f363f336f',1,'bstd::json::structures::value']]],
-  ['get_5fpath',['get_path',['../classbstd_1_1json_1_1json.html#abdc47c660f9ae1c8041903bb5f47fd98',1,'bstd::json::json']]],
-  ['get_5ftype',['get_type',['../classbstd_1_1json_1_1parser_1_1token.html#a5ba6a05fea9dd226025f6690bcf646c2',1,'bstd::json::parser::token']]],
-  ['get_5fvalue',['get_value',['../classbstd_1_1json_1_1json.html#a75b155ef832c66afbc30614b09ec9fe8',1,'bstd::json::json::get_value()'],['../classbstd_1_1json_1_1parser_1_1token.html#ad760272ea57f7706934b90e4abf302f9',1,'bstd::json::parser::token::get_value()']]]
+  ['invalid',['invalid',['../classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da2fb06e5b23210e89b3ac53087f6a22dd',1,'bstd::json::parser::token']]],
+  ['is_5fjson_5fextension',['is_json_extension',['../namespacebstd_1_1json_1_1utilities.html#a8fa4b2b24740e94f60abdaa45c5141fe',1,'bstd::json::utilities']]],
+  ['is_5fvalid',['is_valid',['../classbstd_1_1json_1_1parser_1_1token.html#a5333a4d5768ec2f72929cbc8a4eb6f1a',1,'bstd::json::parser::token']]]
 ];

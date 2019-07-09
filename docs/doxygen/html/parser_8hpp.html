@@ -81,7 +81,7 @@ $(function() {
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;bstd_error.hpp&gt;</code><br />
 <code>#include &quot;<a class="el" href="json_8hpp_source.html">json.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="token_8hpp_source.html">token.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="array_8hpp_source.html">structures/array.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="object_8hpp_source.html">structures/object.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="json__string_8hpp_source.html">structures/json_string.hpp</a>&quot;</code><br />
@@ -103,18 +103,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a83db42618d8826c853638da0cb4e4b61"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; json &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a83db42618d8826c853638da0cb4e4b61">bstd::json::parser::parse</a> (const std::string &amp;_string)</td></tr>
 <tr class="memdesc:a83db42618d8826c853638da0cb4e4b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse JSON according to its grammar (<a href="https://www.json.org/">https://www.json.org/</a>). There is no need for a class here as no state is stored.  <a href="namespacebstd_1_1json_1_1parser.html#a83db42618d8826c853638da0cb4e4b61">More...</a><br /></td></tr>
 <tr class="separator:a83db42618d8826c853638da0cb4e4b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af324457bb05cf63b3584396f734e29f7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; token &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#af324457bb05cf63b3584396f734e29f7">bstd::json::parser::scan</a> (const std::string &amp;_string)</td></tr>
-<tr class="memdesc:af324457bb05cf63b3584396f734e29f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scan a JSON string and return a tokenized version.  <a href="namespacebstd_1_1json_1_1parser.html#af324457bb05cf63b3584396f734e29f7">More...</a><br /></td></tr>
-<tr class="separator:af324457bb05cf63b3584396f734e29f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1681b73f530c348972415807dc6e1b04"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; json &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a1681b73f530c348972415807dc6e1b04">bstd::json::parser::parse</a> (const std::vector&lt; token &gt; _tokens)</td></tr>
-<tr class="memdesc:a1681b73f530c348972415807dc6e1b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a tokenized JSON string.  <a href="namespacebstd_1_1json_1_1parser.html#a1681b73f530c348972415807dc6e1b04">More...</a><br /></td></tr>
-<tr class="separator:a1681b73f530c348972415807dc6e1b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1d00be1c5fdb3caed2d1dd0ac12d41e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; object &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#ae1d00be1c5fdb3caed2d1dd0ac12d41e">bstd::json::parser::parse_object</a> (const std::string _string)</td></tr>
-<tr class="memdesc:ae1d00be1c5fdb3caed2d1dd0ac12d41e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a JSON object.  <a href="namespacebstd_1_1json_1_1parser.html#ae1d00be1c5fdb3caed2d1dd0ac12d41e">More...</a><br /></td></tr>
-<tr class="separator:ae1d00be1c5fdb3caed2d1dd0ac12d41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c01fb37e6dae107337fc9579d204841"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; array &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a9c01fb37e6dae107337fc9579d204841">bstd::json::parser::parse_array</a> (const std::string _string)</td></tr>
-<tr class="memdesc:a9c01fb37e6dae107337fc9579d204841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a JSON array.  <a href="namespacebstd_1_1json_1_1parser.html#a9c01fb37e6dae107337fc9579d204841">More...</a><br /></td></tr>
-<tr class="separator:a9c01fb37e6dae107337fc9579d204841"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36e397bbe297263d56b6164d7a93d0bf"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; json &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a36e397bbe297263d56b6164d7a93d0bf">bstd::json::parser::parse</a> (const lexer &amp;_lexer)</td></tr>
+<tr class="memdesc:a36e397bbe297263d56b6164d7a93d0bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a tokenized JSON string.  <a href="namespacebstd_1_1json_1_1parser.html#a36e397bbe297263d56b6164d7a93d0bf">More...</a><br /></td></tr>
+<tr class="separator:a36e397bbe297263d56b6164d7a93d0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a278e09e08641f7d0e1df3119bf9cf100"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a278e09e08641f7d0e1df3119bf9cf100">bstd::json::parser::trim_leading_ws</a> (std::string &amp;_string)</td></tr>
 <tr class="memdesc:a278e09e08641f7d0e1df3119bf9cf100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove and return the leading whitespace from _string. Example: Given "\t  \nexample string" as _string, _string will become "example string" and "\t  \n" will be returned.  <a href="namespacebstd_1_1json_1_1parser.html#a278e09e08641f7d0e1df3119bf9cf100">More...</a><br /></td></tr>
 <tr class="separator:a278e09e08641f7d0e1df3119bf9cf100"><td class="memSeparator" colspan="2">&#160;</td></tr>

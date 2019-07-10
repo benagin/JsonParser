@@ -4,6 +4,11 @@ namespace bstd::json::parser {
 
 
 std::shared_ptr<json>
+parse(const char* _string) {
+  return parse(std::string(_string));
+}
+
+std::shared_ptr<json>
 parse(const std::string& _string) {
   // Could be a .json file path or a JSON string.
   auto json_as_string = _string;

@@ -4,13 +4,6 @@
 namespace bstd::json::parser {
 
 
-bool
-token::
-is_valid() const {
-  return m_type != invalid;
-}
-
-
 token::type
 token::
 get_type() const {
@@ -46,10 +39,30 @@ set_value(const std::string& _value) {
 }
 
 
+bool
+token::
+operator==(const token& _rhs) const {
+  return m_type == _rhs.m_type and m_value == _rhs.m_value;
+}
+
+
 std::ostream&
 operator<<(std::ostream& _os, const token& _token) {
-  return _os << '(' << _token.get_type() << ", " << _token.get_value()
-      << ')';
+  return _os << _token.to_string();
+}
+
+
+bool
+token::
+is_valid() const {
+  return m_type != invalid;
+}
+
+
+const std::string
+token::
+to_string() const {
+  return std::string('(' + std::to_string(get_type()) + ", " + get_value() + ')');
 }
 
 

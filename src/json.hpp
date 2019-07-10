@@ -55,12 +55,12 @@ class json final : public json_base {
 
     /// Operator overloads.
 
-    /// \brief Equality operator
+    /// \brief Equality operator.
     /// \param _rhs the json object on the right hand side of the operator
     /// \return true if this contains the same values as _rhs
     bool operator==(const json& _rhs) const;
 
-    /// \brief Inequality operator
+    /// \brief Inequality operator.
     /// \param _rhs the json object on the right hand side of the operator
     /// \return true if this does not contain the same value as _rhs
     bool operator!=(const json& _rhs) const;

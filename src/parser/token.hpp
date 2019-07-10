@@ -54,10 +54,6 @@ class token final {
 
     ~token() {}
 
-    /// \brief Check if this token is invalid.
-    /// \returns true if the type is not type::invalid, false otherwise
-    bool is_valid() const;
-
     /// Getters and setters.
 
     /// \brief Get this token's type.
@@ -79,12 +75,27 @@ class token final {
 
     /// Operator overloads.
 
+    /// \brief Equality operator.
+    /// \param _rhs the json object on the right hand side of the operator
+    /// \return true if this contains the same values as _rhs
+    bool operator==(const token& _rhs) const;
+
     /// \brief Output operator overload.
     /// \param _os std::ostream
     /// \param _token the calling token
     /// \return std::ostream
     friend std::ostream& operator<<(std::ostream& _os,
         const token& _token);
+
+    /// Member functions.
+
+    /// \brief Check if this token is invalid.
+    /// \returns true if the type is not type::invalid, false otherwise
+    bool is_valid() const;
+
+    /// \brief Convert this token to a string.
+    /// \return this token as a string
+    const std::string to_string() const;
 
   private:
 

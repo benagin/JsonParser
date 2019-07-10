@@ -29,7 +29,7 @@ D_FILES        := $(DEPENDENCY_DIR)/$*.d
 # TODO: change this to work on other machines.
 ERROR_INC ?= -I$(HOME)/Projects/bstd_error/include
 TEST_INC  ?= -I$(HOME)/Projects/bstd_test/include
-INC       := -Iinclude $(ERROR_INC) $(TEST_INC) -I$(SRC) \
+INC       := -Iinclude $(ERROR_INC) $(TEST_INC) -I$(SRC)
 
 # Compiler Configuration ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 

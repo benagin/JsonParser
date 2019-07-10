@@ -29,6 +29,7 @@ using structures::object;
 ///        element.
 /// \param _string the .json file or JSON string
 /// \return a shared_ptr to a json object
+std::shared_ptr<json> parse(const char* _string);
 std::shared_ptr<json> parse(const std::string& _string);
 
 /// \brief Parse a tokenized JSON string.

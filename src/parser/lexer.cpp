@@ -3,6 +3,23 @@
 
 namespace bstd::json::parser {
 
+const std::vector<token>
+lexer::
+get_tokens() const {
+  return m_tokens;
+}
+
+
+const token
+lexer::
+get_next_token() {
+  if(m_index == m_tokens.cend())
+    throw std::out_of_range("Attempt to get a token after all have \
+        been retrieved.");
+
+  return *m_index++;
+}
+
 
 void
 lexer::
@@ -43,32 +60,33 @@ lex(const std::string& _json_string) {
 
     m_tokens.push_back(t);
   }
+
+  if(m_debug) {
+    std::cout << this << std::endl;
+  }
 }
 
 
-const token
+const std::string
 lexer::
-get_next_token() {
-  if(m_index == m_tokens.cend())
-    throw std::out_of_range("Attempt to get a token after all have \
-        been retrieved.");
+to_string() const {
+  std::string result = "[";
 
-  return *m_index++;
+  for(int i = 0; i < m_tokens.size(); ++i) {
+    result += m_tokens.at(i).to_string();
+    result += ' ';
+
+    if(i != m_tokens.size() - 1)
+      result += ',';
+  }
+
+  return result += ']';
 }
 
 
 std::ostream&
 operator<<(std::ostream& _os, const lexer& _lexer) {
-  _os << '[';
-  for(int i = 0; i < _lexer.m_tokens.size(); ++i) {
-    _os << _lexer.m_tokens.at(i) << ' ';
-
-    if(i != _lexer.m_tokens.size() - 1)
-      _os << ',';
-  }
-  _os << ']' << std::endl;
-
-  return _os;
+  return _os << _lexer.to_string();
 }
 
 

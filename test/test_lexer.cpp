@@ -6,12 +6,21 @@ BSTD_TEST_MAIN(test_lexer)
 test_lexer::
 test_lexer() {
   ADD_TEST(test_lexer::lexer_get_next_token);
+  ADD_TEST(test_lexer::lexer_lex);
 }
 
 
 const bstd::test::result
 test_lexer::
 lexer_get_next_token() const {
+
+  return bstd::test::result(false, "test failed");
+}
+
+
+const bstd::test::result
+test_lexer::
+lexer_lex() const {
   lexer l1;
   l1.lex(m_json_string1);
   std::vector<token> l1_expected { token() };

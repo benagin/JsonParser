@@ -89,8 +89,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab5642637058a695495e40411d44855f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#ab5642637058a695495e40411d44855f5">lexer</a> ()</td></tr>
-<tr class="separator:ab5642637058a695495e40411d44855f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af39f7183bdf76f96ab2a0deaff7c3792"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#af39f7183bdf76f96ab2a0deaff7c3792">lexer</a> (const bool _debug=false)</td></tr>
+<tr class="separator:af39f7183bdf76f96ab2a0deaff7c3792"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6487641b401b0f88cc90479af4f06a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#ac6487641b401b0f88cc90479af4f06a8">lexer</a> (const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a> &amp;)=delete</td></tr>
 <tr class="memdesc:ac6487641b401b0f88cc90479af4f06a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor.  <a href="#ac6487641b401b0f88cc90479af4f06a8">More...</a><br /></td></tr>
 <tr class="separator:ac6487641b401b0f88cc90479af4f06a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -99,17 +99,23 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a754258470a74d8ec0c791c5dea646336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a572c4fb116975938cd9982f02e416d09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a572c4fb116975938cd9982f02e416d09">~lexer</a> ()</td></tr>
 <tr class="separator:a572c4fb116975938cd9982f02e416d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac93c684fd3c72ae1f3fa5d1c961ebf79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#ac93c684fd3c72ae1f3fa5d1c961ebf79">lex</a> (const std::string &amp;_json_string)</td></tr>
-<tr class="memdesc:ac93c684fd3c72ae1f3fa5d1c961ebf79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenize a JSON string. This populates m_tokens with tokens that represent the JSON provided.  <a href="#ac93c684fd3c72ae1f3fa5d1c961ebf79">More...</a><br /></td></tr>
-<tr class="separator:ac93c684fd3c72ae1f3fa5d1c961ebf79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e423adfd0a84e95dbae15982625b515"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a7e423adfd0a84e95dbae15982625b515">get_tokens</a> () const</td></tr>
+<tr class="memdesc:a7e423adfd0a84e95dbae15982625b515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getters and setters.  <a href="#a7e423adfd0a84e95dbae15982625b515">More...</a><br /></td></tr>
+<tr class="separator:a7e423adfd0a84e95dbae15982625b515"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a100bb3827328e2ed9bfad05d1b5d1db9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a100bb3827328e2ed9bfad05d1b5d1db9">get_next_token</a> ()</td></tr>
 <tr class="memdesc:a100bb3827328e2ed9bfad05d1b5d1db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next token from m_tokens.  <a href="#a100bb3827328e2ed9bfad05d1b5d1db9">More...</a><br /></td></tr>
 <tr class="separator:a100bb3827328e2ed9bfad05d1b5d1db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac93c684fd3c72ae1f3fa5d1c961ebf79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#ac93c684fd3c72ae1f3fa5d1c961ebf79">lex</a> (const std::string &amp;_json_string)</td></tr>
+<tr class="memdesc:ac93c684fd3c72ae1f3fa5d1c961ebf79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Member functions.  <a href="#ac93c684fd3c72ae1f3fa5d1c961ebf79">More...</a><br /></td></tr>
+<tr class="separator:ac93c684fd3c72ae1f3fa5d1c961ebf79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a074869e250bf69b7a7685df50093f888"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a074869e250bf69b7a7685df50093f888">to_string</a> () const</td></tr>
+<tr class="memdesc:a074869e250bf69b7a7685df50093f888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert tokens to a string.  <a href="#a074869e250bf69b7a7685df50093f888">More...</a><br /></td></tr>
+<tr class="separator:a074869e250bf69b7a7685df50093f888"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a7b6aadb9ed273fc8618b859de484ac3b"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a7b6aadb9ed273fc8618b859de484ac3b">operator&lt;&lt;</a> (std::ostream &amp;_os, const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a> &amp;_lexer)</td></tr>
-<tr class="memdesc:a7b6aadb9ed273fc8618b859de484ac3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output operator overload.  <a href="#a7b6aadb9ed273fc8618b859de484ac3b">More...</a><br /></td></tr>
+<tr class="memdesc:a7b6aadb9ed273fc8618b859de484ac3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator overloads.  <a href="#a7b6aadb9ed273fc8618b859de484ac3b">More...</a><br /></td></tr>
 <tr class="separator:a7b6aadb9ed273fc8618b859de484ac3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -134,8 +140,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab5642637058a695495e40411d44855f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5642637058a695495e40411d44855f5">&#9670;&nbsp;</a></span>lexer() <span class="overload">[1/2]</span></h2>
+<a id="af39f7183bdf76f96ab2a0deaff7c3792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af39f7183bdf76f96ab2a0deaff7c3792">&#9670;&nbsp;</a></span>lexer() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,7 +152,8 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">bstd::json::parser::lexer::lexer </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>_debug</em> = <code>false</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -241,7 +248,29 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00051">51</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00015">15</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7e423adfd0a84e95dbae15982625b515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e423adfd0a84e95dbae15982625b515">&#9670;&nbsp;</a></span>get_tokens()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a> &gt; bstd::json::parser::lexer::get_tokens </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getters and setters. </p>
+<p>Get tokens. </p><dl class="section return"><dt>Returns</dt><dd>m_tokens </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00008">8</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>
@@ -261,15 +290,15 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Tokenize a JSON string. This populates m_tokens with tokens that represent the JSON provided. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Member functions. </p>
+<p>Tokenize a JSON string. This populates m_tokens with tokens that represent the JSON provided. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">_json_string</td><td>a JSON string </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00009">9</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00026">26</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>
@@ -298,6 +327,28 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Deleted copy assignment. </p>
+
+</div>
+</div>
+<a id="a074869e250bf69b7a7685df50093f888"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a074869e250bf69b7a7685df50093f888">&#9670;&nbsp;</a></span>to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string bstd::json::parser::lexer::to_string </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert tokens to a string. </p>
+<dl class="section return"><dt>Returns</dt><dd>tokens as a string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00072">72</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>
@@ -336,8 +387,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Output operator overload. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Operator overloads. </p>
+<p>Output operator overload. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">_os</td><td>std::ostream </td></tr>
     <tr><td class="paramname">_lexer</td><td>the calling lexer </td></tr>
@@ -346,7 +397,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::ostream </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00061">61</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00088">88</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>

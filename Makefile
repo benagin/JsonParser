@@ -37,7 +37,7 @@ CXX 	  = g++
 CXXFLAGS  = -std=c++2a -Wall -Werror -pedantic -fPIC
 LDFLAGS   = -shared
 # TODO: change this to work on other machines.
-LINK      = -Lbin -L$(HOME)/Projects/bstd_test/bin
+LINK      = -Lbin
 LINK_JSON = $(LINK) -lbstdjson
 LINK_TEST = $(LINK) -lbstdtest
 LINK_ALL  = $(LINK_JSON) $(LINK_TEST)
@@ -99,7 +99,7 @@ $(EXAMPLES_BASENAMES):  %: %.cpp $(LIB)
 $(TESTS):	        $(TESTS_BASENAMES)
 $(TESTS_BASENAMES):	%: %.cpp $(LIB)
 	@echo Compiling $<...
-	@$(CXX) $(CXXFLAGS) $(DEPS) $(LINK_ALL) $(INC) $< -o $@
+	@$(CXX) $(CXXFLAGS) $(DEPS) $(INC) $(LINK_ALL) $< -o $@
 	@cat $(D_FILES) >> $(DEPENDENCIES)
 
 # Cleanup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#

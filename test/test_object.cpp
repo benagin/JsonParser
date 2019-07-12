@@ -14,39 +14,34 @@ test_object() {
 }
 
 
-const bstd::test::result
+void
 test_object::
-object_size() const {
+object_size() {
   const auto empty_object = bstd::json::parser::parse("")->get_value();
   const auto one_object = bstd::json::parser::parse(m_object_path)->get_value();
   const auto three_object= bstd::json::parser::parse(m_object_large_path)->get_value();
 
-  const auto zero = empty_object->size();
-  const auto one = one_object->size();
-  const auto three = three_object->size();
-
-  return bstd::test::result(zero == 0 && one == 1 && three == 3,
-      "object size failed");
+  VERIFY(empty_object->size() == 0, "empty objec::size")
+  VERIFY(one_object->size() == 1, "single valued object::size")
+  VERIFY(three_object->size() == 0, "object::size with 3 values")
 }
 
 
 /*
-const bstd::test::result
+void
 test_object::
-object_assignment_operator() const {
+object_assignment_operator() {
   const auto object1 = bstd::json::parser::parse(m_object_path)->get_value();
   const auto copy = object1;
 
   // Check member variables.
   const bool test = <insert-test>;
-
-  return bstd::test::result(test, "object assignment failed");
 }
 
 
-const bstd::test::result
+void
 test_object::
-object_equal_operator() const {
+object_equal_operator() {
   const auto object1 = bstd::json::parser::parse(m_object_string1);
   const auto object1_copy = bstd::json::parser::parse(m_object_string1);
   const auto object2 = bstd::json::parser::parse(m_object_string2);
@@ -54,48 +49,44 @@ object_equal_operator() const {
   const bool test1 = *object1 == *object1_copy;
   const bool test2 = *object1 != *object2;
 
-  return bstd::test::result(test1 && test2,
-      "object equal operator failed");
+  VERIFY(test1, "object equal comparison operator (==)")
+  VERIFY(test1, "object not equal comparison operator (!=)")
 }
 
 
-const bstd::test::result
+void
 test_object::
-object_addition_operator() const {
+object_addition_operator() {
   const auto object1 = bstd::json::parser::parse(m_object_string1);
   const auto object2 = bstd::json::parser::parse(m_object_string2);
   const auto object3 = bstd::json::parser::parse(m_object_string1 + m_object_string2);
 
   const auto result = *object1 + *object2;
 
-  return bstd::test::result(result.size() == 2 && result  == *object3,
-      "object addition operator failed");
+  VERIFY(result.size() == 2, "object addition operator (+) size")
+  VERIFY(result == *object3,"object addition operator (+) contents")
 }
 */
 
 
-const bstd::test::result
+void
 test_object::
-object_to_string() const {
+object_to_string() {
   const auto object1 = bstd::json::parser::parse(m_object_string1);
 
-  const auto test = object1->to_string(true) == m_object_string1;
-  std::cout << "to_string: " << object1->to_string(true) << std::endl;
-  std::cout << "string: " << m_object_string1  << std::endl;
-
-  return bstd::test::result(test, "object to string failed");
+  VERIFY(object1->to_string(true) == m_object_string1,
+      "objec::to_string vs. parser output")
 }
 
 
-const bstd::test::result
+void
 test_object::
-object_add_value() const {
+object_add_value() {
   const auto object1 = bstd::json::parser::parse(m_object_string1);
   const auto object2 = bstd::json::parser::parse(m_object_string2);
   const auto object3 = bstd::json::parser::parse(m_object_string1 + m_object_string2);
 
   const auto result = object1->add_value(object2->get_value());
 
-  return bstd::test::result(object3->get_value() == result,
-      "object add value failed");
+  VERIFY(object3->get_value() == result, "object::add_value vs. parser output")
 }

@@ -10,15 +10,16 @@ class test_json final : public bstd::test::unit_tester {
 
     test_json();
 
-    const bstd::test::result json_size() const;
-    const bstd::test::result json_assignment_operator() const;
-    const bstd::test::result json_equal_operator() const;
-    const bstd::test::result json_addition_operator() const;
-    const bstd::test::result json_to_string() const;
-    const bstd::test::result json_add_value() const;
+    void json_size();
+    void json_assignment_operator() ;
+    void json_equal_operator();
+    void json_addition_operator();
+    void json_to_string();
+    void json_add_value();
 
   private:
 
+    std::string m_json_short_string{"{ }"};
     std::string m_json_string1{"{ \"name1\": \"value1\" }"};
     std::string m_json_string2{"{ \"name2\": \"value2\" }"};
 

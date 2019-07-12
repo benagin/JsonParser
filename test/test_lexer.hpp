@@ -12,8 +12,8 @@ class test_lexer final : public bstd::test::unit_tester {
 
     test_lexer();
 
-    const bstd::test::result lexer_get_next_token() const;
-    const bstd::test::result lexer_lex() const;
+    void lexer_get_next_token();
+    void lexer_lex();
 
   private:
 

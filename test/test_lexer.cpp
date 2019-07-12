@@ -10,27 +10,33 @@ test_lexer() {
 }
 
 
-const bstd::test::result
+void
 test_lexer::
-lexer_get_next_token() const {
+lexer_get_next_token() {
+  lexer l(true);
+  l.lex(m_json_string1);
 
-  return bstd::test::result(false, "test failed");
+  const auto& tokens = l.get_tokens();
+  VERIFY(l.get_next_token() == *tokens.cbegin(), "lexer::get_next_token first call")
+  VERIFY(l.get_next_token() == *(tokens.cbegin() + 1), "lexer::get_next_token first call")
+  VERIFY(l.get_next_token() == *(tokens.cbegin() + 2), "lexer::get_next_token first call")
+  VERIFY(l.get_next_token() == *(tokens.cbegin() + 3), "lexer::get_next_token first call")
 }
 
 
-const bstd::test::result
+void
 test_lexer::
-lexer_lex() const {
-  lexer l1;
+lexer_lex() {
+  lexer l1(true);
   l1.lex(m_json_string1);
   std::vector<token> l1_expected { token() };
 
-  lexer l2;
+  lexer l2(true);
   l2.lex(m_json_string2);
   std::vector<token> l2_expected { token() };
 
-  const bool test1 = l1.get_tokens() == l1_expected;
-  const bool test2 = l2.get_tokens() == l2_expected;
-
-  return bstd::test::result(test1 && test2, "lex failed");
+  VERIFY(l1.get_tokens() == l1_expected,
+      "lexer::lex JSON string: " + m_json_string1)
+  VERIFY(l2.get_tokens() == l2_expected,
+      "lexer::lex JSON string: " + m_json_string2)
 }

@@ -10,12 +10,12 @@ class test_object final : public bstd::test::unit_tester {
 
     test_object();
 
-    const bstd::test::result object_size() const;
-    //const bstd::test::result object_assignment_operator() const;
-    //const bstd::test::result object_equal_operator() const;
-    //const bstd::test::result object_addition_operator() const;
-    const bstd::test::result object_to_string() const;
-    const bstd::test::result object_add_value() const;
+    void object_size();
+    //void object_assignment_operator();
+    //void object_equal_operator();
+    //void object_addition_operator();
+    void object_to_string();
+    void object_add_value();
 
   private:
 

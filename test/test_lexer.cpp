@@ -5,28 +5,47 @@ BSTD_TEST_MAIN(test_lexer)
 
 test_lexer::
 test_lexer() {
-  ADD_TEST(test_lexer::lexer_get_next_token);
-  ADD_TEST(test_lexer::lexer_lex);
+  ADD_TEST(test_lexer::get_next_token);
+  ADD_TEST(test_lexer::reset);
+  ADD_TEST(test_lexer::lex);
 }
 
 
 void
 test_lexer::
-lexer_get_next_token() {
+get_next_token() {
   lexer l(true);
   l.lex(m_json_string1);
-
   const auto& tokens = l.get_tokens();
-  VERIFY(l.get_next_token() == *tokens.cbegin(), "lexer::get_next_token first call")
-  VERIFY(l.get_next_token() == *(tokens.cbegin() + 1), "lexer::get_next_token first call")
-  VERIFY(l.get_next_token() == *(tokens.cbegin() + 2), "lexer::get_next_token first call")
-  VERIFY(l.get_next_token() == *(tokens.cbegin() + 3), "lexer::get_next_token first call")
+
+  for(int i = 0; i < tokens.size(); ++i) {
+    VERIFY(l.get_next_token()== tokens.at(i), "get token " + std::to_string(i))
+  }
 }
 
 
 void
 test_lexer::
-lexer_lex() {
+reset() {
+  lexer l(true);
+  l.lex(m_json_string1);
+  const auto& tokens = l.get_tokens();
+
+  VERIFY(l.get_next_token() == *tokens.cbegin(),
+      "lexer::get_next_token first call")
+  VERIFY(l.get_next_token() != *tokens.cbegin(),
+      "lexer::get_next_token second call")
+
+  l.reset();
+
+  VERIFY(l.get_next_token() == *tokens.cbegin(),
+      "lexer::get_next_token after reset")
+}
+
+
+void
+test_lexer::
+lex() {
   lexer l1(true);
   l1.lex(m_json_string1);
   std::vector<token> l1_expected { token() };

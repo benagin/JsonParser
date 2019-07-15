@@ -12,8 +12,9 @@ class test_lexer final : public bstd::test::unit_tester {
 
     test_lexer();
 
-    void lexer_get_next_token();
-    void lexer_lex();
+    void get_next_token();
+    void reset();
+    void lex();
 
   private:
 

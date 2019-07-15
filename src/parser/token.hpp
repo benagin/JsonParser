@@ -36,21 +36,21 @@ class token final {
                      // This type has no value.
     };
 
-    /// \brief Default constructor.
-    token() {}
+    /// \brief Constructor that covers default and only type construction.
+    token(const type _type = invalid) : m_type(_type) {}
 
     /// \brief Construct a token from a character value.
     /// \param _type type
     /// \param _value the character from the JSON string that this token
     ///               represents
-    token(const type _type, const char _value = '\0')
+    token(const type _type, const char _value)
         : token(_type, std::string(1, _value)) {}
 
     /// \brief Construct a token from a string value.
     /// \param _type type
     /// \param _value the sub string from the JSON string that this token
     ///               represents
-    token(const type _type, const std::string& _value = "")
+    token(const type _type, const std::string& _value)
         : m_type(_type), m_value(_value) {}
 
     ~token() {}

@@ -45,6 +45,9 @@ class lexer final {
     /// \param _json_string a JSON string
     void lex(const std::string& _json_string);
 
+    /// \brief Reset the token iterator.
+    void reset();
+
     /// \brief Convert tokens to a string.
     /// \return tokens as a string
     const std::string to_string() const;

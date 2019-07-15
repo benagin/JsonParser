@@ -81,9 +81,13 @@ class token final {
     /// Operator overloads.
 
     /// \brief Equality operator.
-    /// \param _rhs the json object on the right hand side of the operator
-    /// \return true if this contains the same values as _rhs
+    /// \param _rhs the token on the right hand side of the operator
+    /// \return true if this contains the same type and value as _rhs
     bool operator==(const token& _rhs) const;
+    /// \brief Inequality operator.
+    /// \param _rhs the token on the right doesn't have the same type and value
+    /// \return true if this does not contain the same type and value as _rhs
+    bool operator!=(const token& _rhs) const;
 
     /// \brief Output operator overload.
     /// \param _os std::ostream

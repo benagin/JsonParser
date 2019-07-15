@@ -53,6 +53,13 @@ operator==(const token& _rhs) const {
 }
 
 
+bool
+token::
+operator!=(const token& _rhs) const {
+  return !(*this == _rhs);
+}
+
+
 std::ostream&
 operator<<(std::ostream& _os, const token& _token) {
   return _os << _token.to_string();

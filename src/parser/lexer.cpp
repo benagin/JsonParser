@@ -70,6 +70,13 @@ lex(const std::string& _json_string) {
 }
 
 
+void
+lexer::
+reset() {
+  m_index = m_tokens.cbegin();
+}
+
+
 const std::string
 lexer::
 to_string() const {

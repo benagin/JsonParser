@@ -61,8 +61,11 @@ lex(const std::string& _json_string) {
     m_tokens.push_back(t);
   }
 
+  m_tokens.push_back(token(token::end_json));
+  m_index = m_tokens.cbegin();
+
   if(m_debug) {
-    std::cout << this << std::endl;
+    std::cout << *this << std::endl;
   }
 }
 
@@ -73,14 +76,14 @@ to_string() const {
   std::string result = "[";
 
   for(int i = 0; i < m_tokens.size(); ++i) {
-    result += m_tokens.at(i).to_string();
     result += ' ';
+    result += m_tokens.at(i).to_string();
 
     if(i != m_tokens.size() - 1)
       result += ',';
   }
 
-  return result += ']';
+  return result += " ]";
 }
 
 

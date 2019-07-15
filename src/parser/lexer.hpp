@@ -65,7 +65,7 @@ class lexer final {
     std::vector<token> m_tokens;
 
     /// The index of m_tokens used when iterating using get_next_token().
-    CVIT m_index{m_tokens.cbegin()};
+    CVIT m_index;
 
     /// This map stores the single character token types.
     const std::unordered_map<char, token::type> m_char_value_tokens {

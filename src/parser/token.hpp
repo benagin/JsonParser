@@ -1,6 +1,7 @@
 #ifndef BSTD_JSON_TOKEN_HPP_
 #define BSTD_JSON_TOKEN_HPP_
 
+#include <unordered_map>
 #include <ostream>
 #include <string>
 
@@ -58,7 +59,11 @@ class token final {
 
     /// \brief Get this token's type.
     /// \return the type of this token
-    type get_type() const;
+    const type get_type() const;
+    /// \brief Get this token's type as a string.
+    //This is simply the names of the types in the enum.
+    /// \return the type of this token as a string
+    const std::string get_type_as_string() const;
     /// \brief Set this token's type.
     /// \param _type the type to set
     void set_type(const type _type);
@@ -103,9 +108,27 @@ class token final {
 
     std::string m_value{"no-value"};
 
+    const std::unordered_map<type, std::string> m_type_to_string {
+      { invalid, "invalid" },
+      { begin_object, "begin_object" },
+      { end_object, "end_object" },
+      { begin_array, "begin_array" },
+      { end_array, "end_array" },
+      { comma, "comma" },
+      { colon, "colon" },
+      { begin_string, "begin_string" },
+      { end_string, "end_string" },
+      { whitespace, "whitespace" },
+      { string, "string" },
+      { number, "number" },
+      { true_literal, "true_literal" },
+      { false_literal, "false_literal" },
+      { null_literal, "null_literal" },
+      { end_json, "end_json" }
+    };
+
 };
 
 }
 
 #endif
-

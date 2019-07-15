@@ -4,10 +4,17 @@
 namespace bstd::json::parser {
 
 
-token::type
+const token::type
 token::
 get_type() const {
   return m_type;
+}
+
+
+const std::string
+token::
+get_type_as_string() const {
+  return m_type_to_string.at(m_type);
 }
 
 
@@ -62,7 +69,7 @@ is_valid() const {
 const std::string
 token::
 to_string() const {
-  return std::string('(' + std::to_string(get_type()) + ", " + get_value() + ')');
+  return std::string('(' + get_type_as_string() + ", " + get_value() + ')');
 }
 
 

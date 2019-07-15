@@ -77,7 +77,6 @@ $(BSTD_JSON):	$(LIB)
 $(LIB):		$(OBJS)
 		@echo Linking $@...
 		@$(CXX) $(LDFLAGS) -o $@ $^
-		@rm -f $(OBJS)
 
 # Install the library to $(INSTALL_DIR).
 .PHONY: $(INSTALL)

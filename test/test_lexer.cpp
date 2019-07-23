@@ -19,7 +19,7 @@ get_next_token() {
   const auto& tokens = l.get_tokens();
 
   for(int i = 0; i < tokens.size(); ++i) {
-    VERIFY(l.get_next_token()== tokens.at(i), "get token " + std::to_string(i))
+    VERIFY(l.get_next_token() == tokens.at(i), "get token " + std::to_string(i))
   }
 }
 

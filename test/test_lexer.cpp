@@ -49,11 +49,25 @@ lex() {
   lexer symbols_lexer(true);
   symbols_lexer.lex(m_symbols);
 
+  VERIFY(symbols_lexer.get_tokens() == m_lexed_symbols,
+      "lexer::lex JSON symbols")
+
   lexer simple_objects_lexer(true);
   simple_objects_lexer.lex(m_simple_objects);
 
-  VERIFY(symbols_lexer.get_tokens() == m_lexed_symbols,
-      "lexer::lex JSON symbols")
   VERIFY(simple_objects_lexer.get_tokens() == m_lexed_simple_objects,
       "lexer::lex JSON simple objects")
+
+  lexer numbers_lexer(true);
+  numbers_lexer.lex(m_numbers);
+
+  VERIFY(numbers_lexer.get_tokens() == m_lexed_numbers,
+      "lexer::lex JSON numbers")
+
+  lexer ws_lexer(true);
+  ws_lexer.lex(m_whitespace);
+
+  VERIFY(ws_lexer.get_tokens() == m_lexed_whitespace,
+      "lexer::lex JSON whitespace")
+
 }

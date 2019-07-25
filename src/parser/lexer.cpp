@@ -32,6 +32,38 @@ get_next_token() {
 }
 
 
+auto
+lexer::
+lex_true_literal(std::string::const_iterator& _csit,
+    const std::string& _json_string) const {
+  if(std::string(_csit, _csit + 4) == "true") {
+    advance_iterator(_csit, 3, _json_string);
+    return token(token::true_literal);
+  }
+
+  throw bstd::error::context_error(_json_string, _csit, _csit + 4,
+      "Expected the literal \'true\'");
+}
+
+
+auto
+lexer::
+lex_string(std::string::const_iterator& _csit,
+    const std::string& _json_string) const {
+  ++_csit;
+  const auto begin = _csit;
+  while(*_csit != '\"') {
+    if(_csit == _json_string.cend())
+      throw bstd::error::context_error(_json_string, _csit,
+          "Expected end of string");
+
+    ++_csit;
+  }
+
+  return token(token::string, std::string(begin, _csit));
+}
+
+
 void
 lexer::
 lex(const std::string& _json_string) {
@@ -46,11 +78,11 @@ lex(const std::string& _json_string) {
       t = token(cmit->second, cmit->first);
     }
     else if (*csit == '\"') {
-      // TODO: handle strings.
-    } else if (isdigit(*csit) or *csit == '-') {
+      t = lex_string(csit, _json_string);
+    } else if (isdigit(*csit) or *csit == '-' or *csit == '.') {
       // TODO: handle numbers.
     } else if (*csit == 't') {
-      // TODO: handle the literal true.
+      t = lex_true_literal(csit, _json_string);
     } else if (*csit == 'f') {
       // TODO: handle the literal false.
     } else if (*csit == 'n') {
@@ -61,11 +93,12 @@ lex(const std::string& _json_string) {
       // TODO: handle error.
     }
 
+    m_tokens.push_back(t);
+
     if (!t.is_valid()) {
       // TODO: throw if flag is not set.
+      continue;
     }
-
-    m_tokens.push_back(t);
   }
 
   m_tokens.push_back(token(token::end_json));
@@ -104,6 +137,22 @@ to_string() const {
 std::ostream&
 operator<<(std::ostream& _os, const lexer& _lexer) {
   return _os << _lexer.to_string();
+}
+
+
+void
+lexer::
+advance_iterator(std::string::const_iterator& _csit,
+    const std::size_t _distance, const std::string& _json_string) const {
+
+  if(std::distance(_csit, _json_string.cend()) > _distance)
+    std::advance(_csit, _distance);
+  else if(std::distance(_csit, _json_string.cend()) == _distance)
+    std::advance(_csit, _distance - 1);
+  else {
+    throw bstd::error::context_error(_json_string, _csit, _json_string.cend(),
+        "Token value doesn't fit in the JSON string.");
+  }
 }
 
 

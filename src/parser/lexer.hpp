@@ -7,6 +7,8 @@
 #include <unordered_map>
 #include <vector>
 
+#include <bstd_error.hpp>
+
 #include "token.hpp"
 
 namespace bstd::json::parser {
@@ -62,6 +64,27 @@ class lexer final {
         const lexer& _lexer);
 
   private:
+
+    /// \brief Lex the literal 'true'.
+    /// This function advances _csit to the end of the literal.
+    /// \param _csit iterator to the 't' in 'true'
+    /// \param _json_string the source JSON string
+    auto lex_true_literal(std::string::const_iterator& _csit,
+        const std::string& _json_string) const;
+
+    /// \brief Lex strings. This consumes the starting and ending quotes.
+    /// This function advances _csit to the end of the string.
+    /// \param _csit iterator to the first element in the string
+    /// \param _json_string the source JSON string
+    auto lex_string(std::string::const_iterator& _csit,
+        const std::string& _json_string) const;
+
+    /// \brief Safely advances _csit as far as possible up to _distance.
+    /// This modifies _csit.
+    /// \param _csit iterator to advance
+    /// \param _distance largest distance to advance _csit
+    void advance_iterator(std::string::const_iterator& _csit,
+        const std::size_t _distance, const std::string& _json_string) const;
 
     bool m_debug{false};
 

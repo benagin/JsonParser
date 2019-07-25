@@ -23,8 +23,6 @@ class token final {
       end_array,     // ]
       comma,         // ,
       colon,         // :
-      begin_string,  // "
-      end_string,    // "
       whitespace,    // ' '\t\n\v\f\r
 
       string,        // some_string(contents of the string, not including

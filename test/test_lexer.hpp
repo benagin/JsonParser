@@ -36,9 +36,7 @@ class test_lexer final : public bstd::test::unit_tester {
         { token::comma },
         { token::true_literal },
         { token::comma },
-        { token::begin_string },
         { token::string, "string"},
-        { token::end_string },
         { token::comma },
         { token::null_literal },
         { token::comma },
@@ -47,7 +45,7 @@ class test_lexer final : public bstd::test::unit_tester {
         { token::end_json }
     }};
 
-    const std::string m_numbers{"[1,2.5,0,-0.000,0.5,-5.1,-.5e-10,5.123E5]"};
+    const std::string m_numbers{"[1,2.5,0,-0.000,0.5,-5.1,-.5e-10,5.123E5,99.1e+2]"};
     const std::vector<token> m_lexed_numbers {{
         { token::begin_array },
         { token::number, "1" },
@@ -65,6 +63,8 @@ class test_lexer final : public bstd::test::unit_tester {
         { token::number, "-.5e-10" },
         { token::comma },
         { token::number, "5.123E5" },
+        { token::comma },
+        { token::number, "99.1e+2" },
         { token::end_array },
         { token::end_json }
     }};

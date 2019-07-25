@@ -2,8 +2,9 @@
 #define BSTD_JSON_TOKEN_HPP_
 
 #include <unordered_map>
-#include <ostream>
+#include <iostream>
 #include <string>
+#include <utility>
 
 namespace bstd::json::parser {
 
@@ -26,7 +27,7 @@ class token final {
       end_string,    // "
       whitespace,    // ' '\t\n\v\f\r
 
-      string,        // some_name (contents of the string, not including
+      string,        // some_string(contents of the string, not including
                      // quotes)
       number,        // 1, -1, 2.5, 1e-10, etc.
       true_literal,  // true
@@ -37,7 +38,8 @@ class token final {
     };
 
     /// \brief Constructor that covers default and only type construction.
-    token(const type _type = invalid) : m_type(_type) {}
+    token(const type _type = invalid)
+        : m_type(_type), m_value(m_type_to_default_value.at(m_type)) {}
 
     /// \brief Construct a token from a character value.
     /// \param _type type
@@ -52,6 +54,11 @@ class token final {
     ///               represents
     token(const type _type, const std::string& _value)
         : m_type(_type), m_value(_value) {}
+
+    /// \brief Construct with a pair.
+    /// \param _pair a pair of token::type to std::string
+    token(const std::pair<type, std::string> _pair)
+        : m_type(_pair.first), m_value(_pair.second) {}
 
     ~token() {}
 
@@ -110,26 +117,10 @@ class token final {
 
     type m_type{invalid};
 
-    std::string m_value{"no-value"};
+    std::string m_value{"invalid"};
 
-    const std::unordered_map<type, std::string> m_type_to_string {
-      { invalid, "invalid" },
-      { begin_object, "begin_object" },
-      { end_object, "end_object" },
-      { begin_array, "begin_array" },
-      { end_array, "end_array" },
-      { comma, "comma" },
-      { colon, "colon" },
-      { begin_string, "begin_string" },
-      { end_string, "end_string" },
-      { whitespace, "whitespace" },
-      { string, "string" },
-      { number, "number" },
-      { true_literal, "true_literal" },
-      { false_literal, "false_literal" },
-      { null_literal, "null_literal" },
-      { end_json, "end_json" }
-    };
+    static const std::unordered_map<type, std::string> m_type_to_string;
+    static const std::unordered_map<type, std::string> m_type_to_default_value;
 
 };
 

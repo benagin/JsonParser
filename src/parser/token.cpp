@@ -3,6 +3,47 @@
 
 namespace bstd::json::parser {
 
+const
+std::unordered_map<token::type, std::string> token::m_type_to_string = {
+    { token::invalid, "invalid" },
+    { token::begin_object, "begin_object" },
+    { token::end_object, "end_object" },
+    { token::begin_array, "begin_array" },
+    { token::end_array, "end_array" },
+    { token::comma, "comma" },
+    { token::colon, "colon" },
+    { token::begin_string, "begin_string" },
+    { token::end_string, "end_string" },
+    { token::whitespace, "whitespace" },
+    { token::string, "string" },
+    { token::number, "number" },
+    { token::true_literal, "true_literal" },
+    { token::false_literal, "false_literal" },
+    { token::null_literal, "null_literal" },
+    { token::end_json, "end_json" }
+};
+
+const
+std::unordered_map<token::type, std::string> token::m_type_to_default_value = {
+    { token::invalid, "invalid" },
+    { token::begin_object, "{" },
+    { token::end_object, "}" },
+    { token::begin_array, "[" },
+    { token::end_array, "]" },
+    { token::comma, "," },
+    { token::colon, ":" },
+    { token::begin_string, "\"" },
+    { token::end_string, "\"" },
+    { token::whitespace, " " },
+    { token::string, "string" },
+    { token::number, "1" },
+    { token::true_literal, "true" },
+    { token::false_literal, "false" },
+    { token::null_literal, "null" },
+    { token::end_json, "end_json" }
+};
+
+
 
 const token::type
 token::

@@ -71,14 +71,7 @@ class lexer final {
     CVIT m_index;
 
     /// This map stores the single character token types.
-    const std::unordered_map<char, token::type> m_char_value_tokens {
-        { '{', token::begin_object },
-        { '}', token::end_object },
-        { '[', token::begin_array},
-        { ']', token::end_array },
-        { ',', token::comma },
-        { ':', token::colon },
-    };
+    static const std::unordered_map<char, token::type> m_char_value_tokens;
 
 };
 

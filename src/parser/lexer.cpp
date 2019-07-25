@@ -3,6 +3,17 @@
 
 namespace bstd::json::parser {
 
+
+const std::unordered_map<char, token::type> lexer::m_char_value_tokens = {
+  { '{', token::begin_object },
+  { '}', token::end_object },
+  { '[', token::begin_array},
+  { ']', token::end_array },
+  { ',', token::comma },
+  { ':', token::colon },
+};
+
+
 const std::vector<token>
 lexer::
 get_tokens() const {
@@ -26,18 +37,15 @@ lexer::
 lex(const std::string& _json_string) {
   // TODO: Figure out what to do with errors.
   // TODO: Create argument for allowing exceptions.
-
-  // The first thing we do here is handle some special cases were we gather more
-  // information to construct a more abstract object. These cases include
-  // strings, numbers, literals, and whitespace.
-  // If none of these conditions apply we simply create a token with the
-  // character.
   // TODO: support nesting.
-  for(auto csit = _json_string.cbegin(); csit != _json_string.cend();
-      ++csit) {
+  for(auto csit = _json_string.cbegin(); csit != _json_string.cend(); ++csit) {
     token t;
 
-    if (*csit == '\"') {
+    const auto cmit = m_char_value_tokens.find(*csit);
+    if (cmit != m_char_value_tokens.cend()) {
+      t = token(cmit->second, cmit->first);
+    }
+    else if (*csit == '\"') {
       // TODO: handle strings.
     } else if (isdigit(*csit) or *csit == '-') {
       // TODO: handle numbers.
@@ -49,13 +57,12 @@ lex(const std::string& _json_string) {
       // TODO: handle the literal null.
     } else if (isspace(*csit)) {
       // TODO: handle whitespace.
-    } else if (m_char_value_tokens.find(*csit) != m_char_value_tokens.cend()) {
-      t.set_type(m_char_value_tokens.find(*csit)->second);
-      t.set_value(*csit);
+    } else {
+      // TODO: handle error.
     }
 
     if (!t.is_valid()) {
-      // Throw if flag is not set.
+      // TODO: throw if flag is not set.
     }
 
     m_tokens.push_back(t);

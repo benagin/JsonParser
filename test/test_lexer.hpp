@@ -18,8 +18,21 @@ class test_lexer final : public bstd::test::unit_tester {
 
   private:
 
-    std::string m_json_string1{"{ \"name1\": \"value1\" }"};
-    std::string m_json_string2{"[ 1, true,  \"string\", null] "};
+    std::string m_symbols{"{}[],:"};
+    std::vector<token> m_lexed_symbols {{
+        { token::begin_object },
+        { token::end_object },
+        { token::begin_array },
+        { token::end_array },
+        { token::comma },
+        { token::colon },
+        { token::end_json }
+    }};
+
+    std::string m_simple_objects{"[ 1, true,  \"string\", null, false] "};
+    std::vector<token> m_lexed_simple_objects {{
+
+    }};
 
 };
 

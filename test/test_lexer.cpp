@@ -15,7 +15,7 @@ void
 test_lexer::
 get_next_token() {
   lexer l(true);
-  l.lex(m_json_string1);
+  l.lex(m_simple_objects);
   const auto& tokens = l.get_tokens();
 
   for(int i = 0; i < tokens.size(); ++i) {
@@ -28,7 +28,7 @@ void
 test_lexer::
 reset() {
   lexer l(true);
-  l.lex(m_json_string1);
+  l.lex(m_simple_objects);
   const auto& tokens = l.get_tokens();
 
   VERIFY(l.get_next_token() == *tokens.cbegin(),
@@ -46,16 +46,14 @@ reset() {
 void
 test_lexer::
 lex() {
-  lexer l1(true);
-  l1.lex(m_json_string1);
-  std::vector<token> l1_expected { token() };
+  lexer symbols_lexer(true);
+  symbols_lexer.lex(m_symbols);
 
-  lexer l2(true);
-  l2.lex(m_json_string2);
-  std::vector<token> l2_expected { token() };
+  lexer simple_objects_lexer(true);
+  simple_objects_lexer.lex(m_simple_objects);
 
-  VERIFY(l1.get_tokens() == l1_expected,
-      "lexer::lex JSON string: " + m_json_string1)
-  VERIFY(l2.get_tokens() == l2_expected,
-      "lexer::lex JSON string: " + m_json_string2)
+  VERIFY(symbols_lexer.get_tokens() == m_lexed_symbols,
+      "lexer::lex JSON symbols")
+  VERIFY(simple_objects_lexer.get_tokens() == m_lexed_simple_objects,
+      "lexer::lex JSON simple objects")
 }

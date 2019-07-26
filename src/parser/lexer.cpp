@@ -34,20 +34,6 @@ get_next_token() {
 
 auto
 lexer::
-lex_true_literal(std::string::const_iterator& _csit,
-    const std::string& _json_string) const {
-  if(std::string(_csit, _csit + 4) == "true") {
-    advance_iterator(_csit, 3, _json_string);
-    return token(token::true_literal);
-  }
-
-  throw bstd::error::context_error(_json_string, _csit, _csit + 4,
-      "Expected the literal \'true\'");
-}
-
-
-auto
-lexer::
 lex_string(std::string::const_iterator& _csit,
     const std::string& _json_string) const {
   ++_csit;
@@ -61,6 +47,46 @@ lex_string(std::string::const_iterator& _csit,
   }
 
   return token(token::string, std::string(begin, _csit));
+}
+
+
+auto
+lexer::
+lex_literal(const std::string_view& _literal, const token::type _literal_type,
+    std::string::const_iterator& _csit, const std::string& _json_string) const {
+  const auto size = _literal.size();
+
+  if(std::string(_csit, _csit + size) == _literal) {
+    advance_iterator(_csit, size - 1, _json_string);
+    return token(_literal_type);
+  }
+
+  throw bstd::error::context_error(_json_string, _csit, _csit + 4,
+      "Expected the literal \'" + std::string(_literal) + "\'");
+}
+
+
+auto
+lexer::
+lex_true_literal(std::string::const_iterator& _csit,
+    const std::string& _json_string) const {
+  return lex_literal("true", token::true_literal, _csit, _json_string);
+}
+
+
+auto
+lexer::
+lex_false_literal(std::string::const_iterator& _csit,
+    const std::string& _json_string) const {
+  return lex_literal("false", token::false_literal, _csit, _json_string);
+}
+
+
+auto
+lexer::
+lex_null_literal(std::string::const_iterator& _csit,
+    const std::string& _json_string) const {
+  return lex_literal("null", token::null_literal, _csit, _json_string);
 }
 
 
@@ -84,9 +110,9 @@ lex(const std::string& _json_string) {
     } else if (*csit == 't') {
       t = lex_true_literal(csit, _json_string);
     } else if (*csit == 'f') {
-      // TODO: handle the literal false.
+      t = lex_false_literal(csit, _json_string);
     } else if (*csit == 'n') {
-      // TODO: handle the literal null.
+      t = lex_null_literal(csit, _json_string);
     } else if (isspace(*csit)) {
       // TODO: handle whitespace.
     } else {
@@ -144,15 +170,13 @@ void
 lexer::
 advance_iterator(std::string::const_iterator& _csit,
     const std::size_t _distance, const std::string& _json_string) const {
-
   if(std::distance(_csit, _json_string.cend()) > _distance)
     std::advance(_csit, _distance);
   else if(std::distance(_csit, _json_string.cend()) == _distance)
     std::advance(_csit, _distance - 1);
-  else {
+  else
     throw bstd::error::context_error(_json_string, _csit, _json_string.cend(),
         "Token value doesn't fit in the JSON string.");
-  }
 }
 
 

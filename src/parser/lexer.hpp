@@ -65,18 +65,38 @@ class lexer final {
 
   private:
 
-    /// \brief Lex the literal 'true'.
-    /// This function advances _csit to the end of the literal.
-    /// \param _csit iterator to the 't' in 'true'
-    /// \param _json_string the source JSON string
-    auto lex_true_literal(std::string::const_iterator& _csit,
-        const std::string& _json_string) const;
-
     /// \brief Lex strings. This consumes the starting and ending quotes.
     /// This function advances _csit to the end of the string.
     /// \param _csit iterator to the first element in the string
     /// \param _json_string the source JSON string
     auto lex_string(std::string::const_iterator& _csit,
+        const std::string& _json_string) const;
+
+    /// \brief Lex a literal.
+    /// This function advances _csit to the end of the literal.
+    /// \param _literal the literal to lex
+    /// \param _csit iterator to the first character in the literal
+    /// \param _json_string the source JSON string
+    auto lex_literal(const std::string_view& _literal,
+        const token::type _literal_type, std::string::const_iterator& _csit,
+        const std::string& _json_string) const;
+
+    /// \brief Lex the literal 'true'.
+    /// \param _csit iterator to the 't' in 'true'
+    /// \param _json_string the source JSON string
+    auto lex_true_literal(std::string::const_iterator& _csit,
+        const std::string& _json_string) const;
+
+    /// \brief Lex the literal 'false'.
+    /// \param _csit iterator to the 'f' in 'false'
+    /// \param _json_string the source JSON string
+    auto lex_false_literal(std::string::const_iterator& _csit,
+        const std::string& _json_string) const;
+
+    /// \brief Lex the literal 'null'.
+    /// \param _csit iterator to the 'n' in 'null'
+    /// \param _json_string the source JSON string
+    auto lex_null_literal(std::string::const_iterator& _csit,
         const std::string& _json_string) const;
 
     /// \brief Safely advances _csit as far as possible up to _distance.

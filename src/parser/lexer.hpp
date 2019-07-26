@@ -20,7 +20,11 @@ class lexer final {
 
     typedef std::vector<token>::const_iterator CVIT;
 
-    lexer(const bool _debug = false) : m_debug(_debug) {}
+    /// \brief Construct a lexer object.
+    /// \param _debug debug flag
+    /// \param _throw if true, this class will throw errors when applicable
+    lexer(const bool _debug = false, const bool _throw = true)
+        : m_debug(_debug), m_throw(_throw) {}
 
     /// \brief Deleted copy constructor.
     lexer(const lexer&) = delete;
@@ -106,7 +110,15 @@ class lexer final {
     void advance_iterator(std::string::const_iterator& _csit,
         const std::size_t _distance, const std::string& _json_string) const;
 
+    /// \brief Throw our ouput an error.
+    /// If m_throw is true this throws _e, otherwise it outputs the error to
+    /// standard error.
+    /// \param _e an exception to throw or report
+    void report_error(const std::runtime_error _e) const;
+
     bool m_debug{false};
+
+    bool m_throw{true};
 
     std::vector<token> m_tokens;
 

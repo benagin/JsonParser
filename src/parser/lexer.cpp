@@ -24,9 +24,10 @@ get_tokens() const {
 const token
 lexer::
 get_next_token() {
-  if(m_index == m_tokens.cend())
-    throw std::out_of_range("Attempt to get a token after all have \
-        been retrieved.");
+  if(m_index == m_tokens.cend()) {
+    report_error(std::runtime_error("Attempt to get a token after all have \
+        been retrieved."));
+  }
 
   return *m_index++;
 }
@@ -40,8 +41,8 @@ lex_string(std::string::const_iterator& _csit,
   const auto begin = _csit;
   while(*_csit != '\"') {
     if(_csit == _json_string.cend())
-      throw bstd::error::context_error(_json_string, _csit,
-          "Expected end of string");
+      report_error(bstd::error::context_error(_json_string, _csit,
+          "Expected end of string"));
 
     ++_csit;
   }
@@ -56,13 +57,12 @@ lex_literal(const std::string_view& _literal, const token::type _literal_type,
     std::string::const_iterator& _csit, const std::string& _json_string) const {
   const auto size = _literal.size();
 
-  if(std::string(_csit, _csit + size) == _literal) {
-    advance_iterator(_csit, size - 1, _json_string);
-    return token(_literal_type);
-  }
+  if(std::string(_csit, _csit + size) != _literal)
+    report_error(bstd::error::context_error(_json_string, _csit, _csit + 4,
+        "Expected the literal \'" + std::string(_literal) + "\'"));
 
-  throw bstd::error::context_error(_json_string, _csit, _csit + 4,
-      "Expected the literal \'" + std::string(_literal) + "\'");
+  advance_iterator(_csit, size - 1, _json_string);
+  return token(_literal_type);
 }
 
 
@@ -93,8 +93,6 @@ lex_null_literal(std::string::const_iterator& _csit,
 void
 lexer::
 lex(const std::string& _json_string) {
-  // TODO: Figure out what to do with errors.
-  // TODO: Create argument for allowing exceptions.
   // TODO: support nesting.
   for(auto csit = _json_string.cbegin(); csit != _json_string.cend(); ++csit) {
     token t;
@@ -121,9 +119,9 @@ lex(const std::string& _json_string) {
 
     m_tokens.push_back(t);
 
-    if (!t.is_valid()) {
-      // TODO: throw if flag is not set.
-      continue;
+    if(!t.is_valid()) {
+      report_error(bstd::error::context_error(_json_string, csit,
+          "Character does not match the start of any valid JSON value"));
     }
   }
 
@@ -175,8 +173,18 @@ advance_iterator(std::string::const_iterator& _csit,
   else if(std::distance(_csit, _json_string.cend()) == _distance)
     std::advance(_csit, _distance - 1);
   else
-    throw bstd::error::context_error(_json_string, _csit, _json_string.cend(),
-        "Token value doesn't fit in the JSON string.");
+    report_error(bstd::error::context_error(_json_string, _csit,
+        _json_string.cend(), "Token value doesn't fit in the JSON string."));
+}
+
+
+void
+lexer::
+report_error(const std::runtime_error _e) const {
+  if(m_throw)
+    throw _e;
+  else
+    std::cerr << _e.what() << std::endl;
 }
 
 

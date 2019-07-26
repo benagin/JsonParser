@@ -14,7 +14,7 @@ test_lexer() {
 void
 test_lexer::
 get_next_token() {
-  lexer l(true);
+  lexer l(true, false);
   l.lex(m_simple_objects);
   const auto& tokens = l.get_tokens();
 
@@ -27,7 +27,7 @@ get_next_token() {
 void
 test_lexer::
 reset() {
-  lexer l(true);
+  lexer l(true, false);
   l.lex(m_simple_objects);
   const auto& tokens = l.get_tokens();
 
@@ -46,25 +46,25 @@ reset() {
 void
 test_lexer::
 lex() {
-  lexer symbols_lexer(true);
+  lexer symbols_lexer(true, false);
   symbols_lexer.lex(m_symbols);
 
   VERIFY(symbols_lexer.get_tokens() == m_lexed_symbols,
       "lexer::lex JSON symbols")
 
-  lexer simple_objects_lexer(true);
+  lexer simple_objects_lexer(true, false);
   simple_objects_lexer.lex(m_simple_objects);
 
   VERIFY(simple_objects_lexer.get_tokens() == m_lexed_simple_objects,
       "lexer::lex JSON simple objects")
 
-  lexer numbers_lexer(true);
+  lexer numbers_lexer(true, false);
   numbers_lexer.lex(m_numbers);
 
   VERIFY(numbers_lexer.get_tokens() == m_lexed_numbers,
       "lexer::lex JSON numbers")
 
-  lexer ws_lexer(true);
+  lexer ws_lexer(true, false);
   ws_lexer.lex(m_whitespace);
 
   VERIFY(ws_lexer.get_tokens() == m_lexed_whitespace,

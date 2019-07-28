@@ -92,7 +92,6 @@ lex_number(std::string::const_iterator& _csit, const std::string& _json_string) 
 
   // TODO: fix this spaghetti.
   while(_csit != _json_string.cend()) {
-    std::cout << "dec: " << *_csit << std::endl;
     if(*_csit == '.') {
       if(type == floating or type == exponent)
         return report_error(bstd::error::context_error(_json_string, _csit,

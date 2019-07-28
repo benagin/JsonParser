@@ -36,8 +36,7 @@ class token final {
     };
 
     /// \brief Constructor that covers default and only type construction.
-    token(const type _type = invalid)
-        : m_type(_type), m_value(m_type_to_default_value.at(m_type)) {}
+    token(const type _type = invalid);
 
     /// \brief Construct a token from a character value.
     /// \param _type type

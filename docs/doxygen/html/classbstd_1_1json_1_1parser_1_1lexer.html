@@ -89,8 +89,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af39f7183bdf76f96ab2a0deaff7c3792"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#af39f7183bdf76f96ab2a0deaff7c3792">lexer</a> (const bool _debug=false)</td></tr>
-<tr class="separator:af39f7183bdf76f96ab2a0deaff7c3792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70361dfede2951a20783d6ee50dd0dba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a70361dfede2951a20783d6ee50dd0dba">lexer</a> (const bool _debug=false, const bool _throw=true)</td></tr>
+<tr class="memdesc:a70361dfede2951a20783d6ee50dd0dba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a lexer object.  <a href="#a70361dfede2951a20783d6ee50dd0dba">More...</a><br /></td></tr>
+<tr class="separator:a70361dfede2951a20783d6ee50dd0dba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6487641b401b0f88cc90479af4f06a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#ac6487641b401b0f88cc90479af4f06a8">lexer</a> (const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a> &amp;)=delete</td></tr>
 <tr class="memdesc:ac6487641b401b0f88cc90479af4f06a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor.  <a href="#ac6487641b401b0f88cc90479af4f06a8">More...</a><br /></td></tr>
 <tr class="separator:ac6487641b401b0f88cc90479af4f06a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,6 +109,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac93c684fd3c72ae1f3fa5d1c961ebf79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#ac93c684fd3c72ae1f3fa5d1c961ebf79">lex</a> (const std::string &amp;_json_string)</td></tr>
 <tr class="memdesc:ac93c684fd3c72ae1f3fa5d1c961ebf79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Member functions.  <a href="#ac93c684fd3c72ae1f3fa5d1c961ebf79">More...</a><br /></td></tr>
 <tr class="separator:ac93c684fd3c72ae1f3fa5d1c961ebf79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f38d2f53f0f1b2295b431ee4dcd5b6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a9f38d2f53f0f1b2295b431ee4dcd5b6d">reset</a> ()</td></tr>
+<tr class="memdesc:a9f38d2f53f0f1b2295b431ee4dcd5b6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the token iterator.  <a href="#a9f38d2f53f0f1b2295b431ee4dcd5b6d">More...</a><br /></td></tr>
+<tr class="separator:a9f38d2f53f0f1b2295b431ee4dcd5b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a074869e250bf69b7a7685df50093f888"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a074869e250bf69b7a7685df50093f888">to_string</a> () const</td></tr>
 <tr class="memdesc:a074869e250bf69b7a7685df50093f888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert tokens to a string.  <a href="#a074869e250bf69b7a7685df50093f888">More...</a><br /></td></tr>
 <tr class="separator:a074869e250bf69b7a7685df50093f888"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,7 +125,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Tokenize a JSON string. </p>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00015">15</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00018">18</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a06aabdadf2941c00686b10bd2f00421d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06aabdadf2941c00686b10bd2f00421d">&#9670;&nbsp;</a></span>CVIT</h2>
@@ -135,13 +139,13 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00019">19</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00022">22</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af39f7183bdf76f96ab2a0deaff7c3792"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af39f7183bdf76f96ab2a0deaff7c3792">&#9670;&nbsp;</a></span>lexer() <span class="overload">[1/2]</span></h2>
+<a id="a70361dfede2951a20783d6ee50dd0dba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70361dfede2951a20783d6ee50dd0dba">&#9670;&nbsp;</a></span>lexer() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,8 +157,18 @@ Friends</h2></td></tr>
           <td class="memname">bstd::json::parser::lexer::lexer </td>
           <td>(</td>
           <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>_debug</em> = <code>false</code></td><td>)</td>
+          <td class="paramname"><em>_debug</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>_throw</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -164,7 +178,16 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00021">21</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
+<p>Construct a lexer object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_debug</td><td>debug flag </td></tr>
+    <tr><td class="paramname">_throw</td><td>if true, this class will throw errors when applicable </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00027">27</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
 
 </div>
 </div>
@@ -219,7 +242,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00028">28</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00035">35</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
 
 </div>
 </div>
@@ -248,7 +271,7 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00015">15</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00043">43</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>
@@ -270,7 +293,7 @@ Friends</h2></td></tr>
 <p>Getters and setters. </p>
 <p>Get tokens. </p><dl class="section return"><dt>Returns</dt><dd>m_tokens </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00008">8</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00036">36</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>
@@ -298,7 +321,7 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00026">26</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00176">176</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>
@@ -330,6 +353,27 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a9f38d2f53f0f1b2295b431ee4dcd5b6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f38d2f53f0f1b2295b431ee4dcd5b6d">&#9670;&nbsp;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bstd::json::parser::lexer::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset the token iterator. </p>
+
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00219">219</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a074869e250bf69b7a7685df50093f888"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a074869e250bf69b7a7685df50093f888">&#9670;&nbsp;</a></span>to_string()</h2>
 
@@ -348,7 +392,7 @@ Friends</h2></td></tr>
 <p>Convert tokens to a string. </p>
 <dl class="section return"><dt>Returns</dt><dd>tokens as a string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00072">72</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00226">226</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>
@@ -397,7 +441,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::ostream </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00088">88</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00242">242</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>

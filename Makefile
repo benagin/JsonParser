@@ -45,6 +45,7 @@ LINK_ALL  = $(LINK_JSON) $(LINK_TEST)
 
 ifeq ($(debug), 1)
 	CXXFLAGS += -g
+	LDFLAGS += -g
 endif
 
 DEPS = -MMD -MF $(D_FILES)
@@ -108,6 +109,7 @@ clean:
 	@echo Cleaning...
 	@rm -f $(shell find $(DEPENDENCY_DIR) -path "*.d")
 	@rm -f $(shell find . -path "*.o")
+	@rm -rf $(shell find . -path "*.dSYM")
 	@rm -f $(EXAMPLES_BASENAMES)
 	@rm -f $(TESTS_BASENAMES)
 	@rm -f $(DEPENDENCIES)

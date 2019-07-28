@@ -4,6 +4,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
+#include <sstream>
 #include <unordered_map>
 #include <vector>
 
@@ -74,7 +75,14 @@ class lexer final {
     /// \param _csit iterator to the first element in the string
     /// \param _json_string the source JSON string
     auto lex_string(std::string::const_iterator& _csit,
-        const std::string& _json_string) const;
+        const std::string& _json_string);
+
+    /// \brief Lex numbers.
+    /// This function advances _csit to the end of the number.
+    /// \param _csit iterator to the first value in the number
+    /// \param _json_string the source JSON string
+    auto lex_number(std::string::const_iterator& _csit,
+        const std::string& _json_string);
 
     /// \brief Lex a literal.
     /// This function advances _csit to the end of the literal.
@@ -83,42 +91,44 @@ class lexer final {
     /// \param _json_string the source JSON string
     auto lex_literal(const std::string_view& _literal,
         const token::type _literal_type, std::string::const_iterator& _csit,
-        const std::string& _json_string) const;
+        const std::string& _json_string);
 
     /// \brief Lex the literal 'true'.
     /// \param _csit iterator to the 't' in 'true'
     /// \param _json_string the source JSON string
     auto lex_true_literal(std::string::const_iterator& _csit,
-        const std::string& _json_string) const;
+        const std::string& _json_string);
 
     /// \brief Lex the literal 'false'.
     /// \param _csit iterator to the 'f' in 'false'
     /// \param _json_string the source JSON string
     auto lex_false_literal(std::string::const_iterator& _csit,
-        const std::string& _json_string) const;
+        const std::string& _json_string);
 
     /// \brief Lex the literal 'null'.
     /// \param _csit iterator to the 'n' in 'null'
     /// \param _json_string the source JSON string
     auto lex_null_literal(std::string::const_iterator& _csit,
-        const std::string& _json_string) const;
+        const std::string& _json_string);
 
     /// \brief Safely advances _csit as far as possible up to _distance.
     /// This modifies _csit.
     /// \param _csit iterator to advance
     /// \param _distance largest distance to advance _csit
     void advance_iterator(std::string::const_iterator& _csit,
-        const std::size_t _distance, const std::string& _json_string) const;
+        const int _distance, const std::string& _json_string);
 
     /// \brief Throw our ouput an error.
     /// If m_throw is true this throws _e, otherwise it outputs the error to
     /// standard error.
     /// \param _e an exception to throw or report
-    void report_error(const std::runtime_error _e) const;
+    auto report_error(const std::runtime_error _e);
 
     bool m_debug{false};
 
     bool m_throw{true};
+
+    bool m_error_reported{false};
 
     std::vector<token> m_tokens;
 

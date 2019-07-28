@@ -42,6 +42,7 @@ class token final {
     /// \param _type type
     /// \param _value the character from the JSON string that this token
     ///               represents
+    // TODO: verify provided character is valid.
     token(const type _type, const char _value)
         : token(_type, std::string(1, _value)) {}
 
@@ -49,11 +50,13 @@ class token final {
     /// \param _type type
     /// \param _value the sub string from the JSON string that this token
     ///               represents
+    // TODO: verify provided string is valid.
     token(const type _type, const std::string& _value)
         : m_type(_type), m_value(_value) {}
 
     /// \brief Construct with a pair.
     /// \param _pair a pair of token::type to std::string
+    // TODO: verify provided string is valid.
     token(const std::pair<type, std::string> _pair)
         : m_type(_pair.first), m_value(_pair.second) {}
 

@@ -10,6 +10,7 @@
 
 #include <bstd_error.hpp>
 
+#include "regex.hpp"
 #include "token.hpp"
 
 namespace bstd::json::parser {
@@ -70,10 +71,28 @@ class lexer final {
 
   private:
 
+
+    /// \brief Apply regex to a character.
+    /// \param _target the character to match
+    /// \param _regex the regex to apply
+    /// \return true if a match was found
+    auto apply_regex_filter(const std::string::const_iterator& _target,
+        const std::regex& _regex) const;
+
+    /// \brief Apply regex to a range.
+    /// \param _first the first element in the range
+    /// \param _last the last element in the range (one past the end)
+    /// \return true if a match was found at the beginning of the range
+    auto apply_regex_filter(const std::string::const_iterator& _first,
+        const std::string::const_iterator& _last, const std::regex& _regex)
+        const;
+
+
     /// \brief Lex strings. This consumes the starting and ending quotes.
     /// This function advances _csit to the end of the string.
     /// \param _csit iterator to the first element in the string
     /// \param _json_string the source JSON string
+    /// \return the lexed token
     auto lex_string(std::string::const_iterator& _csit,
         const std::string& _json_string);
 
@@ -81,35 +100,19 @@ class lexer final {
     /// This function advances _csit to the end of the number.
     /// \param _csit iterator to the first value in the number
     /// \param _json_string the source JSON string
+    /// \return the lexed token
     auto lex_number(std::string::const_iterator& _csit,
         const std::string& _json_string);
 
     /// \brief Lex a literal.
     /// This function advances _csit to the end of the literal.
     /// \param _literal the literal to lex
+    /// \param _regex a regex pattern to match
     /// \param _csit iterator to the first character in the literal
     /// \param _json_string the source JSON string
-    auto lex_literal(const std::string_view& _literal,
-        const token::type _literal_type, std::string::const_iterator& _csit,
-        const std::string& _json_string);
-
-    /// \brief Lex the literal 'true'.
-    /// \param _csit iterator to the 't' in 'true'
-    /// \param _json_string the source JSON string
-    auto lex_true_literal(std::string::const_iterator& _csit,
-        const std::string& _json_string);
-
-    /// \brief Lex the literal 'false'.
-    /// \param _csit iterator to the 'f' in 'false'
-    /// \param _json_string the source JSON string
-    auto lex_false_literal(std::string::const_iterator& _csit,
-        const std::string& _json_string);
-
-    /// \brief Lex the literal 'null'.
-    /// \param _csit iterator to the 'n' in 'null'
-    /// \param _json_string the source JSON string
-    auto lex_null_literal(std::string::const_iterator& _csit,
-        const std::string& _json_string);
+    /// \return the lexed token
+    auto lex_literal(const token::type& _literal_type, const std::regex& _regex,
+        std::string::const_iterator& _csit, const std::string& _json_string);
 
     /// \brief Safely advances _csit as far as possible up to _distance.
     /// This modifies _csit.
@@ -122,6 +125,8 @@ class lexer final {
     /// If m_throw is true this throws _e, otherwise it outputs the error to
     /// standard error.
     /// \param _e an exception to throw or report
+    /// \return the lexed token
+    /// \return an invalid token
     auto report_error(const std::runtime_error _e);
 
     bool m_debug{false};
@@ -131,7 +136,6 @@ class lexer final {
     bool m_error_reported{false};
 
     std::vector<token> m_tokens;
-
     /// The index of m_tokens used when iterating using get_next_token().
     CVIT m_index;
 

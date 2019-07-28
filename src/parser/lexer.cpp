@@ -17,7 +17,6 @@ const std::unordered_map<char, token::type> lexer::m_char_value_tokens = {
 auto
 lexer::
 report_error(const std::runtime_error _e) {
-  std::cout << m_error_reported << std::endl;
   if(m_error_reported)
     return token(token::invalid);
 
@@ -47,6 +46,24 @@ get_next_token() {
   }
 
   return *m_index++;
+}
+
+
+auto
+lexer::
+apply_regex_filter(const std::string::const_iterator& _target,
+    const std::regex& _regex) const {
+  return std::regex_match(std::string(_target, _target + 1), DOUBLE_QUOTE_REGEX);
+}
+
+
+auto
+lexer::
+apply_regex_filter(const std::string::const_iterator& _first,
+    const std::string::const_iterator& _last, const std::regex& _regex) const {
+  std::smatch match;
+  return std::regex_search(_first, _last, match, _regex)
+      ? match.position() == 0 : false;
 }
 
 
@@ -82,7 +99,6 @@ lex_number(std::string::const_iterator& _csit, const std::string& _json_string) 
   auto type = unknown;
   if(std::isdigit(*_csit)) {
     type = integer;
-    std::cout << *_csit << std::endl;
     advance_iterator(_csit, 1, _json_string);
   }
   else if(*_csit == '.') {
@@ -91,6 +107,7 @@ lex_number(std::string::const_iterator& _csit, const std::string& _json_string) 
   }
 
   // TODO: fix this spaghetti.
+  // TODO: fix this eating commas after integers.
   while(_csit != _json_string.cend()) {
     if(*_csit == '.') {
       if(type == floating or type == exponent)
@@ -133,40 +150,16 @@ lex_number(std::string::const_iterator& _csit, const std::string& _json_string) 
 
 auto
 lexer::
-lex_literal(const std::string_view& _literal, const token::type _literal_type,
+lex_literal(const token::type& _type, const std::regex& _regex,
     std::string::const_iterator& _csit, const std::string& _json_string) {
-  const auto size = _literal.size();
-
-  if(std::string(_csit, _csit + size) != _literal)
-    return report_error(bstd::error::context_error(_json_string, _csit,
-        _csit + 4, "Expected the literal \'" + std::string(_literal) + "\'"));
-
-  advance_iterator(_csit, size - 1, _json_string);
-  return token(_literal_type);
-}
+  std::smatch match;
+  if(!std::regex_search(_csit, _json_string.cend(), match, _regex)
+      or match.position() != 0)
+    return token(token::invalid);
 
 
-auto
-lexer::
-lex_true_literal(std::string::const_iterator& _csit,
-    const std::string& _json_string) {
-  return lex_literal("true", token::true_literal, _csit, _json_string);
-}
-
-
-auto
-lexer::
-lex_false_literal(std::string::const_iterator& _csit,
-    const std::string& _json_string) {
-  return lex_literal("false", token::false_literal, _csit, _json_string);
-}
-
-
-auto
-lexer::
-lex_null_literal(std::string::const_iterator& _csit,
-    const std::string& _json_string) {
-  return lex_literal("null", token::null_literal, _csit, _json_string);
+  advance_iterator(_csit, match.length() - 1, _json_string);
+  return token(_type);
 }
 
 
@@ -181,16 +174,17 @@ lex(const std::string& _json_string) {
     const auto cmit = m_char_value_tokens.find(*csit);
     if(cmit != m_char_value_tokens.cend())
       t = token(cmit->second, cmit->first);
-    else if(*csit == '\"')
+    else if(apply_regex_filter(csit, DOUBLE_QUOTE_REGEX))
       t = lex_string(csit, _json_string);
-    else if(std::isdigit(*csit) or *csit == '-' or *csit == '+' or *csit == '.')
+    else if(apply_regex_filter(csit, _json_string.cend(), BEGIN_NUMBER_REGEX))
       t = lex_number(csit, _json_string);
-    else if(*csit == 't')
-      t = lex_true_literal(csit, _json_string);
-    else if(*csit == 'f')
-      t = lex_false_literal(csit, _json_string);
-    else if(*csit == 'n')
-      t = lex_null_literal(csit, _json_string);
+    else if(apply_regex_filter(csit, _json_string.cend(), TRUE_LITERAL_REGEX))
+      t = lex_literal(token::true_literal, TRUE_LITERAL_REGEX, csit, _json_string);
+    else if(apply_regex_filter(csit, _json_string.cend(), FALSE_LITERAL_REGEX))
+      t = lex_literal(token::false_literal, FALSE_LITERAL_REGEX, csit, _json_string);
+    else if(apply_regex_filter(csit, _json_string.cend(), NULL_LITERAL_REGEX))
+      t = lex_literal(token::null_literal, NULL_LITERAL_REGEX, csit, _json_string);
+    // TODO: use regex to parse large chunks of whitespace
     else if(isspace(*csit))
       t = token(token::whitespace, *csit);
 
@@ -261,7 +255,6 @@ advance_iterator(std::string::const_iterator& _csit,
   else if(std::distance(begin, end) == _distance)
     std::advance(_csit, _distance + adjustment);
   else {
-    std::cout << _distance << std::endl;
     report_error(bstd::error::context_error(_json_string, _csit,
         "attempting to advance the lexing iterator beyond its bounds"));
   }

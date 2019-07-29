@@ -23,7 +23,7 @@ class parser_base {
 
     parser_base(const Container& _container, const bool _debug = false,
         const bool _throw = true)
-        : m_container(std::make_shared<Container>(_container)),
+        : m_container(std::make_unique<Container>(_container)),
           parser_base(m_debug, _throw) {}
 
     /// \brief Deleted copy constructor.

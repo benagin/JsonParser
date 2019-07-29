@@ -15,5 +15,6 @@
 bin/*
 build/
 *.swp
+*.swo
 *.o
 *.dSYM

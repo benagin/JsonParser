@@ -1,22 +1,21 @@
 #ifndef BSTD_JSON_LEXER_HPP_
 #define BSTD_JSON_LEXER_HPP_
 
-#include <iostream>
 #include <stdexcept>
-#include <string>
 #include <sstream>
 #include <unordered_map>
 #include <vector>
 
 #include <bstd_error.hpp>
 
+#include "parser_base.hpp"
 #include "regex.hpp"
 #include "token.hpp"
 
 namespace bstd::json::parser {
 
 /// \brief Tokenize a JSON string.
-class lexer final {
+class lexer final : public parser_base<std::string> {
 
   public:
 
@@ -26,12 +25,12 @@ class lexer final {
     /// \param _debug debug flag
     /// \param _throw if true, this class will throw errors when applicable
     lexer(const bool _debug = false, const bool _throw = true)
-        : m_debug(_debug), m_throw(_throw) {}
+        : parser_base(_debug, _throw) {}
 
     /// \brief Deleted copy constructor.
     lexer(const lexer&) = delete;
     /// \brief Deleted copy assignment.
-    lexer& operator=(lexer _rhs) = delete;
+    lexer& operator=(const lexer&) = delete;
 
     ~lexer() {}
 
@@ -128,10 +127,6 @@ class lexer final {
     /// \return the lexed token
     /// \return an invalid token
     auto report_error(const std::runtime_error _e);
-
-    bool m_debug{false};
-
-    bool m_throw{true};
 
     bool m_error_reported{false};
 

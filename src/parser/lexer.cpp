@@ -14,22 +14,6 @@ const std::unordered_map<char, token::type> lexer::m_char_value_tokens = {
 };
 
 
-auto
-lexer::
-report_error(const std::runtime_error _e) {
-  if(m_error_reported)
-    return token(token::invalid);
-
-  if(m_throw)
-    throw _e;
-  else
-    std::cerr << _e.what() << std::endl;
-
-  m_error_reported = true;
-  return token(token::invalid);
-}
-
-
 const std::vector<token>
 lexer::
 get_tokens() const {
@@ -41,8 +25,9 @@ const token
 lexer::
 get_next_token() {
   if(m_index == m_tokens.cend()) {
-    return report_error(std::runtime_error("Attempt to get a token after all have \
+    report_error(std::runtime_error("Attempt to get a token after all have \
         been retrieved."));
+    return token(token::invalid);
   }
 
   return *m_index++;
@@ -81,8 +66,9 @@ lex_string(std::string::const_iterator& _csit, const std::string& _json_string) 
     advance_iterator(_csit, 1, _json_string);
   }
 
-  return report_error(bstd::error::context_error(_json_string, begin,
+  report_error(bstd::error::context_error(_json_string, begin,
       "String never closed"));
+  return token(token::invalid);
 }
 
 
@@ -110,25 +96,31 @@ lex_number(std::string::const_iterator& _csit, const std::string& _json_string) 
   // TODO: fix this eating commas after integers.
   while(_csit != _json_string.cend()) {
     if(*_csit == '.') {
-      if(type == floating or type == exponent)
-        return report_error(bstd::error::context_error(_json_string, _csit,
+      if(type == floating or type == exponent) {
+        report_error(bstd::error::context_error(_json_string, _csit,
             "Unexpected decimal"));
+        return token(token::invalid);
+      }
 
       type = floating;
     }
     else if(*_csit == 'e' or *_csit == 'E') {
-      if(type == exponent)
-        return report_error(bstd::error::context_error(_json_string, _csit,
+      if(type == exponent) {
+        report_error(bstd::error::context_error(_json_string, _csit,
             "Unexpected exponent"));
+        return token(token::invalid);
+      }
 
       type = exponent;
     }
     else if(*_csit == '-' or *_csit == '+') {
       if(type == integer or type == exponent)
         type = signed_exponent;
-      else
-        return report_error(bstd::error::context_error(_json_string, _csit,
+      else {
+        report_error(bstd::error::context_error(_json_string, _csit,
             "Unexpected sign"));
+        return token(token::invalid);
+      }
     }
     else if(std::isdigit(*_csit)) {
       if(type == unknown)
@@ -143,8 +135,9 @@ lex_number(std::string::const_iterator& _csit, const std::string& _json_string) 
     advance_iterator(_csit, 1, _json_string);
   }
 
-  return report_error(bstd::error::context_error(_json_string, _csit,
+  report_error(bstd::error::context_error(_json_string, _csit,
       "Unexpectedly reached end of JSON string"));
+  return token(token::invalid);
 }
 
 
@@ -254,10 +247,9 @@ advance_iterator(std::string::const_iterator& _csit,
     std::advance(_csit, _distance);
   else if(std::distance(begin, end) == _distance)
     std::advance(_csit, _distance + adjustment);
-  else {
+  else
     report_error(bstd::error::context_error(_json_string, _csit,
         "attempting to advance the lexing iterator beyond its bounds"));
-  }
 }
 
 

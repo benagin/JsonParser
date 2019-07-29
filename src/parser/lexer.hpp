@@ -120,17 +120,8 @@ class lexer final : public parser_base<std::string> {
     void advance_iterator(std::string::const_iterator& _csit,
         const int _distance, const std::string& _json_string);
 
-    /// \brief Throw our ouput an error.
-    /// If m_throw is true this throws _e, otherwise it outputs the error to
-    /// standard error.
-    /// \param _e an exception to throw or report
-    /// \return the lexed token
-    /// \return an invalid token
-    auto report_error(const std::runtime_error _e);
-
-    bool m_error_reported{false};
-
     std::vector<token> m_tokens;
+
     /// The index of m_tokens used when iterating using get_next_token().
     CVIT m_index;
 

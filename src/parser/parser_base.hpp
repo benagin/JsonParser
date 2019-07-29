@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+#include <bstd_error.hpp>
+
 namespace bstd::json::parser {
 
 /// \brief Parser base class to manage some of the common functionality between
@@ -33,6 +35,10 @@ class parser_base {
 
     virtual ~parser_base() = 0;
 
+    /// \brief Throw an error or write it to standard error.
+    /// \param _e an exception to throw or report
+    virtual void report_error(const std::runtime_error _e) final;
+
     /// \biref Output operator overload.
     /// \param _os std::ostream
     /// \param _parser_base the calling object
@@ -50,6 +56,10 @@ class parser_base {
 
   private:
 
+    /// This prevents the parser from reporting unecessary errors after a
+    /// problem is detected.
+    bool m_error_reported{false};
+
     std::unique_ptr<Container> m_container;
 
     /// This allows the parser to keep track of its place as it analyzes the
@@ -58,9 +68,26 @@ class parser_base {
 
 };
 
+
 template<class Container>
 parser_base<Container>::
 ~parser_base() {}
+
+
+template<class Container>
+void
+parser_base<Container>::
+report_error(const std::runtime_error _e) {
+  if(m_error_reported)
+    return;
+
+  if(m_throw)
+    throw _e;
+  else
+    std::cerr << _e.what() << std::endl;
+
+  m_error_reported = true;
+}
 
 
 template<class Container>

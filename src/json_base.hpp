@@ -24,7 +24,7 @@ using structures::value;
 /// \brief Abstract class used as base for each json related structure.
 class json_base {
 
-  public:
+  protected:
 
     /// \brief Default constructor.
     /// \param _debug debug mode flag
@@ -63,8 +63,6 @@ class json_base {
     /// \param _include_ws if true, the original whitespace will be included
     virtual void write(const std::string _path, const bool _include_ws = true)
         const final;
-
-  protected:
 
     bool m_debug{false};
 

@@ -21,7 +21,7 @@ get_tokens() const {
 }
 
 
-const token
+const token&
 lexer::
 get_next_token() {
   if(m_index == m_tokens.cend()) {

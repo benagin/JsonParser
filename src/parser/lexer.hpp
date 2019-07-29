@@ -34,22 +34,21 @@ class lexer final : public parser_base<std::string> {
 
     ~lexer() {}
 
-    /// Getters and setters.
-
     /// \brief Get tokens.
     /// \return m_tokens
     const std::vector<token> get_tokens() const;
 
     /// \brief Get the next token from m_tokens.
     /// \return the next token, determined by m_index
-    /// \throws std::out_of_range if no more tokens can be retrieved
-    const token get_next_token();
-
-    /// Member functions.
+    /// \throws bstd::error::context_error if m_throw is true and no more
+    ///         tokens can be retrieved
+    const token& get_next_token();
 
     /// \brief Tokenize a JSON string.
     /// This populates m_tokens with tokens that represent the JSON provided.
     /// \param _json_string a JSON string
+    /// \throws bstd::error::context_error if _json_string does not obey the
+    ///         grammar
     void lex(const std::string& _json_string);
 
     /// \brief Reset the token iterator.
@@ -58,8 +57,6 @@ class lexer final : public parser_base<std::string> {
     /// \brief Convert tokens to a string.
     /// \return tokens as a string
     const std::string to_string() const;
-
-    /// Operator overloads.
 
     /// \brief Output operator overload.
     /// \param _os std::ostream

@@ -27,8 +27,8 @@ parse(const std::string& _string) {
   std::cout << json_as_string << std::endl;
 
   // TODO: change this to store the lexer in the parser once parser is a class.
-  lexer l;
-  l.lex(json_as_string);
+  lexer l(json_as_string);
+  l.lex();
   return parse(l);
 }
 

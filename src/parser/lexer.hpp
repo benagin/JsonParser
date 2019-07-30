@@ -24,8 +24,8 @@ class lexer final : public parser_base<std::string> {
     /// \brief Construct a lexer object.
     /// \param _debug debug flag
     /// \param _throw if true, this class will throw errors when applicable
-    lexer(const bool _debug = false, const bool _throw = true)
-        : parser_base(_debug, _throw) {}
+    lexer(const std::string& _json_string, const bool _debug = false,
+        const bool _throw = true) : parser_base(_json_string, _debug, _throw) {}
 
     /// \brief Deleted copy constructor.
     lexer(const lexer&) = delete;
@@ -36,23 +36,22 @@ class lexer final : public parser_base<std::string> {
 
     /// \brief Get tokens.
     /// \return m_tokens
-    const std::vector<token> get_tokens() const;
+    const std::vector<token>& get_tokens() const noexcept;
 
-    /// \brief Get the next token from m_tokens.
-    /// \return the next token, determined by m_index
-    /// \throws bstd::error::context_error if m_throw is true and no more
+    /// \brief Process the next token from m_tokens.
+    /// \return the next token to be processed, determined by m_index
+    /// \throws std::runtime_error if m_throw is true and no more
     ///         tokens can be retrieved
-    const token& get_next_token();
+    const CVIT next_token();
 
     /// \brief Tokenize a JSON string.
     /// This populates m_tokens with tokens that represent the JSON provided.
-    /// \param _json_string a JSON string
-    /// \throws bstd::error::context_error if _json_string does not obey the
-    ///         grammar
-    void lex(const std::string& _json_string);
+    /// \throws bstd::error::context_error if m_throw is true and errors in the
+    ///         JSON string are found
+    void lex();
 
     /// \brief Reset the token iterator.
-    void reset();
+    void reset() noexcept;
 
     /// \brief Convert tokens to a string.
     /// \return tokens as a string
@@ -60,7 +59,7 @@ class lexer final : public parser_base<std::string> {
 
     /// \brief Output operator overload.
     /// \param _os std::ostream
-    /// \param _lexer the calling lexer
+    /// \param _lexer the calling object
     /// \return std::ostream
     friend std::ostream& operator<<(std::ostream& _os,
         const lexer& _lexer);
@@ -69,58 +68,36 @@ class lexer final : public parser_base<std::string> {
 
 
     /// \brief Apply regex to a character.
-    /// \param _target the character to match
     /// \param _regex the regex to apply
-    /// \return true if a match was found
-    auto apply_regex_filter(const std::string::const_iterator& _target,
-        const std::regex& _regex) const;
-
-    /// \brief Apply regex to a range.
-    /// \param _first the first element in the range
-    /// \param _last the last element in the range (one past the end)
-    /// \return true if a match was found at the beginning of the range
-    auto apply_regex_filter(const std::string::const_iterator& _first,
-        const std::string::const_iterator& _last, const std::regex& _regex)
-        const;
-
+    /// \return true if a match was found starting at the current element
+    bool apply_regex_filter(const std::regex& _regex) const;
 
     /// \brief Lex strings. This consumes the starting and ending quotes.
     /// This function advances _csit to the end of the string.
-    /// \param _csit iterator to the first element in the string
-    /// \param _json_string the source JSON string
     /// \return the lexed token
-    auto lex_string(std::string::const_iterator& _csit,
-        const std::string& _json_string);
+    /// \throws bstd::error::context_error if m_throw is true and errors in the
+    ///         JSON string are found
+    const token lex_string();
 
     /// \brief Lex numbers.
-    /// This function advances _csit to the end of the number.
-    /// \param _csit iterator to the first value in the number
-    /// \param _json_string the source JSON string
     /// \return the lexed token
-    auto lex_number(std::string::const_iterator& _csit,
-        const std::string& _json_string);
+    /// \throws bstd::error::context_error if m_throw is true and errors in the
+    ///         JSON string are found
+    const token lex_number();
 
     /// \brief Lex a literal.
-    /// This function advances _csit to the end of the literal.
     /// \param _literal the literal to lex
     /// \param _regex a regex pattern to match
-    /// \param _csit iterator to the first character in the literal
-    /// \param _json_string the source JSON string
     /// \return the lexed token
-    auto lex_literal(const token::type& _literal_type, const std::regex& _regex,
-        std::string::const_iterator& _csit, const std::string& _json_string);
-
-    /// \brief Safely advances _csit as far as possible up to _distance.
-    /// This modifies _csit.
-    /// \param _csit iterator to advance
-    /// \param _distance largest distance to advance _csit
-    void advance_iterator(std::string::const_iterator& _csit,
-        const int _distance, const std::string& _json_string);
-
-    std::vector<token> m_tokens;
+    /// \throws bstd::error::context_error if m_throw is true and errors in the
+    ///         JSON string are found
+    const token lex_literal(const token::type& _literal_type,
+        const std::regex& _regex);
 
     /// The index of m_tokens used when iterating using get_next_token().
     CVIT m_index;
+
+    std::vector<token> m_tokens;
 
     /// This map stores the single character token types.
     static const std::unordered_map<char, token::type> m_char_value_tokens;

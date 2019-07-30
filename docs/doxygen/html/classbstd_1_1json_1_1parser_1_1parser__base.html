@@ -90,10 +90,8 @@ Protected Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a00ef7e84ca613b092b5d6b7dadf0ba41"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a00ef7e84ca613b092b5d6b7dadf0ba41">parser_base</a> (const bool _debug=false, const bool _throw=true)</td></tr>
-<tr class="memdesc:a00ef7e84ca613b092b5d6b7dadf0ba41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a00ef7e84ca613b092b5d6b7dadf0ba41">More...</a><br /></td></tr>
-<tr class="separator:a00ef7e84ca613b092b5d6b7dadf0ba41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57e992310501cbc7dec90f37880a97c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a57e992310501cbc7dec90f37880a97c9">parser_base</a> (const Container &amp;_container, const bool _debug=false, const bool _throw=true)</td></tr>
+<tr class="memdesc:a57e992310501cbc7dec90f37880a97c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with a container to parse.  <a href="#a57e992310501cbc7dec90f37880a97c9">More...</a><br /></td></tr>
 <tr class="separator:a57e992310501cbc7dec90f37880a97c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7c70d556a03b10a1dacb7f9902812c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#ae7c70d556a03b10a1dacb7f9902812c6">parser_base</a> (const <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">parser_base</a> &amp;)=delete</td></tr>
 <tr class="memdesc:ae7c70d556a03b10a1dacb7f9902812c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor.  <a href="#ae7c70d556a03b10a1dacb7f9902812c6">More...</a><br /></td></tr>
@@ -103,6 +101,30 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a246cc6c637c38783df867382e75b236d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f6e005f4bafd4fcc55a4d1d9ecdbf7a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a0f6e005f4bafd4fcc55a4d1d9ecdbf7a">~parser_base</a> ()=0</td></tr>
 <tr class="separator:a0f6e005f4bafd4fcc55a4d1d9ecdbf7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a474e2dcc25fd0eba358a8cda5a832c7d"><td class="memItemLeft" align="right" valign="top">const auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a474e2dcc25fd0eba358a8cda5a832c7d">get_container</a> () const noexcept</td></tr>
+<tr class="memdesc:a474e2dcc25fd0eba358a8cda5a832c7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the container.  <a href="#a474e2dcc25fd0eba358a8cda5a832c7d">More...</a><br /></td></tr>
+<tr class="separator:a474e2dcc25fd0eba358a8cda5a832c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb5c22eda9072f30258d3f9c0c773cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#aafb5c22eda9072f30258d3f9c0c773cb">set_container</a> (const Container &amp;_container) const noexcept</td></tr>
+<tr class="memdesc:aafb5c22eda9072f30258d3f9c0c773cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the container.  <a href="#aafb5c22eda9072f30258d3f9c0c773cb">More...</a><br /></td></tr>
+<tr class="separator:aafb5c22eda9072f30258d3f9c0c773cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a647e6ed30f4bb7998980c3a0bec6a645"><td class="memItemLeft" align="right" valign="top">const auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a647e6ed30f4bb7998980c3a0bec6a645">get_element</a> () const noexcept</td></tr>
+<tr class="memdesc:a647e6ed30f4bb7998980c3a0bec6a645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current index.  <a href="#a647e6ed30f4bb7998980c3a0bec6a645">More...</a><br /></td></tr>
+<tr class="separator:a647e6ed30f4bb7998980c3a0bec6a645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefc062ec5a6f185e216ed0b0b483a410"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#aefc062ec5a6f185e216ed0b0b483a410">next_element</a> ()</td></tr>
+<tr class="memdesc:aefc062ec5a6f185e216ed0b0b483a410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process the next element in m_container.  <a href="#aefc062ec5a6f185e216ed0b0b483a410">More...</a><br /></td></tr>
+<tr class="separator:aefc062ec5a6f185e216ed0b0b483a410"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19fe313c29f868c4acb41e5752974a1e"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a19fe313c29f868c4acb41e5752974a1e">peek_next_element</a> () noexcept</td></tr>
+<tr class="memdesc:a19fe313c29f868c4acb41e5752974a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the next element without moving the index.  <a href="#a19fe313c29f868c4acb41e5752974a1e">More...</a><br /></td></tr>
+<tr class="separator:a19fe313c29f868c4acb41e5752974a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31e602b3460be28d458ce843168664e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a31e602b3460be28d458ce843168664e4">advance_index</a> (const int _n)</td></tr>
+<tr class="memdesc:a31e602b3460be28d458ce843168664e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the index by _n (_n can be negative).  <a href="#a31e602b3460be28d458ce843168664e4">More...</a><br /></td></tr>
+<tr class="separator:a31e602b3460be28d458ce843168664e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae206566255b79261c8822846bb62e966"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#ae206566255b79261c8822846bb62e966">reset</a> () noexcept</td></tr>
+<tr class="memdesc:ae206566255b79261c8822846bb62e966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the index.  <a href="#ae206566255b79261c8822846bb62e966">More...</a><br /></td></tr>
+<tr class="separator:ae206566255b79261c8822846bb62e966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcfcb54148106ac34d9731a8356ac980"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#adcfcb54148106ac34d9731a8356ac980">report_error</a> (const std::runtime_error _e) final</td></tr>
+<tr class="memdesc:adcfcb54148106ac34d9731a8356ac980"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throw an error or write it to standard error.  <a href="#adcfcb54148106ac34d9731a8356ac980">More...</a><br /></td></tr>
+<tr class="separator:adcfcb54148106ac34d9731a8356ac980"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f8b2173d7943abe25790e6dc371fba5"><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a3f8b2173d7943abe25790e6dc371fba5">to_string</a> () const =0</td></tr>
 <tr class="memdesc:a3f8b2173d7943abe25790e6dc371fba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method signature for converting to a string.  <a href="#a3f8b2173d7943abe25790e6dc371fba5">More...</a><br /></td></tr>
 <tr class="separator:a3f8b2173d7943abe25790e6dc371fba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,7 +147,7 @@ class bstd::json::parser::parser_base&lt; Container &gt;</h3>
 
 <p>Parser base class to manage some of the common functionality between parser-like classes. \template Container stores the objects we are parsing. </p>
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00013">13</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00015">15</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a38788c024aebb44d332091a6739f6fd3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a38788c024aebb44d332091a6739f6fd3">&#9670;&nbsp;</a></span>CCIT</h2>
@@ -149,61 +171,13 @@ template&lt;class Container&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00017">17</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00019">19</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a00ef7e84ca613b092b5d6b7dadf0ba41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00ef7e84ca613b092b5d6b7dadf0ba41">&#9670;&nbsp;</a></span>parser_base() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Container&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">bstd::json::parser::parser_base</a>&lt; Container &gt;::<a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">parser_base</a> </td>
-          <td>(</td>
-          <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>_debug</em> = <code>false</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>_throw</em> = <code>true</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Default constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">_debug</td><td>debug mode flag </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00021">21</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
-
-</div>
-</div>
 <a id="a57e992310501cbc7dec90f37880a97c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57e992310501cbc7dec90f37880a97c9">&#9670;&nbsp;</a></span>parser_base() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a57e992310501cbc7dec90f37880a97c9">&#9670;&nbsp;</a></span>parser_base() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -244,12 +218,22 @@ template&lt;class Container&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00024">24</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p>Construct with a container to parse. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_container</td><td>the collection of elements to parse </td></tr>
+    <tr><td class="paramname">_debug</td><td>debug mode flag </td></tr>
+    <tr><td class="paramname">_debug</td><td>if true errors will be thrown, otherwise they will be written to standard error </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00026">26</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
 <a id="ae7c70d556a03b10a1dacb7f9902812c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7c70d556a03b10a1dacb7f9902812c6">&#9670;&nbsp;</a></span>parser_base() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7c70d556a03b10a1dacb7f9902812c6">&#9670;&nbsp;</a></span>parser_base() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -303,11 +287,151 @@ template&lt;class Container &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00063">63</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00108">108</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a31e602b3460be28d458ce843168664e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31e602b3460be28d458ce843168664e4">&#9670;&nbsp;</a></span>advance_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Container &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">bstd::json::parser::parser_base</a>&lt; Container &gt;::advance_index </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>_n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Advance the index by _n (_n can be negative). </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if m_throw is true and the advance would move the index past-the-end. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00161">161</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a474e2dcc25fd0eba358a8cda5a832c7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a474e2dcc25fd0eba358a8cda5a832c7d">&#9670;&nbsp;</a></span>get_container()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Container &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto &amp; <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">bstd::json::parser::parser_base</a>&lt; Container &gt;::get_container </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the container. </p>
+<dl class="section return"><dt>Returns</dt><dd>m_container </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00114">114</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a647e6ed30f4bb7998980c3a0bec6a645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a647e6ed30f4bb7998980c3a0bec6a645">&#9670;&nbsp;</a></span>get_element()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Container &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto &amp; <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">bstd::json::parser::parser_base</a>&lt; Container &gt;::get_element </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the current index. </p>
+<dl class="section return"><dt>Returns</dt><dd>an iterator to the current element </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00130">130</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aefc062ec5a6f185e216ed0b0b483a410"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefc062ec5a6f185e216ed0b0b483a410">&#9670;&nbsp;</a></span>next_element()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Container &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">bstd::json::parser::parser_base</a>&lt; Container &gt;::next_element </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Process the next element in m_container. </p>
+<dl class="section return"><dt>Returns</dt><dd>an iterator to the next element in m_container </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if m_throw is true and the next element is past-the-end </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00138">138</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a246cc6c637c38783df867382e75b236d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a246cc6c637c38783df867382e75b236d">&#9670;&nbsp;</a></span>operator=()</h2>
 
@@ -335,6 +459,145 @@ template&lt;class Container&gt; </div>
 </div><div class="memdoc">
 
 <p>Deleted copy assignment. </p>
+
+</div>
+</div>
+<a id="a19fe313c29f868c4acb41e5752974a1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19fe313c29f868c4acb41e5752974a1e">&#9670;&nbsp;</a></span>peek_next_element()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Container &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">bstd::json::parser::parser_base</a>&lt; Container &gt;::peek_next_element </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check the next element without moving the index. </p>
+<dl class="section return"><dt>Returns</dt><dd>an iterator to the next element in m_container or m_container.cend() if the next element is past-the-end </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00150">150</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+
+</div>
+</div>
+<a id="adcfcb54148106ac34d9731a8356ac980"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcfcb54148106ac34d9731a8356ac980">&#9670;&nbsp;</a></span>report_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Container &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">bstd::json::parser::parser_base</a>&lt; Container &gt;::report_error </td>
+          <td>(</td>
+          <td class="paramtype">const std::runtime_error&#160;</td>
+          <td class="paramname"><em>_e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Throw an error or write it to standard error. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_e</td><td>an exception to throw or report </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00178">178</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae206566255b79261c8822846bb62e966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae206566255b79261c8822846bb62e966">&#9670;&nbsp;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Container &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">bstd::json::parser::parser_base</a>&lt; Container &gt;::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset the index. </p>
+
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00169">169</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aafb5c22eda9072f30258d3f9c0c773cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb5c22eda9072f30258d3f9c0c773cb">&#9670;&nbsp;</a></span>set_container()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Container&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">bstd::json::parser::parser_base</a>&lt; Container &gt;::set_container </td>
+          <td>(</td>
+          <td class="paramtype">const Container &amp;&#160;</td>
+          <td class="paramname"><em>_container</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the container. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_container</td><td>the container to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00122">122</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -415,7 +678,7 @@ template&lt;class Container&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::ostream </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00068">68</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00193">193</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -442,7 +705,7 @@ template&lt;class Container&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00047">47</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00087">87</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -468,7 +731,7 @@ template&lt;class Container&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00049">49</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00089">89</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>

@@ -5,7 +5,8 @@ var searchData=
   ['parse_5ferror_2ehpp',['parse_error.hpp',['../parse__error_8hpp.html',1,'']]],
   ['parser_2ecpp',['parser.cpp',['../parser_8cpp.html',1,'']]],
   ['parser_2ehpp',['parser.hpp',['../parser_8hpp.html',1,'']]],
-  ['parser_5fbase',['parser_base',['../classbstd_1_1json_1_1parser_1_1parser__base.html',1,'bstd::json::parser::parser_base&lt; Container &gt;'],['../classbstd_1_1json_1_1parser_1_1parser__base.html#a00ef7e84ca613b092b5d6b7dadf0ba41',1,'bstd::json::parser::parser_base::parser_base(const bool _debug=false, const bool _throw=true)'],['../classbstd_1_1json_1_1parser_1_1parser__base.html#a57e992310501cbc7dec90f37880a97c9',1,'bstd::json::parser::parser_base::parser_base(const Container &amp;_container, const bool _debug=false, const bool _throw=true)'],['../classbstd_1_1json_1_1parser_1_1parser__base.html#ae7c70d556a03b10a1dacb7f9902812c6',1,'bstd::json::parser::parser_base::parser_base(const parser_base &amp;)=delete']]],
+  ['parser_5fbase',['parser_base',['../classbstd_1_1json_1_1parser_1_1parser__base.html',1,'bstd::json::parser::parser_base&lt; Container &gt;'],['../classbstd_1_1json_1_1parser_1_1parser__base.html#a57e992310501cbc7dec90f37880a97c9',1,'bstd::json::parser::parser_base::parser_base(const Container &amp;_container, const bool _debug=false, const bool _throw=true)'],['../classbstd_1_1json_1_1parser_1_1parser__base.html#ae7c70d556a03b10a1dacb7f9902812c6',1,'bstd::json::parser::parser_base::parser_base(const parser_base &amp;)=delete']]],
   ['parser_5fbase_2ehpp',['parser_base.hpp',['../parser__base_8hpp.html',1,'']]],
-  ['parser_5fbase_3c_20std_3a_3astring_20_3e',['parser_base&lt; std::string &gt;',['../classbstd_1_1json_1_1parser_1_1parser__base.html',1,'bstd::json::parser']]]
+  ['parser_5fbase_3c_20std_3a_3astring_20_3e',['parser_base&lt; std::string &gt;',['../classbstd_1_1json_1_1parser_1_1parser__base.html',1,'bstd::json::parser']]],
+  ['peek_5fnext_5felement',['peek_next_element',['../classbstd_1_1json_1_1parser_1_1parser__base.html#a19fe313c29f868c4acb41e5752974a1e',1,'bstd::json::parser::parser_base']]]
 ];

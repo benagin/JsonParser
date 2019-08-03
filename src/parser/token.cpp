@@ -3,6 +3,7 @@
 
 namespace bstd::json::parser {
 
+
 const
 std::unordered_map<token::type, std::string> token::m_type_to_string = {
     { token::invalid, "invalid" },
@@ -20,6 +21,7 @@ std::unordered_map<token::type, std::string> token::m_type_to_string = {
     { token::null_literal, "null_literal" },
     { token::end_json, "end_json" }
 };
+
 
 const
 std::unordered_map<token::type, std::string> token::m_type_to_default_value = {
@@ -43,6 +45,7 @@ std::unordered_map<token::type, std::string> token::m_type_to_default_value = {
 token::
 token(const type _type)
   : m_type(_type), m_value(m_type_to_default_value.at(m_type)) {}
+
 
 const token::type
 token::

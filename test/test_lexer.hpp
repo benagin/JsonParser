@@ -69,28 +69,22 @@ class test_lexer final : public bstd::test::unit_tester {
         { token::end_json }
     }};
 
-    const std::string m_whitespace{"  [ 1\v ,\f 3,\rnull   ,\t ]\n"};
+    const std::string m_whitespace{"  [ 1\r ,\n 3,\rnull   ,\t ]\n"};
     const std::vector<token> m_lexed_whitespace {{
-        { token::whitespace },
-        { token::whitespace },
-        { token::whitespace },
+        { token::whitespace, "  "},
         { token::begin_array },
-        { token::whitespace },
+        { token::whitespace, " "},
         { token::number, "1" },
-        { token::whitespace, "\v" },
-        { token::whitespace },
+        { token::whitespace, "\r " },
         { token::comma },
-        { token::whitespace, "\f"},
-        { token::whitespace },
+        { token::whitespace, "\n "},
         { token::number, "3" },
+        { token::comma },
         { token::whitespace, "\r" },
         { token::null_literal },
-        { token::whitespace },
-        { token::whitespace },
-        { token::whitespace },
+        { token::whitespace, "   "},
         { token::comma },
-        { token::whitespace, "\t" },
-        { token::whitespace },
+        { token::whitespace, "\t " },
         { token::end_array },
         { token::whitespace, "\n" },
         { token::end_json }

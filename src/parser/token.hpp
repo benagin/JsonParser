@@ -36,27 +36,19 @@ class token final {
     };
 
     /// \brief Constructor that covers default and only type construction.
+    /// This can be used to construct tokens for the character valued tokens ({,
+    /// }, [, ], etc.). The value will be populated from m_type_to_default_value.
     token(const type _type = invalid);
-
-    /// \brief Construct a token from a character value.
-    /// \param _type type
-    /// \param _value the character from the JSON string that this token
-    ///               represents
-    // TODO: verify provided character is valid.
-    token(const type _type, const char _value)
-        : token(_type, std::string(1, _value)) {}
 
     /// \brief Construct a token from a string value.
     /// \param _type type
     /// \param _value the sub string from the JSON string that this token
     ///               represents
-    // TODO: verify provided string is valid.
     token(const type _type, const std::string& _value)
         : m_type(_type), m_value(_value) {}
 
     /// \brief Construct with a pair.
     /// \param _pair a pair of token::type to std::string
-    // TODO: verify provided string is valid.
     token(const std::pair<type, std::string> _pair)
         : m_type(_pair.first), m_value(_pair.second) {}
 
@@ -108,6 +100,10 @@ class token final {
     /// \brief Check if this token is invalid.
     /// \returns true if the type is not type::invalid, false otherwise
     bool is_valid() const;
+
+    static constexpr bool is_value_required(const type& _type) {
+      return _type == whitespace or _type == string or _type == number;
+    }
 
     /// \brief Convert this token to a string.
     /// \return this token as a string

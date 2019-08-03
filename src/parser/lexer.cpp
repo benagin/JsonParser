@@ -32,40 +32,32 @@ next_token() {
 }
 
 
-bool
+const auto
 lexer::
-apply_regex_filter(const std::regex& _regex) const {
-  std::smatch match;
-  return std::regex_search(get_element(), get_container()->cend(), match, _regex)
-      ? match.position() == 0 : false;
-}
-
-
-const token
-lexer::
-lex_string() {
-  // TODO: use regex.
-  return token(token::invalid);
-}
-
-
-const token
-lexer::
-lex_number() {
-  // TODO: use regex.
-  return token(token::invalid);
-}
-
-
-const token
-lexer::
-lex_literal(const token::type& _type, const std::regex& _regex) {
-  std::smatch match;
-  if(!std::regex_search(get_element(), get_container()->cend(), match, _regex)
-      or match.position() != 0)
+apply_regex_filter(const token::type& _type, const std::regex& _regex) {
+  std::smatch results;
+  if(!std::regex_search(get_element(), get_container()->cend(), results, _regex))
     return token(token::invalid);
 
-  advance_index(match.length() - 1);
+  if(results.empty())
+    return token(token::invalid);
+
+  if(results.position() != 0)
+    return token(token::invalid);
+
+  const auto& match = results.cbegin();
+
+  advance_index(match->length());
+
+  if(token::is_value_required(_type)) {
+    std::string value = *match;
+    // Consume quotes.
+    if(_type == token::string)
+      value = value.substr(1, match->length() - 2);
+
+    return token(_type, value);
+  }
+
   return token(_type);
 }
 
@@ -73,41 +65,36 @@ lex_literal(const token::type& _type, const std::regex& _regex) {
 void
 lexer::
 lex() {
-  // TODO: support nesting.
-  for(;;) {
+  std::string s;
+  while(get_element() != get_container()->cend()) {
     token t;
 
     const auto cmit = m_char_value_tokens.find(*get_element());
-    if(cmit != m_char_value_tokens.cend())
-      t = token(cmit->second, cmit->first);
-    else if(apply_regex_filter(DOUBLE_QUOTE_REGEX))
-      t = lex_string();
-    else if(apply_regex_filter(BEGIN_NUMBER_REGEX))
-      t = lex_number();
-    else if(apply_regex_filter(TRUE_LITERAL_REGEX))
-      t = lex_literal(token::true_literal, TRUE_LITERAL_REGEX);
-    else if(apply_regex_filter(FALSE_LITERAL_REGEX))
-      t = lex_literal(token::false_literal, FALSE_LITERAL_REGEX);
-    else if(apply_regex_filter(NULL_LITERAL_REGEX))
-      t = lex_literal(token::null_literal, NULL_LITERAL_REGEX);
-    // TODO: use regex to parse large chunks of whitespace
+    if(cmit != m_char_value_tokens.cend()) {
+      t = token(cmit->second);
+      next_element();
+    }
+    else if(*get_element() == '\"')
+      t = apply_regex_filter(token::string, STRING_REGEX);
+    else if(std::isdigit(*get_element()) or *get_element()== '+'
+        or *get_element() == '-')
+      t = apply_regex_filter(token::number, NUMBER_REGEX);
+    else if(*get_element() == 't')
+      t = apply_regex_filter(token::true_literal, TRUE_LITERAL_REGEX);
+    else if(*get_element() == 'f')
+      t = apply_regex_filter(token::false_literal, FALSE_LITERAL_REGEX);
+    else if(*get_element() == 'n')
+      t = apply_regex_filter(token::null_literal, NULL_LITERAL_REGEX);
     else if(isspace(*get_element()))
-      t = token(token::whitespace, *get_element());
+      t = apply_regex_filter(token::whitespace, WHITESPACE_REGEX);
 
     m_tokens.push_back(t);
 
     if(!t.is_valid()) {
       report_error(bstd::error::context_error(*get_container(), get_element(),
-          "Character does not match the start of any valid JSON value"));
+            "Character does not match the start of any valid JSON value"));
       break;
     }
-
-    // TODO: figure out a better loop system than this.
-    if(peek_next_element() != get_container()->cend()) {
-      next_element();
-    }
-    else
-      break;
   }
 
   m_tokens.push_back(token(token::end_json));

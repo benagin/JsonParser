@@ -66,32 +66,10 @@ class lexer final : public parser_base<std::string> {
 
   private:
 
-
     /// \brief Apply regex to a character.
     /// \param _regex the regex to apply
     /// \return true if a match was found starting at the current element
-    bool apply_regex_filter(const std::regex& _regex) const;
-
-    /// \brief Lex strings. This consumes the starting and ending quotes.
-    /// This function advances _csit to the end of the string.
-    /// \return the lexed token
-    /// \throws bstd::error::context_error if m_throw is true and errors in the
-    ///         JSON string are found
-    const token lex_string();
-
-    /// \brief Lex numbers.
-    /// \return the lexed token
-    /// \throws bstd::error::context_error if m_throw is true and errors in the
-    ///         JSON string are found
-    const token lex_number();
-
-    /// \brief Lex a literal.
-    /// \param _literal the literal to lex
-    /// \param _regex a regex pattern to match
-    /// \return the lexed token
-    /// \throws bstd::error::context_error if m_throw is true and errors in the
-    ///         JSON string are found
-    const token lex_literal(const token::type& _literal_type,
+    const auto apply_regex_filter(const token::type& _type,
         const std::regex& _regex);
 
     /// The index of m_tokens used when iterating using get_next_token().

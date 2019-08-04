@@ -11,41 +11,49 @@
 
 #include "json.hpp"
 #include "lexer.hpp"
-#include "structures/array.hpp"
-#include "structures/object.hpp"
-#include "structures/json_string.hpp"
 #include "utilities/json_file_util.hpp"
 
 namespace bstd::json::parser {
 
-using structures::array;
-using structures::json_string;
-using structures::object;
-
-/// \brief Parse JSON according to its grammar (https://www.json.org/).
-/// There is no need for a class here as no state is stored.
-
 /// \brief Parse a .json file or a JSON string and return the result as a json
 ///        element.
+/// This acts as the API for the parser. Calling this will create the necessary
+/// objects to parse the JSON.
 /// \param _string the .json file or JSON string
+/// \param _debug debug flag
+/// \param _throw if true, this function will throw errors when applicable
 /// \return a shared_ptr to a json object
-std::shared_ptr<json> parse(const char* _string);
-std::shared_ptr<json> parse(const std::string& _string);
+std::shared_ptr<json> parse(const char* _string,
+    const bool _debug = false, const bool _throw = true);
+std::shared_ptr<json> parse(const std::string& _string,
+    const bool _debug = false, const bool _throw = true);
 
-/// \brief Parse a tokenized JSON string.
-/// \param _lexer a lexer object which contains a tokenized version of a JSON
-///               string
-/// \return a shared_ptr to a json object
-std::shared_ptr<json> parse(const lexer& _lexer);
+/// \brief Parse JSON according to its grammar (https://www.json.org/).
+class parser final : public parser_base<std::vector<token>> {
 
-/// \brief Remove and return the leading whitespace from _string.
-/// Example:
-/// Given "\t  \nexample string" as _string, _string will become "example string"
-/// and "\t  \n" will be returned.
-/// \param _string the string to trim
-/// \return the trimmed whitespace if any exists
-const std::string trim_leading_ws(std::string& _string);
+  public:
 
+    /// \brief Construct a parser object.
+    /// \param _tokens tokenized JSON
+    /// \param _debug debug flag
+    /// \param _throw if true, this class will throw errors when applicable
+    parser(const std::vector<token>& _tokens, const bool _debug = false,
+        const bool _throw = true) : parser_base(_tokens, _debug, _throw),
+        m_json(std::make_shared<json>()) {}
+
+    /// \brief Get the parsed json object.
+    /// \return m_json
+    std::shared_ptr<json> get_json() const noexcept;
+
+    /// \brief Convert parser to a string.
+    /// \return tokens as a string
+    const std::string to_string() const noexcept;
+
+  private:
+
+    std::shared_ptr<json> m_json;
+
+};
 
 }
 

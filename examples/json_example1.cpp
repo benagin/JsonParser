@@ -1,7 +1,7 @@
 #include <bstd_json.hpp>
 
 int main() {
-  const auto empty = bstd::json::parser::parse("");
+  const auto empty = bstd::json::parser::parse("", true, false);
   std::cout << "Empty: " << std::endl << *empty << std::endl;
 
   const auto ws = bstd::json::parser::parse(" ");

@@ -25,7 +25,7 @@ class lexer final : public parser_base<std::string> {
     /// \param _debug debug flag
     /// \param _throw if true, this class will throw errors when applicable
     lexer(const std::string& _json_string, const bool _debug = false,
-        const bool _throw = true) : parser_base(_json_string, _debug, _throw) {}
+        const bool _throw = true);
 
     /// \brief Deleted copy constructor.
     lexer(const lexer&) = delete;
@@ -53,9 +53,9 @@ class lexer final : public parser_base<std::string> {
     /// \brief Reset the token iterator.
     void reset() noexcept;
 
-    /// \brief Convert tokens to a string.
-    /// \return tokens as a string
-    const std::string to_string() const;
+    /// \brief Convert lexer to a string.
+    /// \return lexed tokens as a string
+    const std::string to_string() const noexcept;
 
     /// \brief Output operator overload.
     /// \param _os std::ostream

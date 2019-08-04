@@ -14,7 +14,10 @@ class json_string final : public value {
   public:
 
     /// TODO: inherit documentation?
-    json_string(const bool _debug = false) : value(_debug) {}
+    json_string(const bool _debug = false) : json_string("", _debug) {}
+
+    json_string(const std::string& _value, const bool _debug = false)
+        : value(_debug), m_value(_value) {}
 
     ~json_string() {}
 

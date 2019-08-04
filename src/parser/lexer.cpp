@@ -14,6 +14,15 @@ const std::unordered_map<char, token::type> lexer::m_char_value_tokens = {
 };
 
 
+lexer::
+lexer(const std::string& _json_string, const bool _debug, const bool _throw)
+    : parser_base(_json_string, _debug, _throw) {
+  if(_json_string.empty())
+    report_error(bstd::error::context_error(_json_string, _json_string.cbegin(),
+        "Empty JSON string"));
+}
+
+
 const std::vector<token>&
 lexer::
 get_tokens() const noexcept {
@@ -115,7 +124,7 @@ reset() noexcept {
 
 const std::string
 lexer::
-to_string() const {
+to_string() const noexcept {
   std::string result = "[";
 
   for(int i = 0; i < m_tokens.size(); ++i) {

@@ -82,7 +82,7 @@ class parser_base {
 
     /// \brief Abstract method signature for converting to a string.
     /// \return the object as a string
-    virtual const std::string to_string() const = 0;
+    virtual const std::string to_string() const noexcept = 0;
 
     bool m_debug{false};
 

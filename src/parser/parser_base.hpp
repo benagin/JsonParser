@@ -38,7 +38,7 @@ class parser_base {
 
     /// \brief Get the container.
     /// \returns m_container
-    const auto& get_container() const noexcept;
+    const auto get_container() const noexcept;
 
     /// \brief Set the container.
     /// \param _container the container to set

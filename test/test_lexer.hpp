@@ -99,7 +99,19 @@ class test_lexer final : public bstd::test::unit_tester {
       { token::true_literal },
       { token::comma },
       { token::invalid },
-      { token::end_json },
+      { token::end_json }
+    }};
+
+    const std::string m_bad_input2{"\"sd[]{}\n\":{\"name\":123x}"};
+    const std::vector<token> m_lexed_bad_input2 {{
+      { token::string, "sd[]{}\n" },
+      { token::colon },
+      { token::begin_object},
+      { token::string, "name"},
+      { token::colon},
+      { token::number, "123" },
+      { token::invalid },
+      { token::end_json }
     }};
 
 };

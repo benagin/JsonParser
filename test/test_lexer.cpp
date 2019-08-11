@@ -74,9 +74,16 @@ lex() {
 void
 test_lexer::
 lex_bad_input() {
-  lexer bad_input_lexer(m_bad_input1, true, false);
-  bad_input_lexer.lex();
+  lexer bad_input_lexer1(m_bad_input1, true, false);
+  bad_input_lexer1.lex();
 
-  VERIFY(bad_input_lexer.get_tokens() == m_lexed_bad_input1,
+  VERIFY(bad_input_lexer1.get_tokens() == m_lexed_bad_input1,
       "lexer::lex_bad_input bad_input1")
+
+  lexer bad_input_lexer2(m_bad_input2, true, false);
+  bad_input_lexer2.lex();
+
+  VERIFY(bad_input_lexer2.get_tokens() == m_lexed_bad_input2,
+      "lexer::lex_bad_input bad_input2")
+
 }

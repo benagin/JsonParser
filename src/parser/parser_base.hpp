@@ -108,7 +108,7 @@ parser_base<Container>::
 
 
 template<class Container>
-const auto&
+const auto
 parser_base<Container>::
 get_container() const noexcept {
   return m_container;

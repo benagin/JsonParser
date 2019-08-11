@@ -68,6 +68,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -82,13 +83,16 @@ $(function() {
 <code>#include &lt;bstd_error.hpp&gt;</code><br />
 <code>#include &quot;<a class="el" href="json_8hpp_source.html">json.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="array_8hpp_source.html">structures/array.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="object_8hpp_source.html">structures/object.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="json__string_8hpp_source.html">structures/json_string.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="json__file__util_8hpp_source.html">utilities/json_file_util.hpp</a>&quot;</code><br />
 </div>
 <p><a href="parser_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser.html">bstd::json::parser::parser</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse JSON according to its grammar (<a href="https://www.json.org/">https://www.json.org/</a>).  <a href="classbstd_1_1json_1_1parser_1_1parser.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacebstd"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd.html">bstd</a></td></tr>
@@ -100,17 +104,11 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8c8deae29dda22ea0212d292ff37e45b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; json &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a8c8deae29dda22ea0212d292ff37e45b">bstd::json::parser::parse</a> (const char *_string)</td></tr>
-<tr class="memdesc:a8c8deae29dda22ea0212d292ff37e45b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse JSON according to its grammar (<a href="https://www.json.org/">https://www.json.org/</a>). There is no need for a class here as no state is stored.  <a href="namespacebstd_1_1json_1_1parser.html#a8c8deae29dda22ea0212d292ff37e45b">More...</a><br /></td></tr>
-<tr class="separator:a8c8deae29dda22ea0212d292ff37e45b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83db42618d8826c853638da0cb4e4b61"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; json &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a83db42618d8826c853638da0cb4e4b61">bstd::json::parser::parse</a> (const std::string &amp;_string)</td></tr>
-<tr class="separator:a83db42618d8826c853638da0cb4e4b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36e397bbe297263d56b6164d7a93d0bf"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; json &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a36e397bbe297263d56b6164d7a93d0bf">bstd::json::parser::parse</a> (const lexer &amp;_lexer)</td></tr>
-<tr class="memdesc:a36e397bbe297263d56b6164d7a93d0bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a tokenized JSON string.  <a href="namespacebstd_1_1json_1_1parser.html#a36e397bbe297263d56b6164d7a93d0bf">More...</a><br /></td></tr>
-<tr class="separator:a36e397bbe297263d56b6164d7a93d0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a278e09e08641f7d0e1df3119bf9cf100"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a278e09e08641f7d0e1df3119bf9cf100">bstd::json::parser::trim_leading_ws</a> (std::string &amp;_string)</td></tr>
-<tr class="memdesc:a278e09e08641f7d0e1df3119bf9cf100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove and return the leading whitespace from _string. Example: Given "\t  \nexample string" as _string, _string will become "example string" and "\t  \n" will be returned.  <a href="namespacebstd_1_1json_1_1parser.html#a278e09e08641f7d0e1df3119bf9cf100">More...</a><br /></td></tr>
-<tr class="separator:a278e09e08641f7d0e1df3119bf9cf100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb4302265885c570df7401dfc37c598c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; json &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#afb4302265885c570df7401dfc37c598c">bstd::json::parser::parse</a> (const char *_string, const bool _debug=false, const bool _throw=true)</td></tr>
+<tr class="memdesc:afb4302265885c570df7401dfc37c598c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a .json file or a JSON string and return the result as a json element. This acts as the API for the parser. Calling this will create the necessary objects to parse the JSON.  <a href="namespacebstd_1_1json_1_1parser.html#afb4302265885c570df7401dfc37c598c">More...</a><br /></td></tr>
+<tr class="separator:afb4302265885c570df7401dfc37c598c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e756ee67612ce51ed5d0880e6afdf87"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; json &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1parser.html#a6e756ee67612ce51ed5d0880e6afdf87">bstd::json::parser::parse</a> (const std::string &amp;_string, const bool _debug, const bool _throw)</td></tr>
+<tr class="separator:a6e756ee67612ce51ed5d0880e6afdf87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

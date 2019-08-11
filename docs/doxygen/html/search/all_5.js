@@ -2,6 +2,7 @@ var searchData=
 [
   ['get_5fcontainer',['get_container',['../classbstd_1_1json_1_1parser_1_1parser__base.html#a474e2dcc25fd0eba358a8cda5a832c7d',1,'bstd::json::parser::parser_base']]],
   ['get_5felement',['get_element',['../classbstd_1_1json_1_1parser_1_1parser__base.html#a647e6ed30f4bb7998980c3a0bec6a645',1,'bstd::json::parser::parser_base']]],
+  ['get_5fjson',['get_json',['../classbstd_1_1json_1_1parser_1_1parser.html#ad18f56404fa73b0ad1b001bed73159c8',1,'bstd::json::parser::parser']]],
   ['get_5fname',['get_name',['../classbstd_1_1json_1_1structures_1_1value.html#adc1aa7d5175edcb14040090f363f336f',1,'bstd::json::structures::value']]],
   ['get_5fpath',['get_path',['../classbstd_1_1json_1_1json.html#abdc47c660f9ae1c8041903bb5f47fd98',1,'bstd::json::json']]],
   ['get_5ftokens',['get_tokens',['../classbstd_1_1json_1_1parser_1_1lexer.html#ab94c9b4dcc5b47658e52926f9171f101',1,'bstd::json::parser::lexer']]],

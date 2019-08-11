@@ -15,6 +15,7 @@ class test_lexer final : public bstd::test::unit_tester {
     void next_token();
     void reset();
     void lex();
+    void lex_bad_input();
 
   private:
 
@@ -88,6 +89,17 @@ class test_lexer final : public bstd::test::unit_tester {
         { token::end_array },
         { token::whitespace, "\n" },
         { token::end_json }
+    }};
+
+    const std::string m_bad_input1{"\"testingasdf;\":[true,a;ldfks,0]"};
+    const std::vector<token> m_lexed_bad_input1 {{
+      { token::string, "testingasdf;" },
+      { token::colon },
+      { token::begin_array },
+      { token::true_literal },
+      { token::comma },
+      { token::invalid },
+      { token::end_json },
     }};
 
 };

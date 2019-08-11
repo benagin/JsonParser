@@ -52,7 +52,7 @@ class parser_base {
 
     /// \brief Process the next element in m_container.
     /// \return an iterator to the next element in m_container
-    /// \throws std::runtime_error if m_throw is true and the next element is
+    /// \throws bstd::error::error if m_throw is true and the next element is
     ///         past-the-end
     const auto next_element();
 
@@ -61,9 +61,8 @@ class parser_base {
     ///         m_container.cend() if the next element is past-the-end
     const auto peek_next_element() noexcept;
 
-    /// \brief Advance the index by _n (_n can be negative).
-    /// \throws std::runtime_error if m_throw is true and the advance would move
-    ///         the index past-the-end.
+    /// \brief Advance the index
+    /// \param _n amount to advance index
     void advance_index(const int _n);
 
     /// \brief Reset the index.
@@ -71,7 +70,7 @@ class parser_base {
 
     /// \brief Throw an error or write it to standard error.
     /// \param _e an exception to throw or report
-    virtual void report_error(const std::runtime_error _e) final;
+    virtual void report_error(const bstd::error::error& _e) final;
 
     /// \biref Output operator overload.
     /// \param _os std::ostream
@@ -137,8 +136,8 @@ const auto
 parser_base<Container>::
 next_element() {
   if(m_index == m_container->cend())
-    throw std::runtime_error("Attempt to process an element after all have been \
-        retrieved.");
+    throw bstd::error::error("parser_base::next_elemnt()",
+        "Attempt to process an element after all have been retrieved.");
 
   return m_index++;
 }
@@ -175,7 +174,7 @@ reset() noexcept {
 template<class Container>
 void
 parser_base<Container>::
-report_error(const std::runtime_error _e) {
+report_error(const bstd::error::error& _e) {
   if(m_error_reported)
     return;
 

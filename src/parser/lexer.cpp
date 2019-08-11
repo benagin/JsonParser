@@ -34,8 +34,8 @@ const lexer::CVIT
 lexer::
 next_token() {
   if(m_index == m_tokens.cend())
-    throw std::runtime_error("Attempt to process a token after all have been \
-        retrieved.");
+    throw bstd::error::error("lexer::next_token()",
+        "Attempt to process a token after all have been retrieved.");
 
   return m_index++;
 }

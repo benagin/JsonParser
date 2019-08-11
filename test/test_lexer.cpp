@@ -7,6 +7,7 @@ test_lexer() {
   ADD_TEST(test_lexer::next_token);
   ADD_TEST(test_lexer::reset);
   ADD_TEST(test_lexer::lex);
+  ADD_TEST(test_lexer::lex_bad_input);
 }
 
 
@@ -67,4 +68,15 @@ lex() {
 
   VERIFY(ws_lexer.get_tokens() == m_lexed_whitespace,
       "lexer::lex JSON whitespace")
+}
+
+
+void
+test_lexer::
+lex_bad_input() {
+  lexer bad_input_lexer(m_bad_input1, true, false);
+  bad_input_lexer.lex();
+
+  VERIFY(bad_input_lexer.get_tokens() == m_lexed_bad_input1,
+      "lexer::lex_bad_input bad_input1")
 }

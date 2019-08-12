@@ -20,11 +20,11 @@ namespace bstd::json::parser {
 /// This acts as the API for the parser. Calling this will create the necessary
 /// objects to parse the JSON.
 /// \param _string the .json file or JSON string
-/// \param _debug debug flag
-/// \param _throw if true, this function will throw errors when applicable
+/// \copydoc parser_base::parser_base()
 /// \return a shared_ptr to a json object
 std::shared_ptr<json> parse(const char* _string,
     const bool _debug = false, const bool _throw = true);
+/// \copydoc parse()
 std::shared_ptr<json> parse(const std::string& _string,
     const bool _debug = false, const bool _throw = true);
 
@@ -42,12 +42,10 @@ class parser final : public parser_base<std::vector<token>> {
         m_json(std::make_shared<json>()) {}
 
     /// \brief Get the parsed json object.
-    /// \return m_json
+    /// \return the parsed json object
     std::shared_ptr<json> get_json() const noexcept;
 
-    /// \brief Convert parser to a string.
-    /// \return tokens as a string
-    const std::string to_string() const noexcept;
+    const std::string to_string() const noexcept override;
 
   private:
 

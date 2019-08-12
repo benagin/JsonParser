@@ -13,22 +13,25 @@ class json_string final : public value {
 
   public:
 
-    /// TODO: inherit documentation?
+    /// \copydoc value::value(bool)
     json_string(const bool _debug = false) : json_string("", _debug) {}
 
+    /// \brief Construct a json_string with a std::string.
+    /// \param _value the std::string value
+    /// \copydoc json_string::json_string(bool)
     json_string(const std::string& _value, const bool _debug = false)
         : value(_debug), m_value(_value) {}
 
     ~json_string() {}
 
-    /// \brief The size of this array.
-    /// \return the size of the underlying vector of values
+    /// Getters and setters.
+
     const std::size_t size() const override;
 
-    /// TODO: inherit documentation?
+    /// Member functions.
+
     const std::string to_string(const bool _include_ws = true) const override;
 
-    /// TODO: inherit documentation?
     const std::shared_ptr<value>&
         add_value(const std::shared_ptr<value>& _value) override;
 

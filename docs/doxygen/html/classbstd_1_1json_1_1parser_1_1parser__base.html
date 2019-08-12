@@ -71,6 +71,7 @@ $(function() {
 <a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classbstd_1_1json_1_1parser_1_1parser__base-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -135,6 +136,15 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a95513e16874e93ddfc7cd1eb91df7438"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3a199d5a7c5998831aeb37332f77fa4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#af3a199d5a7c5998831aeb37332f77fa4">m_throw</a> {true}</td></tr>
 <tr class="separator:af3a199d5a7c5998831aeb37332f77fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa11f4df973d072aecfbe7b9d0f04bcf4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#aa11f4df973d072aecfbe7b9d0f04bcf4">m_error_reported</a> {false}</td></tr>
+<tr class="separator:aa11f4df973d072aecfbe7b9d0f04bcf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea958a1d597f3fc82924f01f73e6d1c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; Container &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#aaea958a1d597f3fc82924f01f73e6d1c">m_container</a></td></tr>
+<tr class="separator:aaea958a1d597f3fc82924f01f73e6d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b47aa9ca2530df01e9663f2bfc2cda8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a38788c024aebb44d332091a6739f6fd3">CCIT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a5b47aa9ca2530df01e9663f2bfc2cda8">m_index</a></td></tr>
+<tr class="separator:a5b47aa9ca2530df01e9663f2bfc2cda8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -223,7 +233,7 @@ template&lt;class Container&gt; </div>
   <table class="params">
     <tr><td class="paramname">_container</td><td>the collection of elements to parse </td></tr>
     <tr><td class="paramname">_debug</td><td>debug mode flag </td></tr>
-    <tr><td class="paramname">_debug</td><td>if true errors will be thrown, otherwise they will be written to standard error </td></tr>
+    <tr><td class="paramname">_throw</td><td>if true errors will be thrown, otherwise they will be written to standard error </td></tr>
   </table>
   </dd>
 </dl>
@@ -287,7 +297,7 @@ template&lt;class Container &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00107">107</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00109">109</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -326,7 +336,7 @@ template&lt;class Container &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00160">160</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00162">162</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -358,7 +368,7 @@ template&lt;class Container &gt; </div>
 <p>Get the container. </p>
 <dl class="section return"><dt>Returns</dt><dd>m_container </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00113">113</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00115">115</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -390,7 +400,7 @@ template&lt;class Container &gt; </div>
 <p>Get the current index. </p>
 <dl class="section return"><dt>Returns</dt><dd>an iterator to the current element </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00129">129</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00131">131</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -428,7 +438,7 @@ template&lt;class Container &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00137">137</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00139">139</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -490,7 +500,7 @@ template&lt;class Container &gt; </div>
 <p>Check the next element without moving the index. </p>
 <dl class="section return"><dt>Returns</dt><dd>an iterator to the next element in m_container or m_container.cend() if the next element is past-the-end </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00149">149</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00151">151</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -528,7 +538,7 @@ template&lt;class Container &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00177">177</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00179">179</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -559,7 +569,7 @@ template&lt;class Container &gt; </div>
 
 <p>Reset the index. </p>
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00168">168</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00170">170</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -597,7 +607,7 @@ template&lt;class Container&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00121">121</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00123">123</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -629,7 +639,7 @@ template&lt;class Container&gt; </div>
 <p>Abstract method signature for converting to a string. </p>
 <dl class="section return"><dt>Returns</dt><dd>the object as a string </dd></dl>
 
-<p>Implemented in <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a7728ad19b9c4d6edafdebfd300897418">bstd::json::parser::lexer</a>, and <a class="el" href="classbstd_1_1json_1_1parser_1_1parser.html#a225f646feddabbc22fe1c3c04edaa5e6">bstd::json::parser::parser</a>.</p>
+<p>Implemented in <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#ac635de2877bd04317f6b99d07f4ee4c9">bstd::json::parser::lexer</a>, and <a class="el" href="classbstd_1_1json_1_1parser_1_1parser.html#a41468d9142f20c9bd7c8203c81f00528">bstd::json::parser::parser</a>.</p>
 
 </div>
 </div>
@@ -678,11 +688,37 @@ template&lt;class Container&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::ostream </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00192">192</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00079">79</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="aaea958a1d597f3fc82924f01f73e6d1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea958a1d597f3fc82924f01f73e6d1c">&#9670;&nbsp;</a></span>m_container</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Container&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;Container&gt; <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">bstd::json::parser::parser_base</a>&lt; Container &gt;::m_container</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00098">98</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a95513e16874e93ddfc7cd1eb91df7438"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a95513e16874e93ddfc7cd1eb91df7438">&#9670;&nbsp;</a></span>m_debug</h2>
 
@@ -705,7 +741,61 @@ template&lt;class Container&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00086">86</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00088">88</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa11f4df973d072aecfbe7b9d0f04bcf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa11f4df973d072aecfbe7b9d0f04bcf4">&#9670;&nbsp;</a></span>m_error_reported</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Container&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">bstd::json::parser::parser_base</a>&lt; Container &gt;::m_error_reported {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This prevents the parser from reporting unecessary errors after a problem is detected. </p>
+
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00096">96</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5b47aa9ca2530df01e9663f2bfc2cda8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b47aa9ca2530df01e9663f2bfc2cda8">&#9670;&nbsp;</a></span>m_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Container&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a38788c024aebb44d332091a6739f6fd3">CCIT</a> <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">bstd::json::parser::parser_base</a>&lt; Container &gt;::m_index</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This allows the parser to keep track of its place as it analyzes the elements in m_container. </p>
+
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00102">102</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -731,7 +821,7 @@ template&lt;class Container&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00088">88</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser__base_8hpp_source.html#l00090">90</a> of file <a class="el" href="parser__base_8hpp_source.html">parser_base.hpp</a>.</p>
 
 </div>
 </div>

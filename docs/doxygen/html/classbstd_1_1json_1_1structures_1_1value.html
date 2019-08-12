@@ -70,6 +70,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classbstd_1_1json_1_1structures_1_1value-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">bstd::json::structures::value Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -96,32 +97,37 @@ Inheritance diagram for bstd::json::structures::value:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ace0242e7c0b0796d7b4f9060621e23dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#ace0242e7c0b0796d7b4f9060621e23dd">value</a> (const bool _debug)</td></tr>
-<tr class="memdesc:ace0242e7c0b0796d7b4f9060621e23dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty value. TODO: inherit documentation?  <a href="#ace0242e7c0b0796d7b4f9060621e23dd">More...</a><br /></td></tr>
+<tr class="memdesc:ace0242e7c0b0796d7b4f9060621e23dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty value.  <a href="#ace0242e7c0b0796d7b4f9060621e23dd">More...</a><br /></td></tr>
 <tr class="separator:ace0242e7c0b0796d7b4f9060621e23dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bc545502d13b7f6dbf1a57ef025c933"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a9bc545502d13b7f6dbf1a57ef025c933">~value</a> ()=0</td></tr>
 <tr class="separator:a9bc545502d13b7f6dbf1a57ef025c933"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc1aa7d5175edcb14040090f363f336f"><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#adc1aa7d5175edcb14040090f363f336f">get_name</a> () const final</td></tr>
 <tr class="memdesc:adc1aa7d5175edcb14040090f363f336f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getters.  <a href="#adc1aa7d5175edcb14040090f363f336f">More...</a><br /></td></tr>
 <tr class="separator:adc1aa7d5175edcb14040090f363f336f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a970e90da881ecfb3a9288017e0f1d9df"><td class="memItemLeft" align="right" valign="top">virtual const std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a970e90da881ecfb3a9288017e0f1d9df">size</a> () const =0</td></tr>
-<tr class="memdesc:a970e90da881ecfb3a9288017e0f1d9df"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO: inherit documentation?  <a href="#a970e90da881ecfb3a9288017e0f1d9df">More...</a><br /></td></tr>
-<tr class="separator:a970e90da881ecfb3a9288017e0f1d9df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09852c8f6e04687b6dcd9be57ff4bff4"><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a09852c8f6e04687b6dcd9be57ff4bff4">to_string</a> (const bool _include_ws=true) const =0</td></tr>
-<tr class="memdesc:a09852c8f6e04687b6dcd9be57ff4bff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Member functions.  <a href="#a09852c8f6e04687b6dcd9be57ff4bff4">More...</a><br /></td></tr>
-<tr class="separator:a09852c8f6e04687b6dcd9be57ff4bff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86728901bb15cc41366445170f2d7c35"><td class="memItemLeft" align="right" valign="top">virtual const std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html">value</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a86728901bb15cc41366445170f2d7c35">add_value</a> (const std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html">value</a> &gt; &amp;_value)=0</td></tr>
-<tr class="memdesc:a86728901bb15cc41366445170f2d7c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO: inherit documentation?  <a href="#a86728901bb15cc41366445170f2d7c35">More...</a><br /></td></tr>
-<tr class="separator:a86728901bb15cc41366445170f2d7c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3542acff091435f2b3183847c8357415"><td class="memItemLeft" align="right" valign="top">virtual const std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a3542acff091435f2b3183847c8357415">size</a> () const override=0</td></tr>
+<tr class="memdesc:a3542acff091435f2b3183847c8357415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method signature for getting the size of the structure.  <a href="#a3542acff091435f2b3183847c8357415">More...</a><br /></td></tr>
+<tr class="separator:a3542acff091435f2b3183847c8357415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cfb2a076c686a4a15109843e64c7312"><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a2cfb2a076c686a4a15109843e64c7312">to_string</a> (const bool _include_ws=true) const override=0</td></tr>
+<tr class="memdesc:a2cfb2a076c686a4a15109843e64c7312"><td class="mdescLeft">&#160;</td><td class="mdescRight">Member functions.  <a href="#a2cfb2a076c686a4a15109843e64c7312">More...</a><br /></td></tr>
+<tr class="separator:a2cfb2a076c686a4a15109843e64c7312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d3e3214546e9c5132f2cda45bae9a05"><td class="memItemLeft" align="right" valign="top">virtual const std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html">value</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a9d3e3214546e9c5132f2cda45bae9a05">add_value</a> (const std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html">value</a> &gt; &amp;_value) override=0</td></tr>
+<tr class="memdesc:a9d3e3214546e9c5132f2cda45bae9a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method signature for concatenating a value to the structure.  <a href="#a9d3e3214546e9c5132f2cda45bae9a05">More...</a><br /></td></tr>
+<tr class="separator:a9d3e3214546e9c5132f2cda45bae9a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a82a74b4251ee3b478824b019a4d17b80"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a82a74b4251ee3b478824b019a4d17b80">m_debug</a> {false}</td></tr>
-<tr class="separator:a82a74b4251ee3b478824b019a4d17b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8338470732bb0e03a21f6fa3c8d62d4"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#ae8338470732bb0e03a21f6fa3c8d62d4">m_value_ws</a></td></tr>
 <tr class="separator:ae8338470732bb0e03a21f6fa3c8d62d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classbstd_1_1json_1_1json__base"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classbstd_1_1json_1_1json__base')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classbstd_1_1json_1_1json__base.html">bstd::json::json_base</a></td></tr>
 <tr class="memitem:af49895ba349b5216014aa1e8451bb93c inherit pro_attribs_classbstd_1_1json_1_1json__base"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1json__base.html#af49895ba349b5216014aa1e8451bb93c">m_debug</a> {false}</td></tr>
 <tr class="separator:af49895ba349b5216014aa1e8451bb93c inherit pro_attribs_classbstd_1_1json_1_1json__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a518e45e3c5a973a76955f447fa98bf37"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a518e45e3c5a973a76955f447fa98bf37">m_name</a> {&quot;&quot;}</td></tr>
+<tr class="separator:a518e45e3c5a973a76955f447fa98bf37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a079373a9bd6e8c7109959950621545ea"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a079373a9bd6e8c7109959950621545ea">m_name_ws</a></td></tr>
+<tr class="separator:a079373a9bd6e8c7109959950621545ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -164,7 +170,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct an empty value. TODO: inherit documentation? </p>
+<p>Construct an empty value. </p>
+<p>Default constructor. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_debug</td><td>debug mode flag </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="value_8hpp_source.html#l00021">21</a> of file <a class="el" href="value_8hpp_source.html">value.hpp</a>.</p>
 
@@ -198,8 +210,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a86728901bb15cc41366445170f2d7c35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86728901bb15cc41366445170f2d7c35">&#9670;&nbsp;</a></span>add_value()</h2>
+<a id="a9d3e3214546e9c5132f2cda45bae9a05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d3e3214546e9c5132f2cda45bae9a05">&#9670;&nbsp;</a></span>add_value()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -217,12 +229,19 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>TODO: inherit documentation? </p>
+<p>Abstract method signature for concatenating a value to the structure. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_value</td><td>the value to be concatenated </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the new, concatenated value </dd></dl>
 
 <p>Implements <a class="el" href="classbstd_1_1json_1_1json__base.html#aee4b29fd7765db45cfc4f490c494acd0">bstd::json::json_base</a>.</p>
 
@@ -260,8 +279,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a970e90da881ecfb3a9288017e0f1d9df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a970e90da881ecfb3a9288017e0f1d9df">&#9670;&nbsp;</a></span>size()</h2>
+<a id="a3542acff091435f2b3183847c8357415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3542acff091435f2b3183847c8357415">&#9670;&nbsp;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -278,12 +297,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>TODO: inherit documentation? </p>
+<p>Abstract method signature for getting the size of the structure. </p>
+<dl class="section return"><dt>Returns</dt><dd>the size of the structure </dd></dl>
 
 <p>Implements <a class="el" href="classbstd_1_1json_1_1json__base.html#a3b3e5e1f530d82093883a6f2ccc590b4">bstd::json::json_base</a>.</p>
 
@@ -291,8 +311,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a09852c8f6e04687b6dcd9be57ff4bff4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09852c8f6e04687b6dcd9be57ff4bff4">&#9670;&nbsp;</a></span>to_string()</h2>
+<a id="a2cfb2a076c686a4a15109843e64c7312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cfb2a076c686a4a15109843e64c7312">&#9670;&nbsp;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,13 +330,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Member functions. </p>
-<p>TODO: inherit documentation? </p>
 
 <p>Implements <a class="el" href="classbstd_1_1json_1_1json__base.html#ab97f6a57a379e52261d0b656f908517e">bstd::json::json_base</a>.</p>
 
@@ -327,8 +346,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a82a74b4251ee3b478824b019a4d17b80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82a74b4251ee3b478824b019a4d17b80">&#9670;&nbsp;</a></span>m_debug</h2>
+<a id="a518e45e3c5a973a76955f447fa98bf37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a518e45e3c5a973a76955f447fa98bf37">&#9670;&nbsp;</a></span>m_name</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -337,18 +356,43 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool bstd::json::structures::value::m_debug {false}</td>
+          <td class="memname">std::string bstd::json::structures::value::m_name {&quot;&quot;}</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The whitespace that surrounds the value. The first object in this pair is the leading whitespace and the second object is the trailing whitespace. This can be seen in the grammar: element ws value ws </p>
+<p>The string associated with this value. From the grammar this is the string in: member ws string ws ':' value </p>
 
-<p class="definition">Definition at line <a class="el" href="value_8hpp_source.html#l00046">46</a> of file <a class="el" href="value_8hpp_source.html">value.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="value_8hpp_source.html#l00049">49</a> of file <a class="el" href="value_8hpp_source.html">value.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a079373a9bd6e8c7109959950621545ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a079373a9bd6e8c7109959950621545ea">&#9670;&nbsp;</a></span>m_name_ws</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;std::string, std::string&gt; bstd::json::structures::value::m_name_ws</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The whitespace that surrounds the name of this value. This can be seen in the grammar above for m_name. </p>
+
+<p class="definition">Definition at line <a class="el" href="value_8hpp_source.html#l00055">55</a> of file <a class="el" href="value_8hpp_source.html">value.hpp</a>.</p>
 
 </div>
 </div>
@@ -371,8 +415,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>The whitespace that surrounds the value. </p>
 
-<p class="definition">Definition at line <a class="el" href="value_8hpp_source.html#l00053">53</a> of file <a class="el" href="value_8hpp_source.html">value.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="value_8hpp_source.html#l00044">44</a> of file <a class="el" href="value_8hpp_source.html">value.hpp</a>.</p>
 
 </div>
 </div>

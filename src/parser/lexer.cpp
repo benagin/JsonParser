@@ -139,10 +139,4 @@ to_string() const noexcept {
 }
 
 
-std::ostream&
-operator<<(std::ostream& _os, const lexer& _lexer) {
-  return _os << std::endl << _lexer.to_string();
-}
-
-
 }

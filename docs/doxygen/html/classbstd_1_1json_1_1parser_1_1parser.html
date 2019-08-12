@@ -69,6 +69,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classbstd_1_1json_1_1parser_1_1parser-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">bstd::json::parser::parser Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
@@ -97,9 +98,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad18f56404fa73b0ad1b001bed73159c8"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1json.html">json</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser.html#ad18f56404fa73b0ad1b001bed73159c8">get_json</a> () const noexcept</td></tr>
 <tr class="memdesc:ad18f56404fa73b0ad1b001bed73159c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parsed json object.  <a href="#ad18f56404fa73b0ad1b001bed73159c8">More...</a><br /></td></tr>
 <tr class="separator:ad18f56404fa73b0ad1b001bed73159c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a225f646feddabbc22fe1c3c04edaa5e6"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser.html#a225f646feddabbc22fe1c3c04edaa5e6">to_string</a> () const noexcept</td></tr>
-<tr class="memdesc:a225f646feddabbc22fe1c3c04edaa5e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert parser to a string.  <a href="#a225f646feddabbc22fe1c3c04edaa5e6">More...</a><br /></td></tr>
-<tr class="separator:a225f646feddabbc22fe1c3c04edaa5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41468d9142f20c9bd7c8203c81f00528"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser.html#a41468d9142f20c9bd7c8203c81f00528">to_string</a> () const noexcept override</td></tr>
+<tr class="memdesc:a41468d9142f20c9bd7c8203c81f00528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method signature for converting to a string.  <a href="#a41468d9142f20c9bd7c8203c81f00528">More...</a><br /></td></tr>
+<tr class="separator:a41468d9142f20c9bd7c8203c81f00528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af1f9e75f1b604927b354f5208a80341c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1json.html">json</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser.html#af1f9e75f1b604927b354f5208a80341c">m_json</a></td></tr>
+<tr class="separator:af1f9e75f1b604927b354f5208a80341c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -232,14 +238,14 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the parsed json object. </p>
-<dl class="section return"><dt>Returns</dt><dd>m_json </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the parsed json object </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00041">41</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a225f646feddabbc22fe1c3c04edaa5e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a225f646feddabbc22fe1c3c04edaa5e6">&#9670;&nbsp;</a></span>to_string()</h2>
+<a id="a41468d9142f20c9bd7c8203c81f00528"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41468d9142f20c9bd7c8203c81f00528">&#9670;&nbsp;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -256,17 +262,42 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Convert parser to a string. </p>
-<dl class="section return"><dt>Returns</dt><dd>tokens as a string </dd></dl>
+<p>Abstract method signature for converting to a string. </p>
+<dl class="section return"><dt>Returns</dt><dd>the object as a string </dd></dl>
 
 <p>Implements <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#adb9229b87410a07835c82b307cb20829">bstd::json::parser::parser_base&lt; std::vector&lt; token &gt; &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00048">48</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af1f9e75f1b604927b354f5208a80341c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1f9e75f1b604927b354f5208a80341c">&#9670;&nbsp;</a></span>m_json</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classbstd_1_1json_1_1json.html">json</a>&gt; bstd::json::parser::parser::m_json</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parser_8hpp_source.html#l00052">52</a> of file <a class="el" href="parser_8hpp_source.html">parser.hpp</a>.</p>
 
 </div>
 </div>

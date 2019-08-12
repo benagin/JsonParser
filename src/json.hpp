@@ -20,8 +20,7 @@ class json final : public json_base {
   public:
 
     /// \brief Construct an empty json object.
-    /// TODO: inherit documentation?
-    /// \param _debug debug mode flag
+    /// \copydoc json_base::json_base(bool)
     json(const bool _debug = false) : json_base(_debug),
         m_value(std::make_shared<json_string>()) {}
 
@@ -35,8 +34,6 @@ class json final : public json_base {
 
     /// Getters and setters.
 
-    /// \brief The size of this json object.
-    /// \return the size of the root value
     const std::size_t size() const override;
 
     /// \brief Get the path of the associated JSON file.
@@ -79,17 +76,8 @@ class json final : public json_base {
 
     /// Member functions.
 
-    /// \brief Convert this json object to a string representation.
-    /// This will be the same string that was originally parsed.
-    /// \param _includ_ws if true, the original whitespace will be included in
-    ///                   the string.
-    /// \return a string representation of this json object
     const std::string to_string(const bool _include_ws = true) const override;
 
-    /// \brief Concatenate _value to m_value. The behavior depends on the type of
-    /// _value.
-    /// \param _value the value to be concatenated
-    /// \return the new, concatenated value
     const std::shared_ptr<value>&
         add_value(const std::shared_ptr<value>& _value) override;
 

@@ -72,10 +72,13 @@ $(function() {
 , <a class="el" href="classbstd_1_1json_1_1structures_1_1array.html#a9033cf3592b35e65a813f822e50fe7e3">bstd::json::structures::array</a>
 , <a class="el" href="classbstd_1_1json_1_1structures_1_1json__string.html#a419def0fe57249bbac1e14e0d476080d">bstd::json::structures::json_string</a>
 , <a class="el" href="classbstd_1_1json_1_1structures_1_1object.html#a0b2cfc61c915bc93365121aa3aa8db96">bstd::json::structures::object</a>
-, <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a86728901bb15cc41366445170f2d7c35">bstd::json::structures::value</a>
+, <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a9d3e3214546e9c5132f2cda45bae9a05">bstd::json::structures::value</a>
 </li>
 <li>advance_index()
 : <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a31e602b3460be28d458ce843168664e4">bstd::json::parser::parser_base&lt; Container &gt;</a>
+</li>
+<li>apply_regex_filter()
+: <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a06ff8436ae7acb8738b3f276613723a0">bstd::json::parser::lexer</a>
 </li>
 <li>array()
 : <a class="el" href="classbstd_1_1json_1_1structures_1_1array.html#af20fb253d4d39c7c0e57f5f3bd2ff60e">bstd::json::structures::array</a>
@@ -195,22 +198,71 @@ $(function() {
 : <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a55481225f02ac2a98d180b8f239001d1">bstd::json::parser::lexer</a>
 </li>
 <li>lexer()
-: <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#ac6487641b401b0f88cc90479af4f06a8">bstd::json::parser::lexer</a>
+: <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#aa542f3b5e42ee095ce062ac3331cdf9c">bstd::json::parser::lexer</a>
 </li>
 </ul>
 
 
 <h3><a id="index_m"></a>- m -</h3><ul>
+<li>m_char_value_tokens
+: <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a2b8305cbe85b395bb36543420cb96795">bstd::json::parser::lexer</a>
+</li>
+<li>m_container
+: <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#aaea958a1d597f3fc82924f01f73e6d1c">bstd::json::parser::parser_base&lt; Container &gt;</a>
+</li>
 <li>m_debug
 : <a class="el" href="classbstd_1_1json_1_1json__base.html#af49895ba349b5216014aa1e8451bb93c">bstd::json::json_base</a>
 , <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a95513e16874e93ddfc7cd1eb91df7438">bstd::json::parser::parser_base&lt; Container &gt;</a>
-, <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a82a74b4251ee3b478824b019a4d17b80">bstd::json::structures::value</a>
+</li>
+<li>m_error_reported
+: <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#aa11f4df973d072aecfbe7b9d0f04bcf4">bstd::json::parser::parser_base&lt; Container &gt;</a>
+</li>
+<li>m_index
+: <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a664928a994633c2234115d80aec627ba">bstd::json::parser::lexer</a>
+, <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a5b47aa9ca2530df01e9663f2bfc2cda8">bstd::json::parser::parser_base&lt; Container &gt;</a>
+</li>
+<li>m_json
+: <a class="el" href="classbstd_1_1json_1_1parser_1_1parser.html#af1f9e75f1b604927b354f5208a80341c">bstd::json::parser::parser</a>
+</li>
+<li>m_name
+: <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a518e45e3c5a973a76955f447fa98bf37">bstd::json::structures::value</a>
+</li>
+<li>m_name_ws
+: <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a079373a9bd6e8c7109959950621545ea">bstd::json::structures::value</a>
+</li>
+<li>m_path
+: <a class="el" href="classbstd_1_1json_1_1json.html#acef16229b8d7c0bef1bdf1d7734685be">bstd::json::json</a>
 </li>
 <li>m_throw
 : <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#af3a199d5a7c5998831aeb37332f77fa4">bstd::json::parser::parser_base&lt; Container &gt;</a>
 </li>
+<li>m_tokens
+: <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a8b4dd2605d66edcb69dd92873883139f">bstd::json::parser::lexer</a>
+</li>
+<li>m_type
+: <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html#a817c2f8b507ddd55f84e43a53e4b5b53">bstd::json::parser::token</a>
+</li>
+<li>m_type_to_default_value
+: <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html#a437cace06f184aceaa5a1d51c0672b0e">bstd::json::parser::token</a>
+</li>
+<li>m_type_to_string
+: <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html#ac27f4d24e1aacfb707a8d305df7ebd91">bstd::json::parser::token</a>
+</li>
+<li>m_value
+: <a class="el" href="classbstd_1_1json_1_1json.html#abc0d14ba71a25b7b87735d96e7daf780">bstd::json::json</a>
+, <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html#af22a6214cff1b9649f18ad975fee0773">bstd::json::parser::token</a>
+, <a class="el" href="classbstd_1_1json_1_1structures_1_1json__string.html#a39a75d3f4197ceba44c3affeccc1e16d">bstd::json::structures::json_string</a>
+</li>
 <li>m_value_ws
 : <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#ae8338470732bb0e03a21f6fa3c8d62d4">bstd::json::structures::value</a>
+</li>
+<li>m_values
+: <a class="el" href="classbstd_1_1json_1_1structures_1_1array.html#aa2ae95a95235a75cc432680cda0ff435">bstd::json::structures::array</a>
+, <a class="el" href="classbstd_1_1json_1_1structures_1_1object.html#a8e7d9add58e6f28b0499080ecd1c82ab">bstd::json::structures::object</a>
+</li>
+<li>m_ws
+: <a class="el" href="classbstd_1_1json_1_1structures_1_1array.html#a3660a9a6544fe7fdfad15605a62af9ec">bstd::json::structures::array</a>
+, <a class="el" href="classbstd_1_1json_1_1structures_1_1object.html#aff0ec1ac578f10bb1dce99191791a616">bstd::json::structures::object</a>
 </li>
 </ul>
 
@@ -251,13 +303,11 @@ $(function() {
 </li>
 <li>operator&lt;&lt;
 : <a class="el" href="classbstd_1_1json_1_1json__base.html#a1132eca1b5767096a54aa94a8e15ef51">bstd::json::json_base</a>
-, <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a7b6aadb9ed273fc8618b859de484ac3b">bstd::json::parser::lexer</a>
 , <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a5f2f7721ca4667d122f57695f72b4dcf">bstd::json::parser::parser_base&lt; Container &gt;</a>
 , <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html#acae690ad0f3f69f3aae8be531f10e555">bstd::json::parser::token</a>
 </li>
 <li>operator=()
 : <a class="el" href="classbstd_1_1json_1_1json.html#a4f764ada1aafa9cdc793a07ea538d685">bstd::json::json</a>
-, <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a6b8ed15d8ae0569800692962f5630a15">bstd::json::parser::lexer</a>
 , <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a246cc6c637c38783df867382e75b236d">bstd::json::parser::parser_base&lt; Container &gt;</a>
 </li>
 <li>operator==()
@@ -267,7 +317,7 @@ $(function() {
 , <a class="el" href="classbstd_1_1json_1_1structures_1_1object.html#ae4afd5b1f309fe217bffa8e0620b4ff8">bstd::json::structures::object</a>
 </li>
 <li>operator[]()
-: <a class="el" href="classbstd_1_1json_1_1structures_1_1object.html#a1a53cc6ac2f00e3856decdfe999912f2">bstd::json::structures::object</a>
+: <a class="el" href="classbstd_1_1json_1_1structures_1_1object.html#aaa932d74664f687e30288017dadf6659">bstd::json::structures::object</a>
 </li>
 </ul>
 
@@ -316,7 +366,7 @@ $(function() {
 , <a class="el" href="classbstd_1_1json_1_1structures_1_1array.html#ac66165561ba0075687a41195859c7d94">bstd::json::structures::array</a>
 , <a class="el" href="classbstd_1_1json_1_1structures_1_1json__string.html#af74cf227cba6e246de5fbfc989dc76f1">bstd::json::structures::json_string</a>
 , <a class="el" href="classbstd_1_1json_1_1structures_1_1object.html#acc55574461224b2f2457b620df2faaae">bstd::json::structures::object</a>
-, <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a970e90da881ecfb3a9288017e0f1d9df">bstd::json::structures::value</a>
+, <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a3542acff091435f2b3183847c8357415">bstd::json::structures::value</a>
 </li>
 <li>string
 : <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da3dbd9c3159b74b0686f0357f5f6eb5cc">bstd::json::parser::token</a>
@@ -328,14 +378,14 @@ $(function() {
 <li>to_string()
 : <a class="el" href="classbstd_1_1json_1_1json.html#a32e6b48be53da64bf79f1cd5dfe85a7c">bstd::json::json</a>
 , <a class="el" href="classbstd_1_1json_1_1json__base.html#ab97f6a57a379e52261d0b656f908517e">bstd::json::json_base</a>
-, <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a7728ad19b9c4d6edafdebfd300897418">bstd::json::parser::lexer</a>
-, <a class="el" href="classbstd_1_1json_1_1parser_1_1parser.html#a225f646feddabbc22fe1c3c04edaa5e6">bstd::json::parser::parser</a>
+, <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#ac635de2877bd04317f6b99d07f4ee4c9">bstd::json::parser::lexer</a>
+, <a class="el" href="classbstd_1_1json_1_1parser_1_1parser.html#a41468d9142f20c9bd7c8203c81f00528">bstd::json::parser::parser</a>
 , <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#adb9229b87410a07835c82b307cb20829">bstd::json::parser::parser_base&lt; Container &gt;</a>
 , <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html#ac5f6a8f18f3ce9313da6729f13396d71">bstd::json::parser::token</a>
 , <a class="el" href="classbstd_1_1json_1_1structures_1_1array.html#a08bee963981c69ab363c4f1ad791b5cb">bstd::json::structures::array</a>
 , <a class="el" href="classbstd_1_1json_1_1structures_1_1json__string.html#ad44213dc039c31b57d32a93eb350a7c6">bstd::json::structures::json_string</a>
 , <a class="el" href="classbstd_1_1json_1_1structures_1_1object.html#a2a5066795450a561ac836bee3cb3faf7">bstd::json::structures::object</a>
-, <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a09852c8f6e04687b6dcd9be57ff4bff4">bstd::json::structures::value</a>
+, <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a2cfb2a076c686a4a15109843e64c7312">bstd::json::structures::value</a>
 </li>
 <li>token()
 : <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html#ae7f48c343e41a4ebd070f1ed363207d7">bstd::json::parser::token</a>

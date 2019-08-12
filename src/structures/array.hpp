@@ -13,36 +13,32 @@ class array final : public value {
   public:
 
     /// \brief Construct an empty array.
-    /// TODO: inherit documentation?
+    /// \copydoc value::value(bool)
     array(const bool _debug = false) : value(_debug) {}
 
     ~array() {}
 
     /// Getters and setters.
 
-    /// \brief The size of this array.
-    /// \return the size of the underlying vector of values
     const std::size_t size() const override;
 
     /// Accessors.
 
     /// Operator overloads.
 
-    /// TODO: inherit documentation?
+    /// TODO: write documentation.
     bool operator==(const array& _rhs) const;
 
-    /// TODO: inherit documentation?
+    /// TODO: write documentation.
     bool operator!=(const array& _rhs) const;
 
-    /// TODO: inherit documentation?
+    /// TODO: write documentation.
     array& operator+=(const array& _rhs);
 
     /// Member functions.
 
-    /// TODO: inherit documentation?
     const std::string to_string(const bool _include_ws = true) const override;
 
-    /// TODO: inherit documentation?
     const std::shared_ptr<value>&
         add_value(const std::shared_ptr<value>& _value) override;
 

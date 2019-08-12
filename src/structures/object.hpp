@@ -14,15 +14,15 @@ class object final : public value {
   public:
 
     /// \brief Construct an empty object.
-    /// TODO: inherit documentation?
+    /// \copydoc value::value(bool)
     object(const bool _debug = false) : value(_debug) {}
+
+    // TODO: copy constructor.
 
     ~object() {}
 
     /// Getters and setters.
 
-    /// \brief The size of this object.
-    /// \return the size of the underlying vector of values
     const std::size_t size() const override;
 
     /// Accessors.
@@ -48,10 +48,8 @@ class object final : public value {
 
     /// Member functions.
 
-    /// TODO: inherit documentation?
     const std::string to_string(const bool _include_ws = true) const override;
 
-    /// TODO: inherit documentation?
     const std::shared_ptr<value>&
         add_value(const std::shared_ptr<value>& _value) override;
 

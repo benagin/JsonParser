@@ -21,7 +21,7 @@ class parser_base {
     /// \brief Construct with a container to parse.
     /// \param _container the collection of elements to parse
     /// \param _debug debug mode flag
-    /// \param _debug if true errors will be thrown, otherwise they will be
+    /// \param _throw if true errors will be thrown, otherwise they will be
     ///               written to standard error
     parser_base(const Container& _container, const bool _debug = false,
         const bool _throw = true)
@@ -77,7 +77,9 @@ class parser_base {
     /// \param _parser_base the calling object
     /// \return std::ostream
     friend std::ostream& operator<<(std::ostream& _os,
-        const parser_base& _parser_base);
+        const parser_base& _parser_base) {
+      return _os << _parser_base.to_string();
+    }
 
     /// \brief Abstract method signature for converting to a string.
     /// \return the object as a string
@@ -184,13 +186,6 @@ report_error(const bstd::error::error& _e) {
     std::cerr << _e.what() << std::endl;
 
   m_error_reported = true;
-}
-
-
-template<class Container>
-std::ostream&
-operator<<(std::ostream& _os, const parser_base<Container>& _parser_base) {
-  return _os << _parser_base.to_string();
 }
 
 

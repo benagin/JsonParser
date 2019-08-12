@@ -17,7 +17,7 @@ class value : public json_base {
   public:
 
     /// \brief Construct an empty value.
-    /// TODO: inherit documentation?
+    /// \copydoc json_base::json_base(bool)
     value(const bool _debug) : json_base(_debug) {}
 
     virtual ~value() = 0;
@@ -29,28 +29,20 @@ class value : public json_base {
     ///         string if this value represents a JSON element
     virtual const std::string get_name() const final;
 
-    /// TODO: inherit documentation?
-    virtual const std::size_t size() const = 0;
+    virtual const std::size_t size() const override = 0;
 
     /// Member functions.
 
-    /// TODO: inherit documentation?
-    virtual const std::string to_string(const bool _include_ws = true) const = 0;
+    virtual const std::string to_string(const bool _include_ws = true) const
+        override = 0;
 
-    /// TODO: inherit documentation?
     virtual const std::shared_ptr<value>&
-        add_value(const std::shared_ptr<value>& _value) = 0;
+        add_value(const std::shared_ptr<value>& _value) override = 0;
 
   protected:
 
-    bool m_debug{false};
-
-    ///< The whitespace that surrounds the value.
-    ///< The first object in this pair is the leading whitespace and the second
-    ///< object is the trailing whitespace. This can be seen in the grammar:
-    ///< element
-    ///<  ws value ws
-    std::pair<std::string, std::string> m_value_ws;
+    std::pair<std::string, std::string> m_value_ws; ///< The whitespace that
+                                                    ///< surrounds the value.
 
   private:
 
@@ -60,9 +52,11 @@ class value : public json_base {
                             ///< member
                             ///<  ws string ws ':' value
 
-    ///< The whitespace that surrounds the name of this value.
-    ///< This can be seen in the grammar above for m_name.
-    std::pair<std::string, std::string> m_name_ws;
+    std::pair<std::string, std::string> m_name_ws; ///< The whitespace that
+                                                   ///< surrounds the name of
+                                                   ///< this value.
+                                                   ///< This can be seen in the
+                                                   ///< grammar above for m_name.
 
 };
 

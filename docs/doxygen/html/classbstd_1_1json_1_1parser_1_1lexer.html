@@ -70,7 +70,9 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#friends">Friends</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classbstd_1_1json_1_1parser_1_1lexer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">bstd::json::parser::lexer Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
@@ -101,12 +103,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa542f3b5e42ee095ce062ac3331cdf9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#aa542f3b5e42ee095ce062ac3331cdf9c">lexer</a> (const std::string &amp;_json_string, const bool _debug=false, const bool _throw=true)</td></tr>
 <tr class="memdesc:aa542f3b5e42ee095ce062ac3331cdf9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a lexer object.  <a href="#aa542f3b5e42ee095ce062ac3331cdf9c">More...</a><br /></td></tr>
 <tr class="separator:aa542f3b5e42ee095ce062ac3331cdf9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6487641b401b0f88cc90479af4f06a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#ac6487641b401b0f88cc90479af4f06a8">lexer</a> (const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a> &amp;)=delete</td></tr>
-<tr class="memdesc:ac6487641b401b0f88cc90479af4f06a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor.  <a href="#ac6487641b401b0f88cc90479af4f06a8">More...</a><br /></td></tr>
-<tr class="separator:ac6487641b401b0f88cc90479af4f06a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b8ed15d8ae0569800692962f5630a15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a6b8ed15d8ae0569800692962f5630a15">operator=</a> (const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a> &amp;)=delete</td></tr>
-<tr class="memdesc:a6b8ed15d8ae0569800692962f5630a15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy assignment.  <a href="#a6b8ed15d8ae0569800692962f5630a15">More...</a><br /></td></tr>
-<tr class="separator:a6b8ed15d8ae0569800692962f5630a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a572c4fb116975938cd9982f02e416d09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a572c4fb116975938cd9982f02e416d09">~lexer</a> ()</td></tr>
 <tr class="separator:a572c4fb116975938cd9982f02e416d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab94c9b4dcc5b47658e52926f9171f101"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#ab94c9b4dcc5b47658e52926f9171f101">get_tokens</a> () const noexcept</td></tr>
@@ -121,15 +117,29 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7b5be8751f83ec680f1e3e38a7dc6a28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a7b5be8751f83ec680f1e3e38a7dc6a28">reset</a> () noexcept</td></tr>
 <tr class="memdesc:a7b5be8751f83ec680f1e3e38a7dc6a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the token iterator.  <a href="#a7b5be8751f83ec680f1e3e38a7dc6a28">More...</a><br /></td></tr>
 <tr class="separator:a7b5be8751f83ec680f1e3e38a7dc6a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7728ad19b9c4d6edafdebfd300897418"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a7728ad19b9c4d6edafdebfd300897418">to_string</a> () const noexcept</td></tr>
-<tr class="memdesc:a7728ad19b9c4d6edafdebfd300897418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert lexer to a string.  <a href="#a7728ad19b9c4d6edafdebfd300897418">More...</a><br /></td></tr>
-<tr class="separator:a7728ad19b9c4d6edafdebfd300897418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac635de2877bd04317f6b99d07f4ee4c9"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#ac635de2877bd04317f6b99d07f4ee4c9">to_string</a> () const noexcept override</td></tr>
+<tr class="memdesc:ac635de2877bd04317f6b99d07f4ee4c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method signature for converting to a string.  <a href="#ac635de2877bd04317f6b99d07f4ee4c9">More...</a><br /></td></tr>
+<tr class="separator:ac635de2877bd04317f6b99d07f4ee4c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a7b6aadb9ed273fc8618b859de484ac3b"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a7b6aadb9ed273fc8618b859de484ac3b">operator&lt;&lt;</a> (std::ostream &amp;_os, const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a> &amp;_lexer)</td></tr>
-<tr class="memdesc:a7b6aadb9ed273fc8618b859de484ac3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output operator overload.  <a href="#a7b6aadb9ed273fc8618b859de484ac3b">More...</a><br /></td></tr>
-<tr class="separator:a7b6aadb9ed273fc8618b859de484ac3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a06ff8436ae7acb8738b3f276613723a0"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a06ff8436ae7acb8738b3f276613723a0">apply_regex_filter</a> (const <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720d">token::type</a> &amp;_type, const std::regex &amp;_regex)</td></tr>
+<tr class="memdesc:a06ff8436ae7acb8738b3f276613723a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply regex to a character.  <a href="#a06ff8436ae7acb8738b3f276613723a0">More...</a><br /></td></tr>
+<tr class="separator:a06ff8436ae7acb8738b3f276613723a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a664928a994633c2234115d80aec627ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a06aabdadf2941c00686b10bd2f00421d">CVIT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a664928a994633c2234115d80aec627ba">m_index</a></td></tr>
+<tr class="memdesc:a664928a994633c2234115d80aec627ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of m_tokens used when iterating using get_next_token().  <a href="#a664928a994633c2234115d80aec627ba">More...</a><br /></td></tr>
+<tr class="separator:a664928a994633c2234115d80aec627ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b4dd2605d66edcb69dd92873883139f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a8b4dd2605d66edcb69dd92873883139f">m_tokens</a></td></tr>
+<tr class="separator:a8b4dd2605d66edcb69dd92873883139f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a2b8305cbe85b395bb36543420cb96795"><td class="memItemLeft" align="right" valign="top">static const std::unordered_map&lt; char, <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720d">token::type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a2b8305cbe85b395bb36543420cb96795">m_char_value_tokens</a></td></tr>
+<tr class="memdesc:a2b8305cbe85b395bb36543420cb96795"><td class="mdescLeft">&#160;</td><td class="mdescRight">This map stores the single character token types.  <a href="#a2b8305cbe85b395bb36543420cb96795">More...</a><br /></td></tr>
+<tr class="separator:a2b8305cbe85b395bb36543420cb96795"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -201,7 +211,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa542f3b5e42ee095ce062ac3331cdf9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa542f3b5e42ee095ce062ac3331cdf9c">&#9670;&nbsp;</a></span>lexer() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa542f3b5e42ee095ce062ac3331cdf9c">&#9670;&nbsp;</a></span>lexer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,34 +255,6 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ac6487641b401b0f88cc90479af4f06a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6487641b401b0f88cc90479af4f06a8">&#9670;&nbsp;</a></span>lexer() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bstd::json::parser::lexer::lexer </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deleted copy constructor. </p>
-
-</div>
-</div>
 <a id="a572c4fb116975938cd9982f02e416d09"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a572c4fb116975938cd9982f02e416d09">&#9670;&nbsp;</a></span>~lexer()</h2>
 
@@ -296,11 +278,58 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00035">35</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00030">30</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a06ff8436ae7acb8738b3f276613723a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06ff8436ae7acb8738b3f276613723a0">&#9670;&nbsp;</a></span>apply_regex_filter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto bstd::json::parser::lexer::apply_regex_filter </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720d">token::type</a> &amp;&#160;</td>
+          <td class="paramname"><em>_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::regex &amp;&#160;</td>
+          <td class="paramname"><em>_regex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply regex to a character. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_regex</td><td>the regex to apply </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if a match was found starting at the current element </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00046">46</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+
+</div>
+</div>
 <a id="ab94c9b4dcc5b47658e52926f9171f101"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab94c9b4dcc5b47658e52926f9171f101">&#9670;&nbsp;</a></span>get_tokens()</h2>
 
@@ -375,42 +404,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Process the next token from m_tokens. </p>
 <dl class="section return"><dt>Returns</dt><dd>the next token to be processed, determined by m_index </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>if m_throw is true and no more tokens can be retrieved </td></tr>
-  </table>
-  </dd>
-</dl>
 
 <p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00035">35</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a6b8ed15d8ae0569800692962f5630a15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b8ed15d8ae0569800692962f5630a15">&#9670;&nbsp;</a></span>operator=()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a>&amp; bstd::json::parser::lexer::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deleted copy assignment. </p>
 
 </div>
 </div>
@@ -443,8 +438,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a7728ad19b9c4d6edafdebfd300897418"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7728ad19b9c4d6edafdebfd300897418">&#9670;&nbsp;</a></span>to_string()</h2>
+<a id="ac635de2877bd04317f6b99d07f4ee4c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac635de2877bd04317f6b99d07f4ee4c9">&#9670;&nbsp;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -461,13 +456,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Convert lexer to a string. </p>
-<dl class="section return"><dt>Returns</dt><dd>lexed tokens as a string </dd></dl>
+<p>Abstract method signature for converting to a string. </p>
+<dl class="section return"><dt>Returns</dt><dd>the object as a string </dd></dl>
 
 <p>Implements <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#adb9229b87410a07835c82b307cb20829">bstd::json::parser::parser_base&lt; std::string &gt;</a>.</p>
 
@@ -475,9 +470,9 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a7b6aadb9ed273fc8618b859de484ac3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b6aadb9ed273fc8618b859de484ac3b">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2b8305cbe85b395bb36543420cb96795"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b8305cbe85b395bb36543420cb96795">&#9670;&nbsp;</a></span>m_char_value_tokens</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -486,41 +481,69 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>_os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html">lexer</a> &amp;&#160;</td>
-          <td class="paramname"><em>_lexer</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">const std::unordered_map&lt; char, <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720d">token::type</a> &gt; bstd::json::parser::lexer::m_char_value_tokens</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">  { <span class="charliteral">&#39;{&#39;</span>, <a class="code" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da6c92275074db93bff50b0cf5f6450dfc">token::begin_object</a> },</div><div class="line">  { <span class="charliteral">&#39;}&#39;</span>, <a class="code" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da7ef6fb895895202c6b541e5c63808182">token::end_object</a> },</div><div class="line">  { <span class="charliteral">&#39;[&#39;</span>, <a class="code" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720dae8dadccc0bc43a5b2fa3018a83fd8d3d">token::begin_array</a>},</div><div class="line">  { <span class="charliteral">&#39;]&#39;</span>, <a class="code" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da0e3bd1e9d5c1a81e16f995496e360298">token::end_array</a> },</div><div class="line">  { <span class="charliteral">&#39;,&#39;</span>, <a class="code" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da98692557a50957f595a91180901a8aff">token::comma</a> },</div><div class="line">  { <span class="charliteral">&#39;:&#39;</span>, <a class="code" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da2dbd58c1b5ec9858b2a6a545680fadc2">token::colon</a> },</div><div class="line">}</div></div><!-- fragment -->
+<p>This map stores the single character token types. </p>
+
+<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00063">63</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a664928a994633c2234115d80aec627ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a664928a994633c2234115d80aec627ba">&#9670;&nbsp;</a></span>m_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a06aabdadf2941c00686b10bd2f00421d">CVIT</a> bstd::json::parser::lexer::m_index</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Output operator overload. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">_os</td><td>std::ostream </td></tr>
-    <tr><td class="paramname">_lexer</td><td>the calling object </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::ostream </dd></dl>
+<p>The index of m_tokens used when iterating using get_next_token(). </p>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00143">143</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00059">59</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8b4dd2605d66edcb69dd92873883139f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b4dd2605d66edcb69dd92873883139f">&#9670;&nbsp;</a></span>m_tokens</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a>&gt; bstd::json::parser::lexer::m_tokens</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00061">61</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
 
 </div>
 </div>

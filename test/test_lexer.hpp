@@ -20,7 +20,7 @@ class test_lexer final : public bstd::test::unit_tester {
   private:
 
     const std::string m_symbols{"{}[],:"};
-    const std::vector<token> m_lexed_symbols {{
+    const std::vector<token> m_lexed_symbols {
         { token::begin_object },
         { token::end_object },
         { token::begin_array },
@@ -28,10 +28,10 @@ class test_lexer final : public bstd::test::unit_tester {
         { token::comma },
         { token::colon },
         { token::end_json }
-    }};
+    };
 
     const std::string m_simple_objects{"[1,true,\"string\",null,false]"};
-    const std::vector<token> m_lexed_simple_objects {{
+    const std::vector<token> m_lexed_simple_objects {
         { token::begin_array },
         { token::number, "1" },
         { token::comma },
@@ -44,10 +44,10 @@ class test_lexer final : public bstd::test::unit_tester {
         { token::false_literal},
         { token::end_array },
         { token::end_json }
-    }};
+    };
 
     const std::string m_numbers{"[1,2.5,0,-0.000,0.5,-5.1,-.5e-10,5.123E5,99.1e+2]"};
-    const std::vector<token> m_lexed_numbers {{
+    const std::vector<token> m_lexed_numbers {
         { token::begin_array },
         { token::number, "1" },
         { token::comma },
@@ -68,10 +68,10 @@ class test_lexer final : public bstd::test::unit_tester {
         { token::number, "99.1e+2" },
         { token::end_array },
         { token::end_json }
-    }};
+    };
 
     const std::string m_whitespace{"  [ 1\r ,\n 3,\rnull   ,\t ]\n"};
-    const std::vector<token> m_lexed_whitespace {{
+    const std::vector<token> m_lexed_whitespace {
         { token::whitespace, "  "},
         { token::begin_array },
         { token::whitespace, " "},
@@ -89,10 +89,10 @@ class test_lexer final : public bstd::test::unit_tester {
         { token::end_array },
         { token::whitespace, "\n" },
         { token::end_json }
-    }};
+    };
 
     const std::string m_bad_input1{"\"testingasdf;\":[true,a;ldfks,0]"};
-    const std::vector<token> m_lexed_bad_input1 {{
+    const std::vector<token> m_lexed_bad_input1 {
       { token::string, "testingasdf;" },
       { token::colon },
       { token::begin_array },
@@ -100,10 +100,10 @@ class test_lexer final : public bstd::test::unit_tester {
       { token::comma },
       { token::invalid },
       { token::end_json }
-    }};
+    };
 
     const std::string m_bad_input2{"\"sd[]{}\n\":{\"name\":123x}"};
-    const std::vector<token> m_lexed_bad_input2 {{
+    const std::vector<token> m_lexed_bad_input2 {
       { token::string, "sd[]{}\n" },
       { token::colon },
       { token::begin_object},
@@ -112,7 +112,7 @@ class test_lexer final : public bstd::test::unit_tester {
       { token::number, "123" },
       { token::invalid },
       { token::end_json }
-    }};
+    };
 
 };
 

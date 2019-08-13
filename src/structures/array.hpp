@@ -18,13 +18,7 @@ class array final : public value {
 
     ~array() {}
 
-    /// Getters and setters.
-
     const std::size_t size() const override;
-
-    /// Accessors.
-
-    /// Operator overloads.
 
     /// TODO: write documentation.
     bool operator==(const array& _rhs) const;
@@ -34,8 +28,6 @@ class array final : public value {
 
     /// TODO: write documentation.
     array& operator+=(const array& _rhs);
-
-    /// Member functions.
 
     const std::string to_string(const bool _include_ws = true) const override;
 

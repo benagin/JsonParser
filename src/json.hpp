@@ -6,6 +6,7 @@
 
 namespace bstd::json {
 
+using structures::value;
 using structures::json_string;
 
 /// \brief A C++ representation of a JSON object.
@@ -32,8 +33,6 @@ class json final : public json_base {
 
     ~json() {}
 
-    /// Getters and setters.
-
     const std::size_t size() const override;
 
     /// \brief Get the path of the associated JSON file.
@@ -49,8 +48,6 @@ class json final : public json_base {
     /// \brief Set the root value.
     /// \param _value a shared_ptr to a value
     void set_value(const std::shared_ptr<value>& _value);
-
-    /// Operator overloads.
 
     /// \brief Equality operator.
     /// \param _rhs the json object on the right hand side of the operator
@@ -74,12 +71,11 @@ class json final : public json_base {
     /// \return _lhs
     friend json operator+(json _lhs, const json& _rhs);
 
-    /// Member functions.
-
     const std::string to_string(const bool _include_ws = true) const override;
 
+    // TODO: replace this with stl-like functions.
     const std::shared_ptr<value>&
-        add_value(const std::shared_ptr<value>& _value) override;
+        add_value(const std::shared_ptr<value>& _value);
 
     using json_base::write;
 

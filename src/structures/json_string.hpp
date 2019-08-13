@@ -24,11 +24,7 @@ class json_string final : public value {
 
     ~json_string() {}
 
-    /// Getters and setters.
-
     const std::size_t size() const override;
-
-    /// Member functions.
 
     const std::string to_string(const bool _include_ws = true) const override;
 

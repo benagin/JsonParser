@@ -21,11 +21,7 @@ class object final : public value {
 
     ~object() {}
 
-    /// Getters and setters.
-
     const std::size_t size() const override;
-
-    /// Accessors.
 
     /// TODO: write documentation.
     value& operator[](const std::string& _string);
@@ -35,8 +31,6 @@ class object final : public value {
     value& at(const std::string& _string);
     const value& at(const std::string& _string) const;
 
-    /// Operator overloads.
-
     /// TODO: write documentation.
     bool operator==(const object& _rhs) const;
 
@@ -45,8 +39,6 @@ class object final : public value {
 
     /// TODO: write documentation.
     object& operator+=(const object& _rhs);
-
-    /// Member functions.
 
     const std::string to_string(const bool _include_ws = true) const override;
 

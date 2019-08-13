@@ -14,6 +14,12 @@ get_name() const {
 }
 
 
+std::ostream&
+operator<<(std::ostream& _os, const value& _value) {
+  return _os << _value.to_string();
+}
+
+
 const std::string
 value::
 to_string(const bool _include_ws) const {

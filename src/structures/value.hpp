@@ -12,37 +12,44 @@ namespace bstd::json::structures {
 /// It acts as a member by storing the associated string (name) to the value. An
 /// element is simply a value surrounded by optional whitespace. This class keeps
 /// track of that whitespace acting as an element as well.
-class value : public json_base {
+class value {
 
   public:
-
-    /// \brief Construct an empty value.
-    /// \copydoc json_base::json_base(bool)
-    value(const bool _debug) : json_base(_debug) {}
-
-    virtual ~value() = 0;
-
-    /// Getters.
 
     /// \brief Get this value's name.
     /// \return this value's name if it represents a JSON member or an empty
     ///         string if this value represents a JSON element
     virtual const std::string get_name() const final;
 
-    virtual const std::size_t size() const override = 0;
+    virtual const std::size_t size() const = 0;
 
-    /// Member functions.
+    /// \biref Output operator overload.
+    /// This calls to_string() which includes whitespace by default.
+    /// If you do not want whitespace use
+    /// `std::cout << value->to_string(false);`
+    /// \param _os std::ostream
+    /// \param _value the calling object
+    /// \return std::ostream
+    friend std::ostream& operator<<(std::ostream& _os,
+        const value& _value);
 
-    virtual const std::string to_string(const bool _include_ws = true) const
-        override = 0;
+    virtual const std::string to_string(const bool _include_ws = true) const = 0;
 
     virtual const std::shared_ptr<value>&
-        add_value(const std::shared_ptr<value>& _value) override = 0;
+        add_value(const std::shared_ptr<value>& _value) = 0;
 
   protected:
 
+    /// \brief Construct an empty value.
+    /// \copydoc json_base::json_base(bool)
+    value(const bool _debug) : m_debug(_debug) {}
+
+    virtual ~value() = 0;
+
     std::pair<std::string, std::string> m_value_ws; ///< The whitespace that
                                                     ///< surrounds the value.
+
+    bool m_debug{false};
 
   private:
 

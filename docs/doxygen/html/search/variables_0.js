@@ -2,7 +2,7 @@ var searchData=
 [
   ['m_5fchar_5fvalue_5ftokens',['m_char_value_tokens',['../classbstd_1_1json_1_1parser_1_1lexer.html#a2b8305cbe85b395bb36543420cb96795',1,'bstd::json::parser::lexer']]],
   ['m_5fcontainer',['m_container',['../classbstd_1_1json_1_1parser_1_1parser__base.html#aaea958a1d597f3fc82924f01f73e6d1c',1,'bstd::json::parser::parser_base']]],
-  ['m_5fdebug',['m_debug',['../classbstd_1_1json_1_1json__base.html#af49895ba349b5216014aa1e8451bb93c',1,'bstd::json::json_base::m_debug()'],['../classbstd_1_1json_1_1parser_1_1parser__base.html#a95513e16874e93ddfc7cd1eb91df7438',1,'bstd::json::parser::parser_base::m_debug()']]],
+  ['m_5fdebug',['m_debug',['../classbstd_1_1json_1_1json__base.html#af49895ba349b5216014aa1e8451bb93c',1,'bstd::json::json_base::m_debug()'],['../classbstd_1_1json_1_1parser_1_1parser__base.html#a95513e16874e93ddfc7cd1eb91df7438',1,'bstd::json::parser::parser_base::m_debug()'],['../classbstd_1_1json_1_1structures_1_1value.html#a82a74b4251ee3b478824b019a4d17b80',1,'bstd::json::structures::value::m_debug()']]],
   ['m_5ferror_5freported',['m_error_reported',['../classbstd_1_1json_1_1parser_1_1parser__base.html#aa11f4df973d072aecfbe7b9d0f04bcf4',1,'bstd::json::parser::parser_base']]],
   ['m_5findex',['m_index',['../classbstd_1_1json_1_1parser_1_1lexer.html#a664928a994633c2234115d80aec627ba',1,'bstd::json::parser::lexer::m_index()'],['../classbstd_1_1json_1_1parser_1_1parser__base.html#a5b47aa9ca2530df01e9663f2bfc2cda8',1,'bstd::json::parser::parser_base::m_index()']]],
   ['m_5fjson',['m_json',['../classbstd_1_1json_1_1parser_1_1parser.html#af1f9e75f1b604927b354f5208a80341c',1,'bstd::json::parser::parser']]],

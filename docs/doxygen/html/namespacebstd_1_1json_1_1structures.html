@@ -68,7 +68,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">bstd::json::structures Namespace Reference</div>  </div>
 </div><!--header-->
@@ -88,7 +89,51 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1structures_1_1value.html">value</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents a value from the grammar (<a href="https://www.json.org/">https://www.json.org/</a>). Different from the grammar, this class also acts as a member and an element. It acts as a member by storing the associated string (name) to the value. An element is simply a value surrounded by optional whitespace. This class keeps track of that whitespace acting as an element as well.  <a href="classbstd_1_1json_1_1structures_1_1value.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:af5ca7a57e50211c8584957e3a9f13d46"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json_1_1structures.html#af5ca7a57e50211c8584957e3a9f13d46">operator&lt;&lt;</a> (std::ostream &amp;_os, const <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html">value</a> &amp;_value)</td></tr>
+<tr class="separator:af5ca7a57e50211c8584957e3a9f13d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="af5ca7a57e50211c8584957e3a9f13d46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5ca7a57e50211c8584957e3a9f13d46">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; bstd::json::structures::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>_os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html">value</a> &amp;&#160;</td>
+          <td class="paramname"><em>_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>\biref Output operator overload. This calls to_string() which includes whitespace by default. If you do not want whitespace use <code>std::cout &lt;&lt; value-&gt;to_string(false);</code> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_os</td><td>std::ostream </td></tr>
+    <tr><td class="paramname">_value</td><td>the calling object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::ostream </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="value_8cpp_source.html#l00018">18</a> of file <a class="el" href="value_8cpp_source.html">value.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

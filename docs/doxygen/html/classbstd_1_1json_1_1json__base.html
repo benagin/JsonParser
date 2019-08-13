@@ -87,11 +87,7 @@ Inheritance diagram for bstd::json::json_base:</div>
  <div class="center">
   <img src="classbstd_1_1json_1_1json__base.png" usemap="#bstd::json::json_5Fbase_map" alt=""/>
   <map id="bstd::json::json_5Fbase_map" name="bstd::json::json_5Fbase_map">
-<area href="classbstd_1_1json_1_1json.html" title="A C++ representation of a JSON object. A JSON object consists of objects, arrays, key,..." alt="bstd::json::json" shape="rect" coords="0,56,193,80"/>
-<area href="classbstd_1_1json_1_1structures_1_1value.html" title="This class represents a value from the grammar (https://www.json.org/). Different from the grammar,..." alt="bstd::json::structures::value" shape="rect" coords="203,56,396,80"/>
-<area href="classbstd_1_1json_1_1structures_1_1array.html" title="Represents an array from the JSON grammar (https://www.json.org/)." alt="bstd::json::structures::array" shape="rect" coords="0,112,193,136"/>
-<area href="classbstd_1_1json_1_1structures_1_1json__string.html" title="Represents string from the JSON grammar (https://www.json.org/)." alt="bstd::json::structures::json_string" shape="rect" coords="203,112,396,136"/>
-<area href="classbstd_1_1json_1_1structures_1_1object.html" title="Represents an object from the JSON grammar (https://www.json.org/)." alt="bstd::json::structures::object" shape="rect" coords="406,112,599,136"/>
+<area href="classbstd_1_1json_1_1json.html" title="A C++ representation of a JSON object. A JSON object consists of objects, arrays, key,..." alt="bstd::json::json" shape="rect" coords="0,56,127,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -108,9 +104,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ab97f6a57a379e52261d0b656f908517e"><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1json__base.html#ab97f6a57a379e52261d0b656f908517e">to_string</a> (const bool _include_ws=true) const =0</td></tr>
 <tr class="memdesc:ab97f6a57a379e52261d0b656f908517e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method signature for converting to a string.  <a href="#ab97f6a57a379e52261d0b656f908517e">More...</a><br /></td></tr>
 <tr class="separator:ab97f6a57a379e52261d0b656f908517e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee4b29fd7765db45cfc4f490c494acd0"><td class="memItemLeft" align="right" valign="top">virtual const std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html">value</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1json__base.html#aee4b29fd7765db45cfc4f490c494acd0">add_value</a> (const std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html">value</a> &gt; &amp;_value)=0</td></tr>
-<tr class="memdesc:aee4b29fd7765db45cfc4f490c494acd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method signature for concatenating a value to the structure.  <a href="#aee4b29fd7765db45cfc4f490c494acd0">More...</a><br /></td></tr>
-<tr class="separator:aee4b29fd7765db45cfc4f490c494acd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a218679a460a0f7818a0c822f8d369275"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1json__base.html#a218679a460a0f7818a0c822f8d369275">write</a> (const std::string _path, const bool _include_ws=true) const final</td></tr>
 <tr class="memdesc:a218679a460a0f7818a0c822f8d369275"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the structure to a path.  <a href="#a218679a460a0f7818a0c822f8d369275">More...</a><br /></td></tr>
 <tr class="separator:a218679a460a0f7818a0c822f8d369275"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,7 +121,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract class used as base for each json related structure. </p>
 
-<p class="definition">Definition at line <a class="el" href="json__base_8hpp_source.html#l00025">25</a> of file <a class="el" href="json__base_8hpp_source.html">json_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json__base_8hpp_source.html#l00015">15</a> of file <a class="el" href="json__base_8hpp_source.html">json_base.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a80db49d8fb7cdf5a4c6e432c24af3bbe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a80db49d8fb7cdf5a4c6e432c24af3bbe">&#9670;&nbsp;</a></span>json_base()</h2>
@@ -162,7 +155,7 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="json__base_8hpp_source.html#l00031">31</a> of file <a class="el" href="json__base_8hpp_source.html">json_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json__base_8hpp_source.html#l00021">21</a> of file <a class="el" href="json__base_8hpp_source.html">json_base.hpp</a>.</p>
 
 </div>
 </div>
@@ -194,43 +187,6 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aee4b29fd7765db45cfc4f490c494acd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee4b29fd7765db45cfc4f490c494acd0">&#9670;&nbsp;</a></span>add_value()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual const std::shared_ptr&lt;<a class="el" href="classbstd_1_1json_1_1structures_1_1value.html">value</a>&gt;&amp; bstd::json::json_base::add_value </td>
-          <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html">value</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>_value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Abstract method signature for concatenating a value to the structure. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">_value</td><td>the value to be concatenated </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the new, concatenated value </dd></dl>
-
-<p>Implemented in <a class="el" href="classbstd_1_1json_1_1json.html#a6fc7ac7e99660372bee6154adb28842c">bstd::json::json</a>, <a class="el" href="classbstd_1_1json_1_1structures_1_1object.html#a0b2cfc61c915bc93365121aa3aa8db96">bstd::json::structures::object</a>, <a class="el" href="classbstd_1_1json_1_1structures_1_1array.html#a9033cf3592b35e65a813f822e50fe7e3">bstd::json::structures::array</a>, <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a9d3e3214546e9c5132f2cda45bae9a05">bstd::json::structures::value</a>, and <a class="el" href="classbstd_1_1json_1_1structures_1_1json__string.html#a419def0fe57249bbac1e14e0d476080d">bstd::json::structures::json_string</a>.</p>
-
-</div>
-</div>
 <a id="a3b3e5e1f530d82093883a6f2ccc590b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b3e5e1f530d82093883a6f2ccc590b4">&#9670;&nbsp;</a></span>size()</h2>
 
@@ -257,7 +213,7 @@ Friends</h2></td></tr>
 <p>Abstract method signature for getting the size of the structure. </p>
 <dl class="section return"><dt>Returns</dt><dd>the size of the structure </dd></dl>
 
-<p>Implemented in <a class="el" href="classbstd_1_1json_1_1json.html#ac3d6c05dda2c3f203ac2f1b3ed3ec46f">bstd::json::json</a>, <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a3542acff091435f2b3183847c8357415">bstd::json::structures::value</a>, <a class="el" href="classbstd_1_1json_1_1structures_1_1json__string.html#af74cf227cba6e246de5fbfc989dc76f1">bstd::json::structures::json_string</a>, <a class="el" href="classbstd_1_1json_1_1structures_1_1object.html#acc55574461224b2f2457b620df2faaae">bstd::json::structures::object</a>, and <a class="el" href="classbstd_1_1json_1_1structures_1_1array.html#ac66165561ba0075687a41195859c7d94">bstd::json::structures::array</a>.</p>
+<p>Implemented in <a class="el" href="classbstd_1_1json_1_1json.html#ac3d6c05dda2c3f203ac2f1b3ed3ec46f">bstd::json::json</a>.</p>
 
 </div>
 </div>
@@ -294,7 +250,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string representation of the structure </dd></dl>
 
-<p>Implemented in <a class="el" href="classbstd_1_1json_1_1json.html#a32e6b48be53da64bf79f1cd5dfe85a7c">bstd::json::json</a>, <a class="el" href="classbstd_1_1json_1_1structures_1_1object.html#a2a5066795450a561ac836bee3cb3faf7">bstd::json::structures::object</a>, <a class="el" href="classbstd_1_1json_1_1structures_1_1array.html#a08bee963981c69ab363c4f1ad791b5cb">bstd::json::structures::array</a>, <a class="el" href="classbstd_1_1json_1_1structures_1_1value.html#a2cfb2a076c686a4a15109843e64c7312">bstd::json::structures::value</a>, and <a class="el" href="classbstd_1_1json_1_1structures_1_1json__string.html#ad44213dc039c31b57d32a93eb350a7c6">bstd::json::structures::json_string</a>.</p>
+<p>Implemented in <a class="el" href="classbstd_1_1json_1_1json.html#a32e6b48be53da64bf79f1cd5dfe85a7c">bstd::json::json</a>.</p>
 
 </div>
 </div>
@@ -413,7 +369,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json__base_8hpp_source.html#l00067">67</a> of file <a class="el" href="json__base_8hpp_source.html">json_base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json__base_8hpp_source.html#l00050">50</a> of file <a class="el" href="json__base_8hpp_source.html">json_base.hpp</a>.</p>
 
 </div>
 </div>

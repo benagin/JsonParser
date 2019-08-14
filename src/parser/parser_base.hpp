@@ -10,7 +10,7 @@ namespace bstd::json::parser {
 
 /// \brief Parser base class to manage some of the common functionality between
 /// parser-like classes.
-/// \template Container stores the objects we are parsing
+/// \tparam Container stores the objects we are parsing
 template<class Container>
 class parser_base {
 
@@ -72,7 +72,7 @@ class parser_base {
     /// \param _e an exception to throw or report
     virtual void report_error(const bstd::error::error& _e) final;
 
-    /// \biref Output operator overload.
+    /// \brief Output operator overload.
     /// \param _os std::ostream
     /// \param _parser_base the calling object
     /// \return std::ostream

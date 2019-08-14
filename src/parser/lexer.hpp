@@ -22,10 +22,11 @@ class lexer final : public parser_base<std::string> {
     typedef std::vector<token>::const_iterator CVIT;
 
     /// \brief Construct a lexer object.
+    /// \param _json_string a JSON string
     /// \param _debug debug flag
-    /// \param _throw if true, this class will throw errors when applicable
+    /// \param _throw if true, this class will throw exceptions when applicable
     lexer(const std::string& _json_string, const bool _debug = false,
-        const bool _throw = true);
+        const bool _throw = true) : parser_base(_json_string, _debug, _throw) {}
 
     ~lexer() {}
 
@@ -51,6 +52,7 @@ class lexer final : public parser_base<std::string> {
   private:
 
     /// \brief Apply regex to a character.
+    /// \param _type the token type to filter
     /// \param _regex the regex to apply
     /// \return true if a match was found starting at the current element
     const auto apply_regex_filter(const token::type& _type,

@@ -2,12 +2,11 @@
 #define BSTD_JSON_HPP_
 
 #include "json_base.hpp"
-#include "structures/json_string.hpp"
+#include "structures/value.hpp"
 
 namespace bstd::json {
 
 using structures::value;
-using structures::json_string;
 
 /// \brief A C++ representation of a JSON object.
 /// A JSON object consists of objects, arrays, key, value pairs, and other
@@ -22,8 +21,7 @@ class json final : public json_base {
 
     /// \brief Construct an empty json object.
     /// \copydetails json_base::json_base(bool)
-    json(const bool _debug = false) : json_base(_debug),
-        m_value(std::make_shared<json_string>()) {}
+    json(const bool _debug = false) : json_base(_debug) {}
 
     // TODO: copy constructor.
 

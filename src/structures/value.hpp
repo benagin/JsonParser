@@ -23,7 +23,7 @@ class value {
 
     virtual const std::size_t size() const = 0;
 
-    /// \biref Output operator overload.
+    /// \brief Output operator overload.
     /// This calls to_string() which includes whitespace by default.
     /// If you do not want whitespace use
     /// `std::cout << value->to_string(false);`
@@ -33,7 +33,7 @@ class value {
     friend std::ostream& operator<<(std::ostream& _os,
         const value& _value);
 
-    virtual const std::string to_string(const bool _include_ws = true) const = 0;
+    virtual const std::string to_string(const bool _include_ws = true) const;
 
     virtual const std::shared_ptr<value>&
         add_value(const std::shared_ptr<value>& _value) = 0;
@@ -53,11 +53,11 @@ class value {
 
   private:
 
-    std::string m_name{""}; ///< The string associated with this value. From the
-                            ///< grammar this is the
-                            ///< string in:\n
-                            ///< member\n
-                            ///<  ws string ws ':' value
+    std::string m_name; ///< The string associated with this value. From the
+                        ///< grammar this is the
+                        ///< string in:\n
+                        ///< member\n
+                        ///<  ws string ws ':' value
 
     std::pair<std::string, std::string> m_name_ws; ///< The whitespace that
                                                    ///< surrounds the name of

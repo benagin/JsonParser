@@ -14,15 +14,6 @@ const std::unordered_map<char, token::type> lexer::m_char_value_tokens = {
 };
 
 
-lexer::
-lexer(const std::string& _json_string, const bool _debug, const bool _throw)
-    : parser_base(_json_string, _debug, _throw) {
-  if(_json_string.empty())
-    report_error(bstd::error::context_error(_json_string, _json_string.cbegin(),
-        "Empty JSON string"));
-}
-
-
 const std::vector<token>&
 lexer::
 get_tokens() const noexcept {
@@ -74,7 +65,6 @@ apply_regex_filter(const token::type& _type, const std::regex& _regex) {
 void
 lexer::
 lex() {
-  std::string s;
   while(get_element() != get_container()->cend()) {
     token t;
 

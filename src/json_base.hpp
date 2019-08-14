@@ -26,7 +26,7 @@ class json_base {
     /// \return the size of the structure
     virtual const std::size_t size() const = 0;
 
-    /// \biref Output operator overload.
+    /// \brief Output operator overload.
     /// This calls to_string() which includes whitespace by default.
     /// If you do not want whitespace use
     /// `std::cout << derived.to_string(false);`

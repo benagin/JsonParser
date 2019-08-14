@@ -13,12 +13,13 @@ class json_string final : public value {
 
   public:
 
-    /// \copydoc value::value(bool)
+    /// \brief Construct an empty json_string.
+    /// \copydetails value::value(bool)
     json_string(const bool _debug = false) : json_string("", _debug) {}
 
     /// \brief Construct a json_string with a std::string.
     /// \param _value the std::string value
-    /// \copydoc json_string::json_string(bool)
+    /// \copydetails json_string::json_string(bool)
     json_string(const std::string& _value, const bool _debug = false)
         : value(_debug), m_value(_value) {}
 

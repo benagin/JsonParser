@@ -13,7 +13,7 @@ class array final : public value {
   public:
 
     /// \brief Construct an empty array.
-    /// \copydoc value::value(bool)
+    /// \copydetails value::value(bool)
     array(const bool _debug = false) : value(_debug) {}
 
     ~array() {}
@@ -38,10 +38,10 @@ class array final : public value {
 
     std::string m_ws{""}; ///< Objects might have whitepsace between their curly
                           ///< brackets instead of elements. This is 'ws' in the
-                          ///< grammar for array:
-                          ///< array
-                          ///<  '[' ws ']'
-                          ///<  '[' elements ']'
+                          ///< grammar for array:\n
+                          ///< array\n
+                          ///<  '[' ws ']'\n
+                          ///<  '[' elements ']'\n
 
     std::vector<std::shared_ptr<value>> m_values;
 

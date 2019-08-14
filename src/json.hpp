@@ -21,7 +21,7 @@ class json final : public json_base {
   public:
 
     /// \brief Construct an empty json object.
-    /// \copydoc json_base::json_base(bool)
+    /// \copydetails json_base::json_base(bool)
     json(const bool _debug = false) : json_base(_debug),
         m_value(std::make_shared<json_string>()) {}
 

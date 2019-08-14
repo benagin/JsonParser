@@ -14,7 +14,7 @@ class object final : public value {
   public:
 
     /// \brief Construct an empty object.
-    /// \copydoc value::value(bool)
+    /// \copydetails value::value(bool)
     object(const bool _debug = false) : value(_debug) {}
 
     // TODO: copy constructor.
@@ -49,10 +49,10 @@ class object final : public value {
 
     std::string m_ws{""}; ///< Objects might have whitepsace between their curly
                           ///< brackets instead of members. This is 'ws' in the
-                          ///< grammar for object:
-                          ///< object
-                          ///<  '{' ws '}'
-                          ///<  '{' members '}'
+                          ///< grammar for object:\n
+                          ///< object\n
+                          ///<   '{' ws '}'\n
+                          ///<   '{' members '}'
 
     std::vector<std::shared_ptr<value>> m_values;
 

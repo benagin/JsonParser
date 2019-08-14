@@ -41,7 +41,7 @@ class value {
   protected:
 
     /// \brief Construct an empty value.
-    /// \copydoc json_base::json_base(bool)
+    /// \copydetails json_base::json_base(bool)
     value(const bool _debug) : m_debug(_debug) {}
 
     virtual ~value() = 0;
@@ -55,8 +55,8 @@ class value {
 
     std::string m_name{""}; ///< The string associated with this value. From the
                             ///< grammar this is the
-                            ///< string in:
-                            ///< member
+                            ///< string in:\n
+                            ///< member\n
                             ///<  ws string ws ':' value
 
     std::pair<std::string, std::string> m_name_ws; ///< The whitespace that

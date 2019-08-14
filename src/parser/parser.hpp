@@ -20,7 +20,7 @@ namespace bstd::json::parser {
 /// This acts as the API for the parser. Calling this will create the necessary
 /// objects to parse the JSON.
 /// \param _string the .json file or JSON string
-/// \copydoc parser_base::parser_base()
+/// \copydetails parser_base::parser_base()
 /// \return a shared_ptr to a json object
 std::shared_ptr<json> parse(const char* _string,
     const bool _debug = false, const bool _throw = true);

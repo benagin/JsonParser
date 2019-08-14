@@ -116,6 +116,7 @@ Protected Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a1132eca1b5767096a54aa94a8e15ef51"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1json__base.html#a1132eca1b5767096a54aa94a8e15ef51">operator&lt;&lt;</a> (std::ostream &amp;_os, const <a class="el" href="classbstd_1_1json_1_1json__base.html">json_base</a> &amp;_json_base)</td></tr>
+<tr class="memdesc:a1132eca1b5767096a54aa94a8e15ef51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output operator overload. This calls <a class="el" href="classbstd_1_1json_1_1json__base.html#ab97f6a57a379e52261d0b656f908517e" title="Abstract method signature for converting to a string.">to_string()</a> which includes whitespace by default. If you do not want whitespace use <code>std::cout &lt;&lt; derived.to_string(false);</code>  <a href="#a1132eca1b5767096a54aa94a8e15ef51">More...</a><br /></td></tr>
 <tr class="separator:a1132eca1b5767096a54aa94a8e15ef51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -335,7 +336,9 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>\biref Output operator overload. This calls <a class="el" href="classbstd_1_1json_1_1json__base.html#ab97f6a57a379e52261d0b656f908517e" title="Abstract method signature for converting to a string.">to_string()</a> which includes whitespace by default. If you do not want whitespace use <code>std::cout &lt;&lt; derived.to_string(false);</code> </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Output operator overload. This calls <a class="el" href="classbstd_1_1json_1_1json__base.html#ab97f6a57a379e52261d0b656f908517e" title="Abstract method signature for converting to a string.">to_string()</a> which includes whitespace by default. If you do not want whitespace use <code>std::cout &lt;&lt; derived.to_string(false);</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">_os</td><td>std::ostream </td></tr>
     <tr><td class="paramname">_json_base</td><td>the calling object </td></tr>

@@ -245,6 +245,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Construct a lexer object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">_json_string</td><td>a JSON string </td></tr>
     <tr><td class="paramname">_debug</td><td>debug flag </td></tr>
     <tr><td class="paramname">_throw</td><td>if true, this class will throw errors when applicable </td></tr>
   </table>
@@ -278,7 +279,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00030">30</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00031">31</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
 
 </div>
 </div>
@@ -320,6 +321,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Apply regex to a character. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">_type</td><td>the token type to filter </td></tr>
     <tr><td class="paramname">_regex</td><td>the regex to apply </td></tr>
   </table>
   </dd>
@@ -493,7 +495,7 @@ Additional Inherited Members</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">  { <span class="charliteral">&#39;{&#39;</span>, <a class="code" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da6c92275074db93bff50b0cf5f6450dfc">token::begin_object</a> },</div><div class="line">  { <span class="charliteral">&#39;}&#39;</span>, <a class="code" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da7ef6fb895895202c6b541e5c63808182">token::end_object</a> },</div><div class="line">  { <span class="charliteral">&#39;[&#39;</span>, <a class="code" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720dae8dadccc0bc43a5b2fa3018a83fd8d3d">token::begin_array</a>},</div><div class="line">  { <span class="charliteral">&#39;]&#39;</span>, <a class="code" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da0e3bd1e9d5c1a81e16f995496e360298">token::end_array</a> },</div><div class="line">  { <span class="charliteral">&#39;,&#39;</span>, <a class="code" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da98692557a50957f595a91180901a8aff">token::comma</a> },</div><div class="line">  { <span class="charliteral">&#39;:&#39;</span>, <a class="code" href="classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da2dbd58c1b5ec9858b2a6a545680fadc2">token::colon</a> },</div><div class="line">}</div></div><!-- fragment -->
 <p>This map stores the single character token types. </p>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00063">63</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00065">65</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
 
 </div>
 </div>
@@ -519,7 +521,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>The index of m_tokens used when iterating using get_next_token(). </p>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00059">59</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00061">61</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
 
 </div>
 </div>
@@ -543,7 +545,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00061">61</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00063">63</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
 
 </div>
 </div>

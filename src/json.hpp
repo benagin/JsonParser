@@ -84,7 +84,7 @@ class json final : public json_base {
 
   private:
 
-    std::string m_path{""};
+    std::string m_path;
 
     /// The root JSON element.
     std::shared_ptr<value> m_value;

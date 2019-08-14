@@ -36,12 +36,12 @@ class array final : public value {
 
   private:
 
-    std::string m_ws{""}; ///< Objects might have whitepsace between their curly
-                          ///< brackets instead of elements. This is 'ws' in the
-                          ///< grammar for array:\n
-                          ///< array\n
-                          ///<  '[' ws ']'\n
-                          ///<  '[' elements ']'\n
+    std::string m_ws; ///< Objects might have whitepsace between their curly
+                      ///< brackets instead of elements. This is 'ws' in the
+                      ///< grammar for array:\n
+                      ///< array\n
+                      ///<  '[' ws ']'\n
+                      ///<  '[' elements ']'\n
 
     std::vector<std::shared_ptr<value>> m_values;
 

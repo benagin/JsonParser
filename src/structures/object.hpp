@@ -47,12 +47,12 @@ class object final : public value {
 
   private:
 
-    std::string m_ws{""}; ///< Objects might have whitepsace between their curly
-                          ///< brackets instead of members. This is 'ws' in the
-                          ///< grammar for object:\n
-                          ///< object\n
-                          ///<   '{' ws '}'\n
-                          ///<   '{' members '}'
+    std::string m_ws; ///< Objects might have whitepsace between their curly
+                      ///< brackets instead of members. This is 'ws' in the
+                      ///< grammar for object:\n
+                      ///< object\n
+                      ///<   '{' ws '}'\n
+                      ///<   '{' members '}'
 
     std::vector<std::shared_ptr<value>> m_values;
 

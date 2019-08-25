@@ -19,7 +19,7 @@ class lexer final : public parser_base<std::string> {
 
   public:
 
-    typedef std::vector<token>::const_iterator CVIT;
+    using CVIT = typename std::vector<token>::const_iterator;
 
     /// \brief Construct a lexer object.
     /// \param _json_string a JSON string

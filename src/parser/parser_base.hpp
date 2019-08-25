@@ -16,7 +16,7 @@ class parser_base {
 
   protected:
 
-    typedef typename Container::const_iterator CCIT;
+    using CCIT = typename Container::const_iterator;
 
     /// \brief Construct with a container to parse.
     /// \param _container the collection of elements to parse

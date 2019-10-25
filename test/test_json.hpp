@@ -15,7 +15,6 @@ class test_json final : public bstd::test::unit_tester {
     void json_equal_operator();
     void json_addition_operator();
     void json_to_string();
-    void json_add_value();
 
   private:
 

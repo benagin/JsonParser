@@ -9,7 +9,7 @@
 
 #include <bstd_error.hpp>
 
-#include "json.hpp"
+#include "basic_json.hpp"
 #include "lexer.hpp"
 #include "utilities/json_file_util.hpp"
 

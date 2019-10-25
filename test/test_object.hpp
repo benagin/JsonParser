@@ -15,7 +15,6 @@ class test_object final : public bstd::test::unit_tester {
     //void object_equal_operator();
     //void object_addition_operator();
     void object_to_string();
-    void object_add_value();
 
   private:
 

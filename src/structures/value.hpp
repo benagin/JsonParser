@@ -2,8 +2,7 @@
 #define BSTD_JSON_VALUE_HPP_
 
 #include <utility>
-
-#include "json_base.hpp"
+#include <string>
 
 namespace bstd::json::structures {
 
@@ -41,7 +40,7 @@ class value {
   protected:
 
     /// \brief Construct an empty value.
-    /// \copydetails json_base::json_base(bool)
+    /// \param _debug debug mode flag
     value(const bool _debug) : m_debug(_debug) {}
 
     virtual ~value() = 0;

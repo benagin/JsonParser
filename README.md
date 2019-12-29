@@ -33,4 +33,4 @@ Then use (depending on which headers you need):
 
 ## Documentation
 
-See https://benagin.github.io/bstd_test for documentation.
+See https://benagin.github.io/bstd_json for documentation.

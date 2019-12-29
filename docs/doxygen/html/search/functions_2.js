@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['is_5fjson_5fextension',['is_json_extension',['../namespacebstd_1_1json_1_1utilities.html#a8fa4b2b24740e94f60abdaa45c5141fe',1,'bstd::json::utilities']]],
-  ['is_5fvalid',['is_valid',['../classbstd_1_1json_1_1parser_1_1token.html#a5333a4d5768ec2f72929cbc8a4eb6f1a',1,'bstd::json::parser::token']]],
-  ['is_5fvalue_5frequired',['is_value_required',['../classbstd_1_1json_1_1parser_1_1token.html#a34bd1b07b827882931a5e7d9cd16320c',1,'bstd::json::parser::token']]]
+  ['cbegin',['cbegin',['../classbstd_1_1json_1_1basic__json.html#a24f47ba09791b61f49757d3fddf6b8ce',1,'bstd::json::basic_json']]],
+  ['cend',['cend',['../classbstd_1_1json_1_1basic__json.html#ab2e4c73bbe5b63624c02c8f005f5ed4b',1,'bstd::json::basic_json']]]
 ];

@@ -95,8 +95,8 @@ Inheritance diagram for bstd::json::parser::lexer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a06aabdadf2941c00686b10bd2f00421d"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a> &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a06aabdadf2941c00686b10bd2f00421d">CVIT</a></td></tr>
-<tr class="separator:a06aabdadf2941c00686b10bd2f00421d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95afeaee139a792981edd07e919557f7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a95afeaee139a792981edd07e919557f7">CVIT</a> = typename std::vector&lt; <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a> &gt;::const_iterator</td></tr>
+<tr class="separator:a95afeaee139a792981edd07e919557f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -108,7 +108,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab94c9b4dcc5b47658e52926f9171f101"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#ab94c9b4dcc5b47658e52926f9171f101">get_tokens</a> () const noexcept</td></tr>
 <tr class="memdesc:ab94c9b4dcc5b47658e52926f9171f101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get tokens.  <a href="#ab94c9b4dcc5b47658e52926f9171f101">More...</a><br /></td></tr>
 <tr class="separator:ab94c9b4dcc5b47658e52926f9171f101"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9233b16cc4b9ffab90499334cdf5199"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a06aabdadf2941c00686b10bd2f00421d">CVIT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#af9233b16cc4b9ffab90499334cdf5199">next_token</a> ()</td></tr>
+<tr class="memitem:af9233b16cc4b9ffab90499334cdf5199"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a95afeaee139a792981edd07e919557f7">CVIT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#af9233b16cc4b9ffab90499334cdf5199">next_token</a> ()</td></tr>
 <tr class="memdesc:af9233b16cc4b9ffab90499334cdf5199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process the next token from m_tokens.  <a href="#af9233b16cc4b9ffab90499334cdf5199">More...</a><br /></td></tr>
 <tr class="separator:af9233b16cc4b9ffab90499334cdf5199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55481225f02ac2a98d180b8f239001d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a55481225f02ac2a98d180b8f239001d1">lex</a> ()</td></tr>
@@ -129,7 +129,7 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a664928a994633c2234115d80aec627ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a06aabdadf2941c00686b10bd2f00421d">CVIT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a664928a994633c2234115d80aec627ba">m_index</a></td></tr>
+<tr class="memitem:a664928a994633c2234115d80aec627ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a95afeaee139a792981edd07e919557f7">CVIT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a664928a994633c2234115d80aec627ba">m_index</a></td></tr>
 <tr class="memdesc:a664928a994633c2234115d80aec627ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of m_tokens used when iterating using get_next_token().  <a href="#a664928a994633c2234115d80aec627ba">More...</a><br /></td></tr>
 <tr class="separator:a664928a994633c2234115d80aec627ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b4dd2605d66edcb69dd92873883139f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a8b4dd2605d66edcb69dd92873883139f">m_tokens</a></td></tr>
@@ -144,8 +144,8 @@ Static Private Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_types_classbstd_1_1json_1_1parser_1_1parser__base"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classbstd_1_1json_1_1parser_1_1parser__base')"><img src="closed.png" alt="-"/>&#160;Protected Types inherited from <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">bstd::json::parser::parser_base&lt; std::string &gt;</a></td></tr>
-<tr class="memitem:a38788c024aebb44d332091a6739f6fd3 inherit pro_types_classbstd_1_1json_1_1parser_1_1parser__base"><td class="memItemLeft" align="right" valign="top">typedef std::string ::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a38788c024aebb44d332091a6739f6fd3">CCIT</a></td></tr>
-<tr class="separator:a38788c024aebb44d332091a6739f6fd3 inherit pro_types_classbstd_1_1json_1_1parser_1_1parser__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e3fa80459d2788040c7fc9f60e9b825 inherit pro_types_classbstd_1_1json_1_1parser_1_1parser__base"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a4e3fa80459d2788040c7fc9f60e9b825">CCIT</a> = typename std::string ::const_iterator</td></tr>
+<tr class="separator:a4e3fa80459d2788040c7fc9f60e9b825 inherit pro_types_classbstd_1_1json_1_1parser_1_1parser__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classbstd_1_1json_1_1parser_1_1parser__base"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classbstd_1_1json_1_1parser_1_1parser__base')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html">bstd::json::parser::parser_base&lt; std::string &gt;</a></td></tr>
 <tr class="memitem:a57e992310501cbc7dec90f37880a97c9 inherit pro_methods_classbstd_1_1json_1_1parser_1_1parser__base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#a57e992310501cbc7dec90f37880a97c9">parser_base</a> (const std::string &amp;_container, const bool _debug=false, const bool _throw=true)</td></tr>
 <tr class="memdesc:a57e992310501cbc7dec90f37880a97c9 inherit pro_methods_classbstd_1_1json_1_1parser_1_1parser__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with a container to parse.  <a href="classbstd_1_1json_1_1parser_1_1parser__base.html#a57e992310501cbc7dec90f37880a97c9">More...</a><br /></td></tr>
@@ -193,14 +193,14 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00018">18</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a06aabdadf2941c00686b10bd2f00421d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06aabdadf2941c00686b10bd2f00421d">&#9670;&nbsp;</a></span>CVIT</h2>
+<a id="a95afeaee139a792981edd07e919557f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95afeaee139a792981edd07e919557f7">&#9670;&nbsp;</a></span>CVIT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::vector&lt;<a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a>&gt;::const_iterator <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a06aabdadf2941c00686b10bd2f00421d">bstd::json::parser::lexer::CVIT</a></td>
+          <td class="memname">using <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a95afeaee139a792981edd07e919557f7">bstd::json::parser::lexer::CVIT</a> =  typename std::vector&lt;<a class="el" href="classbstd_1_1json_1_1parser_1_1token.html">token</a>&gt;::const_iterator</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -215,6 +215,9 @@ Additional Inherited Members</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bstd::json::parser::lexer::lexer </td>
@@ -240,6 +243,11 @@ Additional Inherited Members</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Construct a lexer object. </p>
@@ -247,12 +255,12 @@ Additional Inherited Members</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">_json_string</td><td>a JSON string </td></tr>
     <tr><td class="paramname">_debug</td><td>debug flag </td></tr>
-    <tr><td class="paramname">_throw</td><td>if true, this class will throw errors when applicable </td></tr>
+    <tr><td class="paramname">_throw</td><td>if true, this class will throw exceptions when applicable </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00018">18</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8hpp_source.html#l00028">28</a> of file <a class="el" href="lexer_8hpp_source.html">lexer.hpp</a>.</p>
 
 </div>
 </div>
@@ -328,7 +336,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if a match was found starting at the current element </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00046">46</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00037">37</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>
@@ -358,7 +366,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Get tokens. </p>
 <dl class="section return"><dt>Returns</dt><dd>m_tokens </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00028">28</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00019">19</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>
@@ -385,7 +393,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00076">76</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00067">67</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>
@@ -396,7 +404,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a06aabdadf2941c00686b10bd2f00421d">lexer::CVIT</a> bstd::json::parser::lexer::next_token </td>
+          <td class="memname">const <a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a95afeaee139a792981edd07e919557f7">lexer::CVIT</a> bstd::json::parser::lexer::next_token </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -407,7 +415,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Process the next token from m_tokens. </p>
 <dl class="section return"><dt>Returns</dt><dd>the next token to be processed, determined by m_index </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00035">35</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00026">26</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>
@@ -436,7 +444,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reset the token iterator. </p>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00120">120</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00110">110</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>
@@ -468,7 +476,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classbstd_1_1json_1_1parser_1_1parser__base.html#adb9229b87410a07835c82b307cb20829">bstd::json::parser::parser_base&lt; std::string &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00127">127</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lexer_8cpp_source.html#l00117">117</a> of file <a class="el" href="lexer_8cpp_source.html">lexer.cpp</a>.</p>
 
 </div>
 </div>
@@ -509,7 +517,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a06aabdadf2941c00686b10bd2f00421d">CVIT</a> bstd::json::parser::lexer::m_index</td>
+          <td class="memname"><a class="el" href="classbstd_1_1json_1_1parser_1_1lexer.html#a95afeaee139a792981edd07e919557f7">CVIT</a> bstd::json::parser::lexer::m_index</td>
         </tr>
       </table>
   </td>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['array',['array',['../classbstd_1_1json_1_1structures_1_1array.html',1,'bstd::json::structures']]]
+  ['basic_5fjson',['basic_json',['../classbstd_1_1json_1_1basic__json.html',1,'bstd::json']]]
 ];

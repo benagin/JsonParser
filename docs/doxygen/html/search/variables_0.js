@@ -2,20 +2,14 @@ var searchData=
 [
   ['m_5fchar_5fvalue_5ftokens',['m_char_value_tokens',['../classbstd_1_1json_1_1parser_1_1lexer.html#a2b8305cbe85b395bb36543420cb96795',1,'bstd::json::parser::lexer']]],
   ['m_5fcontainer',['m_container',['../classbstd_1_1json_1_1parser_1_1parser__base.html#aaea958a1d597f3fc82924f01f73e6d1c',1,'bstd::json::parser::parser_base']]],
-  ['m_5fdebug',['m_debug',['../classbstd_1_1json_1_1json__base.html#af49895ba349b5216014aa1e8451bb93c',1,'bstd::json::json_base::m_debug()'],['../classbstd_1_1json_1_1parser_1_1parser__base.html#a95513e16874e93ddfc7cd1eb91df7438',1,'bstd::json::parser::parser_base::m_debug()'],['../classbstd_1_1json_1_1structures_1_1value.html#a82a74b4251ee3b478824b019a4d17b80',1,'bstd::json::structures::value::m_debug()']]],
+  ['m_5fdebug',['m_debug',['../classbstd_1_1json_1_1parser_1_1parser__base.html#a95513e16874e93ddfc7cd1eb91df7438',1,'bstd::json::parser::parser_base']]],
   ['m_5ferror_5freported',['m_error_reported',['../classbstd_1_1json_1_1parser_1_1parser__base.html#aa11f4df973d072aecfbe7b9d0f04bcf4',1,'bstd::json::parser::parser_base']]],
   ['m_5findex',['m_index',['../classbstd_1_1json_1_1parser_1_1lexer.html#a664928a994633c2234115d80aec627ba',1,'bstd::json::parser::lexer::m_index()'],['../classbstd_1_1json_1_1parser_1_1parser__base.html#a5b47aa9ca2530df01e9663f2bfc2cda8',1,'bstd::json::parser::parser_base::m_index()']]],
   ['m_5fjson',['m_json',['../classbstd_1_1json_1_1parser_1_1parser.html#af1f9e75f1b604927b354f5208a80341c',1,'bstd::json::parser::parser']]],
-  ['m_5fname',['m_name',['../classbstd_1_1json_1_1structures_1_1value.html#a518e45e3c5a973a76955f447fa98bf37',1,'bstd::json::structures::value']]],
-  ['m_5fname_5fws',['m_name_ws',['../classbstd_1_1json_1_1structures_1_1value.html#a079373a9bd6e8c7109959950621545ea',1,'bstd::json::structures::value']]],
-  ['m_5fpath',['m_path',['../classbstd_1_1json_1_1json.html#acef16229b8d7c0bef1bdf1d7734685be',1,'bstd::json::json']]],
   ['m_5fthrow',['m_throw',['../classbstd_1_1json_1_1parser_1_1parser__base.html#af3a199d5a7c5998831aeb37332f77fa4',1,'bstd::json::parser::parser_base']]],
   ['m_5ftokens',['m_tokens',['../classbstd_1_1json_1_1parser_1_1lexer.html#a8b4dd2605d66edcb69dd92873883139f',1,'bstd::json::parser::lexer']]],
-  ['m_5ftype',['m_type',['../classbstd_1_1json_1_1parser_1_1token.html#a817c2f8b507ddd55f84e43a53e4b5b53',1,'bstd::json::parser::token']]],
+  ['m_5ftype',['m_type',['../classbstd_1_1json_1_1basic__json.html#afc1e297fe4b65de9c82a90fd6e809291',1,'bstd::json::basic_json::m_type()'],['../classbstd_1_1json_1_1parser_1_1token.html#a817c2f8b507ddd55f84e43a53e4b5b53',1,'bstd::json::parser::token::m_type()']]],
   ['m_5ftype_5fto_5fdefault_5fvalue',['m_type_to_default_value',['../classbstd_1_1json_1_1parser_1_1token.html#a437cace06f184aceaa5a1d51c0672b0e',1,'bstd::json::parser::token']]],
   ['m_5ftype_5fto_5fstring',['m_type_to_string',['../classbstd_1_1json_1_1parser_1_1token.html#ac27f4d24e1aacfb707a8d305df7ebd91',1,'bstd::json::parser::token']]],
-  ['m_5fvalue',['m_value',['../classbstd_1_1json_1_1json.html#abc0d14ba71a25b7b87735d96e7daf780',1,'bstd::json::json::m_value()'],['../classbstd_1_1json_1_1parser_1_1token.html#af22a6214cff1b9649f18ad975fee0773',1,'bstd::json::parser::token::m_value()'],['../classbstd_1_1json_1_1structures_1_1json__string.html#a39a75d3f4197ceba44c3affeccc1e16d',1,'bstd::json::structures::json_string::m_value()'],['../classbstd_1_1json_1_1structures_1_1value.html#ab088701e1357024098a83ae5e36414e8',1,'bstd::json::structures::value::m_value()']]],
-  ['m_5fvalue_5fws',['m_value_ws',['../classbstd_1_1json_1_1structures_1_1value.html#ae8338470732bb0e03a21f6fa3c8d62d4',1,'bstd::json::structures::value']]],
-  ['m_5fvalues',['m_values',['../classbstd_1_1json_1_1structures_1_1array.html#aa2ae95a95235a75cc432680cda0ff435',1,'bstd::json::structures::array::m_values()'],['../classbstd_1_1json_1_1structures_1_1object.html#a8e7d9add58e6f28b0499080ecd1c82ab',1,'bstd::json::structures::object::m_values()']]],
-  ['m_5fws',['m_ws',['../classbstd_1_1json_1_1structures_1_1array.html#a3660a9a6544fe7fdfad15605a62af9ec',1,'bstd::json::structures::array::m_ws()'],['../classbstd_1_1json_1_1structures_1_1object.html#aff0ec1ac578f10bb1dce99191791a616',1,'bstd::json::structures::object::m_ws()']]]
+  ['m_5fvalue',['m_value',['../classbstd_1_1json_1_1basic__json.html#a821f7f7866784e2f20f34a3a72849f5b',1,'bstd::json::basic_json::m_value()'],['../classbstd_1_1json_1_1parser_1_1token.html#af22a6214cff1b9649f18ad975fee0773',1,'bstd::json::parser::token::m_value()']]]
 ];

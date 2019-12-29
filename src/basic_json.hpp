@@ -130,11 +130,27 @@ class basic_json final {
       }
     }
 
+    // TODO: support array and string iterator versions of these methods.
+
+    /// \brief Get an iterator to the beginning of the JSON object, array, or
+    ///        string.
+    /// \returns An iterator to the beginning of the JSON value.
     typename object_t::iterator begin() noexcept;
+
+    /// \brief Get a const iterator to the beginning of the JSON object, array,
+    ///        or string.
+    /// \returns A const iterator to the beginning of the JSON value.
     typename object_t::const_iterator begin() const noexcept;
     const typename object_t::const_iterator cbegin() const noexcept;
 
+    /// \brief Get an iterator to the end of the JSON object, array, or
+    ///        string.
+    /// \returns An iterator to the end of the JSON value.
     typename object_t::iterator end() noexcept;
+
+    /// \brief Get a const iterator to the end of the JSON object, array, or
+    ///        string.
+    /// \returns A const iterator to the end of the JSON value.
     typename object_t::const_iterator end() const noexcept;
     const typename object_t::const_iterator cend() const noexcept;
 

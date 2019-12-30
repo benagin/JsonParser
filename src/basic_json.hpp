@@ -48,7 +48,7 @@ using json = basic_json<>;
 /// for accessing and changing the object(s).
 /// See https://www.json.org/ for more details on JSON.
 BASIC_JSON_TEMPLATE_DECLARATION
-class basic_json final {
+class basic_json {
 
   public:
 

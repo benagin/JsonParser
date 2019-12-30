@@ -4,6 +4,8 @@
 #include <bstd_json.hpp>
 #include <bstd_test.hpp>
 
+namespace bstd::json::test {
+
 using namespace bstd::json::parser;
 
 class test_lexer final : public bstd::test::unit_tester {
@@ -116,5 +118,6 @@ class test_lexer final : public bstd::test::unit_tester {
 
 };
 
+}
 
 #endif

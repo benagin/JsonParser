@@ -1,6 +1,9 @@
 #include "test_lexer.hpp"
 
-BSTD_TEST_MAIN(test_lexer)
+BSTD_TEST_MAIN(bstd::json::test::test_lexer)
+
+namespace bstd::json::test {
+
 
 test_lexer::
 test_lexer() {
@@ -85,5 +88,8 @@ lex_bad_input() {
 
   VERIFY(bad_input_lexer2.get_tokens() == m_lexed_bad_input2,
       "lexer::lex_bad_input bad_input2")
+
+}
+
 
 }

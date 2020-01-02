@@ -10,6 +10,8 @@
 #include <variant>
 #include <vector>
 
+#include "json_iterator.hpp"
+
 namespace bstd::json {
 
 using namespace std::string_literals;
@@ -52,16 +54,16 @@ class basic_json {
 
   public:
 
-    using basic_json_t = BASIC_JSON_TEMPLATE;
-    using object_t = ObjectType<const StringType, basic_json>;
-    using array_t = ArrayType<basic_json>;
-    using string_t = StringType;
-    using number_t = NumberType;
-    using boolean_t = BoolType;
-    using null_t = NullType;
-    using object_value_t = std::pair<const string_t, basic_json>;
+    using basic_json_type = BASIC_JSON_TEMPLATE;
+    using array_type = ArrayType<basic_json>;
+    using string_type = StringType;
+    using object_type = ObjectType<const string_type, basic_json>;
+    using number_type = NumberType;
+    using boolean_type = BoolType;
+    using null_type = NullType;
+    using object_value_typeype = std::pair<const string_type, basic_json>;
 
-    enum class value_t {
+    enum class value_type {
       object,
       array,
       string,
@@ -77,37 +79,37 @@ class basic_json {
     basic_json& operator=(basic_json&&) = default;
 
     /// \brief Construct a JSON with a character array.
-    /// This constructor attempts to construct a `string_t` from a character
+    /// This constructor attempts to construct a `string_type` from a character
     /// array. Without this, character arrays would invoke the
-    /// `basic_json(const boolean_t)` constructor.
+    /// `basic_json(const boolean_type)` constructor.
     /// \param _string The string to use.
     basic_json(const char* _string)
-      : basic_json(string_t{_string}) {}
+      : basic_json(string_type{_string}) {}
 
     /// \brief Construct a JSON with a string value.
     /// \param _string The string to use.
-    basic_json(const string_t& _string)
-      : m_type{value_t::string}, m_value{_string} {}
+    basic_json(const string_type& _string)
+      : m_type{value_type::string}, m_value{_string} {}
 
     /// \brief Construct a JSON with a number value.
     /// \param _number The number to use.
-    basic_json(const number_t _number)
-      : m_type{value_t::number}, m_value{_number} {}
+    basic_json(const number_type _number)
+      : m_type{value_type::number}, m_value{_number} {}
 
     /// \brief Construct a JSON with a boolean value.
     /// \param _boolean The boolean value to use.
-    basic_json(const boolean_t _boolean)
-      : m_type{value_t::boolean}, m_value{_boolean} {}
+    basic_json(const boolean_type _boolean)
+      : m_type{value_type::boolean}, m_value{_boolean} {}
 
     /// \brief Construct a JSON with a null value.
     /// \param _null The null value to use.
-    basic_json(const null_t _null)
-      : m_type{value_t::null}, m_value{_null} {}
+    basic_json(const null_type _null)
+      : m_type{value_type::null}, m_value{_null} {}
 
     /// \brief Construct a JSON object with initializer list.
     /// \param _il An std::intializer_list containing object values.
-    basic_json(const std::initializer_list<object_value_t>& _il)
-      : m_type{value_t::object}, m_value{object_t{_il}} {}
+    basic_json(const std::initializer_list<object_value_typeype>& _il)
+      : m_type{value_type::object}, m_value{object_type{_il}} {}
 
     /// \brief Check if the JSON object, array or string is empty.
     /// \return `true` if the JSON value is empty; `false` otherwise.
@@ -115,15 +117,15 @@ class basic_json {
     ///         string.
     bool empty() const {
       switch (m_type) {
-        case value_t::object:
-          return std::get<object_t>(m_value).empty();
-        case value_t::array:
-          return std::get<array_t>(m_value).empty();
-        case value_t::string:
-          return std::get<string_t>(m_value).empty();
-        case value_t::number:
-        case value_t::boolean:
-        case value_t::null:
+        case value_type::object:
+          return std::get<object_type>(m_value).empty();
+        case value_type::array:
+          return std::get<array_type>(m_value).empty();
+        case value_type::string:
+          return std::get<string_type>(m_value).empty();
+        case value_type::number:
+        case value_type::boolean:
+        case value_type::null:
         default:
           throw std::domain_error("empty is only defined for objects, arrays, " \
               "and strings.");
@@ -135,24 +137,24 @@ class basic_json {
     /// \brief Get an iterator to the beginning of the JSON object, array, or
     ///        string.
     /// \returns An iterator to the beginning of the JSON value.
-    typename object_t::iterator begin() noexcept;
+    typename object_type::iterator begin() noexcept;
 
     /// \brief Get a const iterator to the beginning of the JSON object, array,
     ///        or string.
     /// \returns A const iterator to the beginning of the JSON value.
-    typename object_t::const_iterator begin() const noexcept;
-    const typename object_t::const_iterator cbegin() const noexcept;
+    typename object_type::const_iterator begin() const noexcept;
+    const typename object_type::const_iterator cbegin() const noexcept;
 
     /// \brief Get an iterator to the end of the JSON object, array, or
     ///        string.
     /// \returns An iterator to the end of the JSON value.
-    typename object_t::iterator end() noexcept;
+    typename object_type::iterator end() noexcept;
 
     /// \brief Get a const iterator to the end of the JSON object, array, or
     ///        string.
     /// \returns A const iterator to the end of the JSON value.
-    typename object_t::const_iterator end() const noexcept;
-    const typename object_t::const_iterator cend() const noexcept;
+    typename object_type::const_iterator end() const noexcept;
+    const typename object_type::const_iterator cend() const noexcept;
 
     /// \brief Convert JSON to string.
     /// \param _include_ws If `true`, the original whitespace will be included.
@@ -172,24 +174,24 @@ class basic_json {
 
   private:
 
-    friend std::ostream& operator<<(std::ostream& _os, const value_t& _type) {
+    friend std::ostream& operator<<(std::ostream& _os, const value_type& _type) {
       switch (_type) {
-        case value_t::object:
+        case value_type::object:
           _os << "object";
           break;
-        case value_t::array:
+        case value_type::array:
           _os << "array";
           break;
-        case value_t::string:
+        case value_type::string:
           _os << "string";
           break;
-        case value_t::number:
+        case value_type::number:
           _os << "number";
           break;
-        case value_t::boolean:
+        case value_type::boolean:
           _os << "boolean";
           break;
-        case value_t::null:
+        case value_type::null:
           _os << "null";
           break;
       }
@@ -197,9 +199,9 @@ class basic_json {
       return _os;
     }
 
-    value_t m_type{value_t::null};
+    value_type m_type{value_type::null};
 
-    std::variant<object_t, array_t, string_t, number_t, boolean_t, null_t>
+    std::variant<object_type, array_type, string_type, number_type, boolean_type, null_type>
       m_value{nullptr};
 };
 
@@ -209,68 +211,68 @@ std::string
 BASIC_JSON_TEMPLATE::
 to_string(const bool _include_ws) const noexcept {
   switch (m_type) {
-    case value_t::object:
+    case value_type::object:
       return object_to_string(this, _include_ws);
-    case value_t::array:
+    case value_type::array:
       // TODO: implement.
       return "array";
-    case value_t::string:
-      return std::get<string_t>(m_value);
-    case value_t::number:
-      return std::to_string(std::get<number_t>(m_value));
-    case value_t::boolean:
-      return std::to_string(std::get<boolean_t>(m_value));
-    case value_t::null:
+    case value_type::string:
+      return std::get<string_type>(m_value);
+    case value_type::number:
+      return std::to_string(std::get<number_type>(m_value));
+    case value_type::boolean:
+      return std::to_string(std::get<boolean_type>(m_value));
+    case value_type::null:
       return "null";
   }
 }
 
 
 BASIC_JSON_TEMPLATE_DECLARATION
-typename BASIC_JSON_TEMPLATE::object_t::iterator
+typename BASIC_JSON_TEMPLATE::object_type::iterator
 BASIC_JSON_TEMPLATE::
 begin() noexcept {
-  return std::get<object_t>(m_value).begin();
+  return std::get<object_type>(m_value).begin();
 }
 
 
 BASIC_JSON_TEMPLATE_DECLARATION
-typename BASIC_JSON_TEMPLATE::object_t::const_iterator
+typename BASIC_JSON_TEMPLATE::object_type::const_iterator
 BASIC_JSON_TEMPLATE::
 begin() const noexcept {
-  return std::get<object_t>(m_value).begin();
+  return std::get<object_type>(m_value).begin();
 }
 
 
 BASIC_JSON_TEMPLATE_DECLARATION
-const typename BASIC_JSON_TEMPLATE::object_t::const_iterator
+const typename BASIC_JSON_TEMPLATE::object_type::const_iterator
 BASIC_JSON_TEMPLATE::
 cbegin() const noexcept {
-  return std::get<object_t>(m_value).cbegin();
+  return std::get<object_type>(m_value).cbegin();
 }
 
 
 BASIC_JSON_TEMPLATE_DECLARATION
-typename BASIC_JSON_TEMPLATE::object_t::iterator
+typename BASIC_JSON_TEMPLATE::object_type::iterator
 BASIC_JSON_TEMPLATE::
 end() noexcept {
-  return std::get<object_t>(m_value).end();
+  return std::get<object_type>(m_value).end();
 }
 
 
 BASIC_JSON_TEMPLATE_DECLARATION
-typename BASIC_JSON_TEMPLATE::object_t::const_iterator
+typename BASIC_JSON_TEMPLATE::object_type::const_iterator
 BASIC_JSON_TEMPLATE::
 end() const noexcept {
-  return std::get<object_t>(m_value).end();
+  return std::get<object_type>(m_value).end();
 }
 
 
 BASIC_JSON_TEMPLATE_DECLARATION
-const typename BASIC_JSON_TEMPLATE::object_t::const_iterator
+const typename BASIC_JSON_TEMPLATE::object_type::const_iterator
 BASIC_JSON_TEMPLATE::
 cend() const noexcept {
-  return std::get<object_t>(m_value).cend();
+  return std::get<object_type>(m_value).cend();
 }
 
 
@@ -293,7 +295,8 @@ object_to_string(const BASIC_JSON_TEMPLATE* _json,
 
 
 BASIC_JSON_TEMPLATE_DECLARATION
-bool operator==(const BASIC_JSON_TEMPLATE& _json1,
+constexpr bool
+operator==(const BASIC_JSON_TEMPLATE& _json1,
     const BASIC_JSON_TEMPLATE& _json2) noexcept {
   // TODO: implement.
   return true;

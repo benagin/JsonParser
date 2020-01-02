@@ -33,7 +33,7 @@ class json_iterator {
     /// \template An iterator type.
     template<class U>
     constexpr json_iterator(const json_iterator<U>& _other)
-      : m_base{_other.base()} {}
+        : m_base{_other.base()} {}
 
     /// \brief Copy assignment constructor.
     /// \param _other Another iterator.
@@ -182,6 +182,22 @@ constexpr bool
 operator>=(const json_iterator<Iterator1>& _lhs,
     const json_iterator<Iterator2>& _rhs) {
   return _lhs.base() >= _rhs.base();
+}
+
+
+template<class Iter>
+constexpr json_iterator<Iter>
+operator+(typename json_iterator<Iter>::difference_type _n,
+    const json_iterator<Iter>& _it) {
+  return json_iterator<Iter>(_it.base() + _n);
+}
+
+
+template<class Iterator1, class Iterator2>
+constexpr auto
+operator-(const json_iterator<Iterator1>& _lhs,
+    const json_iterator<Iterator2>& _rhs) -> decltype(_rhs.base() - _lhs.base()) {
+  return _rhs.base() - _lhs.base();
 }
 
 

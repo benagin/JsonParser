@@ -8,5 +8,6 @@ var searchData=
   ['parser_5fbase_2ehpp',['parser_base.hpp',['../parser__base_8hpp.html',1,'']]],
   ['parser_5fbase_3c_20std_3a_3astring_20_3e',['parser_base&lt; std::string &gt;',['../classbstd_1_1json_1_1parser_1_1parser__base.html',1,'bstd::json::parser']]],
   ['parser_5fbase_3c_20std_3a_3avector_3c_20token_20_3e_20_3e',['parser_base&lt; std::vector&lt; token &gt; &gt;',['../classbstd_1_1json_1_1parser_1_1parser__base.html',1,'bstd::json::parser']]],
-  ['peek_5fnext_5felement',['peek_next_element',['../classbstd_1_1json_1_1parser_1_1parser__base.html#a19fe313c29f868c4acb41e5752974a1e',1,'bstd::json::parser::parser_base']]]
+  ['peek_5fnext_5felement',['peek_next_element',['../classbstd_1_1json_1_1parser_1_1parser__base.html#a19fe313c29f868c4acb41e5752974a1e',1,'bstd::json::parser::parser_base']]],
+  ['pointer',['pointer',['../classbstd_1_1json_1_1json__iterator.html#acf86fdfbc0ee480bd4e835658886a489',1,'bstd::json::json_iterator']]]
 ];

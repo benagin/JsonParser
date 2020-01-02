@@ -90,7 +90,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A C++ representation of a JSON object. A JSON object consists of objects, arrays, and other values. These can be easily stored as C++ structures. This interface allows for accessing and changing the object(s). See <a href="https://www.json.org/">https://www.json.org/</a> for more details on JSON.  <a href="classbstd_1_1json_1_1basic__json.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An iterator for JSON objects, arrays, and strings. Other JSON values cannot have iterators. \template The underlying object, array, or string implementation iterator.  <a href="classbstd_1_1json_1_1json__iterator.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An iterator for JSON objects, arrays, and strings. Other JSON values cannot have iterators.  <a href="classbstd_1_1json_1_1json__iterator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -122,12 +122,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a8886c995ea0623f9b030408ed6fb2817"><td class="memTemplParams" colspan="2">template&lt;class Iterator1 , class Iterator2 &gt; </td></tr>
 <tr class="memitem:a8886c995ea0623f9b030408ed6fb2817"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#a8886c995ea0623f9b030408ed6fb2817">operator&gt;=</a> (const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator1 &gt; &amp;_lhs, const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator2 &gt; &amp;_rhs)</td></tr>
 <tr class="separator:a8886c995ea0623f9b030408ed6fb2817"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad583c7b4c6ac3b1cb9d951656125683a"><td class="memTemplParams" colspan="2">template&lt;class Iter &gt; </td></tr>
-<tr class="memitem:ad583c7b4c6ac3b1cb9d951656125683a"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#ad583c7b4c6ac3b1cb9d951656125683a">operator+</a> (typename <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt;::difference_type _n, const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt; &amp;_it)</td></tr>
-<tr class="separator:ad583c7b4c6ac3b1cb9d951656125683a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d1141a588766d4368ad05c6507d3b98"><td class="memTemplParams" colspan="2">template&lt;class Iter &gt; </td></tr>
-<tr class="memitem:a8d1141a588766d4368ad05c6507d3b98"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#a8d1141a588766d4368ad05c6507d3b98">operator-</a> (typename <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt;::difference_type _n, const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt; &amp;_it)</td></tr>
-<tr class="separator:a8d1141a588766d4368ad05c6507d3b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a2bc0972a33d2fd32c7d849d2f2ca4077"></a>
@@ -205,71 +199,7 @@ template&lt;class Iterator1 , class Iterator2 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00200">200</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ad583c7b4c6ac3b1cb9d951656125683a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad583c7b4c6ac3b1cb9d951656125683a">&#9670;&nbsp;</a></span>operator+()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Iter &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt;Iter&gt; bstd::json::operator+ </td>
-          <td>(</td>
-          <td class="paramtype">typename <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt;::difference_type&#160;</td>
-          <td class="paramname"><em>_n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt; &amp;&#160;</td>
-          <td class="paramname"><em>_it</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00240">240</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a8d1141a588766d4368ad05c6507d3b98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d1141a588766d4368ad05c6507d3b98">&#9670;&nbsp;</a></span>operator-()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Iter &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt;Iter&gt; bstd::json::operator- </td>
-          <td>(</td>
-          <td class="paramtype">typename <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt;::difference_type&#160;</td>
-          <td class="paramname"><em>_n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt; &amp;&#160;</td>
-          <td class="paramname"><em>_it</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00248">248</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00150">150</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
 
 </div>
 </div>
@@ -301,7 +231,7 @@ template&lt;class Iterator1 , class Iterator2 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00208">208</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00158">158</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
 
 </div>
 </div>
@@ -333,7 +263,7 @@ template&lt;class Iterator1 , class Iterator2 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00216">216</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00166">166</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
 
 </div>
 </div>
@@ -365,7 +295,7 @@ template&lt;class Iterator1 , class Iterator2 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00192">192</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00142">142</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
 
 </div>
 </div>
@@ -435,7 +365,7 @@ template&lt;class Iterator1 , class Iterator2 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00224">224</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00174">174</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
 
 </div>
 </div>
@@ -467,7 +397,7 @@ template&lt;class Iterator1 , class Iterator2 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00232">232</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00182">182</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
 
 </div>
 </div>

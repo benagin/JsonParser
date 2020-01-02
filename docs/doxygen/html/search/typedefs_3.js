@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['json',['json',['../namespacebstd_1_1json.html#a2bc0972a33d2fd32c7d849d2f2ca4077',1,'bstd::json']]]
+  ['difference_5ftype',['difference_type',['../classbstd_1_1json_1_1json__iterator.html#a2077bcecfe2eae61c662cd38a1a723ef',1,'bstd::json::json_iterator']]]
 ];

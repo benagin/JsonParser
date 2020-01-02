@@ -85,6 +85,7 @@ $(function() {
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;variant&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>&quot;</code><br />
 </div>
 <p><a href="basic__json_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -120,8 +121,8 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a394995b36f8e2bdfad3165c27d3bb0d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="basic__json_8hpp.html#a720a2dfbc93c06f542d84c17e36b2fd4">BASIC_JSON_TEMPLATE_DECLARATION</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#a394995b36f8e2bdfad3165c27d3bb0d2">bstd::json::object_to_string</a> (const <a class="el" href="basic__json_8hpp.html#abf96fce0129827b2ac6e8d879993d575">BASIC_JSON_TEMPLATE</a> *_json, const bool _include_ws=true)</td></tr>
 <tr class="separator:a394995b36f8e2bdfad3165c27d3bb0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a418bf3b042015e6cba4f662d29fef608"><td class="memItemLeft" align="right" valign="top"><a class="el" href="basic__json_8hpp.html#a720a2dfbc93c06f542d84c17e36b2fd4">BASIC_JSON_TEMPLATE_DECLARATION</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#a418bf3b042015e6cba4f662d29fef608">bstd::json::operator==</a> (const <a class="el" href="basic__json_8hpp.html#abf96fce0129827b2ac6e8d879993d575">BASIC_JSON_TEMPLATE</a> &amp;_json1, const <a class="el" href="basic__json_8hpp.html#abf96fce0129827b2ac6e8d879993d575">BASIC_JSON_TEMPLATE</a> &amp;_json2) noexcept</td></tr>
-<tr class="separator:a418bf3b042015e6cba4f662d29fef608"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa38c623467d14f85716c7c3698a45e45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="basic__json_8hpp.html#a720a2dfbc93c06f542d84c17e36b2fd4">BASIC_JSON_TEMPLATE_DECLARATION</a> constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#aa38c623467d14f85716c7c3698a45e45">bstd::json::operator==</a> (const <a class="el" href="basic__json_8hpp.html#abf96fce0129827b2ac6e8d879993d575">BASIC_JSON_TEMPLATE</a> &amp;_json1, const <a class="el" href="basic__json_8hpp.html#abf96fce0129827b2ac6e8d879993d575">BASIC_JSON_TEMPLATE</a> &amp;_json2) noexcept</td></tr>
+<tr class="separator:aa38c623467d14f85716c7c3698a45e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="abf96fce0129827b2ac6e8d879993d575"></a>
@@ -136,7 +137,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">basic_json&lt;ObjectType,        \</div><div class="line">    ArrayType,                  \</div><div class="line">    StringType,                 \</div><div class="line">    NumberType,                 \</div><div class="line">    BoolType,                   \</div><div class="line">    NullType&gt;                   \</div></div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="basic__json_8hpp_source.html#l00037">37</a> of file <a class="el" href="basic__json_8hpp_source.html">basic_json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="basic__json_8hpp_source.html#l00039">39</a> of file <a class="el" href="basic__json_8hpp_source.html">basic_json.hpp</a>.</p>
 
 </div>
 </div>
@@ -152,7 +153,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;                                                     \</div><div class="line">    template&lt;<span class="keyword">typename</span>, <span class="keyword">typename</span>, <span class="keyword">typename</span>...&gt; <span class="keyword">class </span>ObjectType, \</div><div class="line">    template&lt;<span class="keyword">typename</span>, <span class="keyword">typename</span>...&gt; <span class="keyword">class </span>ArrayType,            \</div><div class="line">    class StringType,                                           \</div><div class="line">    class NumberType,                                           \</div><div class="line">    class BoolType,                                             \</div><div class="line">    class NullType&gt;                                             \</div></div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="basic__json_8hpp_source.html#l00028">28</a> of file <a class="el" href="basic__json_8hpp_source.html">basic_json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="basic__json_8hpp_source.html#l00030">30</a> of file <a class="el" href="basic__json_8hpp_source.html">basic_json.hpp</a>.</p>
 
 </div>
 </div>

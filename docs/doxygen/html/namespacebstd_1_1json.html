@@ -89,6 +89,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1basic__json.html">basic_json</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A C++ representation of a JSON object. A JSON object consists of objects, arrays, and other values. These can be easily stored as C++ structures. This interface allows for accessing and changing the object(s). See <a href="https://www.json.org/">https://www.json.org/</a> for more details on JSON.  <a href="classbstd_1_1json_1_1basic__json.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An iterator for JSON objects, arrays, and strings. Other JSON values cannot have iterators. \template The underlying object, array, or string implementation iterator.  <a href="classbstd_1_1json_1_1json__iterator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -99,8 +102,32 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a394995b36f8e2bdfad3165c27d3bb0d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="basic__json_8hpp.html#a720a2dfbc93c06f542d84c17e36b2fd4">BASIC_JSON_TEMPLATE_DECLARATION</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#a394995b36f8e2bdfad3165c27d3bb0d2">object_to_string</a> (const <a class="el" href="basic__json_8hpp.html#abf96fce0129827b2ac6e8d879993d575">BASIC_JSON_TEMPLATE</a> *_json, const bool _include_ws=true)</td></tr>
 <tr class="separator:a394995b36f8e2bdfad3165c27d3bb0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a418bf3b042015e6cba4f662d29fef608"><td class="memItemLeft" align="right" valign="top"><a class="el" href="basic__json_8hpp.html#a720a2dfbc93c06f542d84c17e36b2fd4">BASIC_JSON_TEMPLATE_DECLARATION</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#a418bf3b042015e6cba4f662d29fef608">operator==</a> (const <a class="el" href="basic__json_8hpp.html#abf96fce0129827b2ac6e8d879993d575">BASIC_JSON_TEMPLATE</a> &amp;_json1, const <a class="el" href="basic__json_8hpp.html#abf96fce0129827b2ac6e8d879993d575">BASIC_JSON_TEMPLATE</a> &amp;_json2) noexcept</td></tr>
-<tr class="separator:a418bf3b042015e6cba4f662d29fef608"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa38c623467d14f85716c7c3698a45e45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="basic__json_8hpp.html#a720a2dfbc93c06f542d84c17e36b2fd4">BASIC_JSON_TEMPLATE_DECLARATION</a> constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#aa38c623467d14f85716c7c3698a45e45">operator==</a> (const <a class="el" href="basic__json_8hpp.html#abf96fce0129827b2ac6e8d879993d575">BASIC_JSON_TEMPLATE</a> &amp;_json1, const <a class="el" href="basic__json_8hpp.html#abf96fce0129827b2ac6e8d879993d575">BASIC_JSON_TEMPLATE</a> &amp;_json2) noexcept</td></tr>
+<tr class="separator:aa38c623467d14f85716c7c3698a45e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae8117a26d34f8720bb43ee9e393b030"><td class="memTemplParams" colspan="2">template&lt;class Iterator1 , class Iterator2 &gt; </td></tr>
+<tr class="memitem:aae8117a26d34f8720bb43ee9e393b030"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#aae8117a26d34f8720bb43ee9e393b030">operator==</a> (const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator1 &gt; &amp;_lhs, const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator2 &gt; &amp;_rhs)</td></tr>
+<tr class="separator:aae8117a26d34f8720bb43ee9e393b030"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd13ebed1564f7709ee6c127518f6540"><td class="memTemplParams" colspan="2">template&lt;class Iterator1 , class Iterator2 &gt; </td></tr>
+<tr class="memitem:afd13ebed1564f7709ee6c127518f6540"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#afd13ebed1564f7709ee6c127518f6540">operator!=</a> (const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator1 &gt; &amp;_lhs, const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator2 &gt; &amp;_rhs)</td></tr>
+<tr class="separator:afd13ebed1564f7709ee6c127518f6540"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc636f05d7b3cc94a8cd611a1e8a74d1"><td class="memTemplParams" colspan="2">template&lt;class Iterator1 , class Iterator2 &gt; </td></tr>
+<tr class="memitem:acc636f05d7b3cc94a8cd611a1e8a74d1"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#acc636f05d7b3cc94a8cd611a1e8a74d1">operator&lt;</a> (const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator1 &gt; &amp;_lhs, const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator2 &gt; &amp;_rhs)</td></tr>
+<tr class="separator:acc636f05d7b3cc94a8cd611a1e8a74d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba46d6daacd9dbb40203a7e1aace69e"><td class="memTemplParams" colspan="2">template&lt;class Iterator1 , class Iterator2 &gt; </td></tr>
+<tr class="memitem:acba46d6daacd9dbb40203a7e1aace69e"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#acba46d6daacd9dbb40203a7e1aace69e">operator&lt;=</a> (const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator1 &gt; &amp;_lhs, const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator2 &gt; &amp;_rhs)</td></tr>
+<tr class="separator:acba46d6daacd9dbb40203a7e1aace69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54119fe4e523cb96f35444f3475520e3"><td class="memTemplParams" colspan="2">template&lt;class Iterator1 , class Iterator2 &gt; </td></tr>
+<tr class="memitem:a54119fe4e523cb96f35444f3475520e3"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#a54119fe4e523cb96f35444f3475520e3">operator&gt;</a> (const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator1 &gt; &amp;_lhs, const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator2 &gt; &amp;_rhs)</td></tr>
+<tr class="separator:a54119fe4e523cb96f35444f3475520e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8886c995ea0623f9b030408ed6fb2817"><td class="memTemplParams" colspan="2">template&lt;class Iterator1 , class Iterator2 &gt; </td></tr>
+<tr class="memitem:a8886c995ea0623f9b030408ed6fb2817"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#a8886c995ea0623f9b030408ed6fb2817">operator&gt;=</a> (const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator1 &gt; &amp;_lhs, const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator2 &gt; &amp;_rhs)</td></tr>
+<tr class="separator:a8886c995ea0623f9b030408ed6fb2817"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad583c7b4c6ac3b1cb9d951656125683a"><td class="memTemplParams" colspan="2">template&lt;class Iter &gt; </td></tr>
+<tr class="memitem:ad583c7b4c6ac3b1cb9d951656125683a"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#ad583c7b4c6ac3b1cb9d951656125683a">operator+</a> (typename <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt;::difference_type _n, const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt; &amp;_it)</td></tr>
+<tr class="separator:ad583c7b4c6ac3b1cb9d951656125683a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d1141a588766d4368ad05c6507d3b98"><td class="memTemplParams" colspan="2">template&lt;class Iter &gt; </td></tr>
+<tr class="memitem:a8d1141a588766d4368ad05c6507d3b98"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebstd_1_1json.html#a8d1141a588766d4368ad05c6507d3b98">operator-</a> (typename <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt;::difference_type _n, const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt; &amp;_it)</td></tr>
+<tr class="separator:a8d1141a588766d4368ad05c6507d3b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a2bc0972a33d2fd32c7d849d2f2ca4077"></a>
@@ -115,7 +142,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="basic__json_8hpp_source.html#l00026">26</a> of file <a class="el" href="basic__json_8hpp_source.html">basic_json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="basic__json_8hpp_source.html#l00028">28</a> of file <a class="el" href="basic__json_8hpp_source.html">basic_json.hpp</a>.</p>
 
 </div>
 </div>
@@ -146,12 +173,204 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="basic__json_8hpp_source.html#l00279">279</a> of file <a class="el" href="basic__json_8hpp_source.html">basic_json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="basic__json_8hpp_source.html#l00281">281</a> of file <a class="el" href="basic__json_8hpp_source.html">basic_json.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a418bf3b042015e6cba4f662d29fef608"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a418bf3b042015e6cba4f662d29fef608">&#9670;&nbsp;</a></span>operator==()</h2>
+<a id="afd13ebed1564f7709ee6c127518f6540"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd13ebed1564f7709ee6c127518f6540">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator1 , class Iterator2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool bstd::json::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00200">200</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad583c7b4c6ac3b1cb9d951656125683a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad583c7b4c6ac3b1cb9d951656125683a">&#9670;&nbsp;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iter &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt;Iter&gt; bstd::json::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">typename <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt;::difference_type&#160;</td>
+          <td class="paramname"><em>_n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_it</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00240">240</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8d1141a588766d4368ad05c6507d3b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d1141a588766d4368ad05c6507d3b98">&#9670;&nbsp;</a></span>operator-()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iter &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt;Iter&gt; bstd::json::operator- </td>
+          <td>(</td>
+          <td class="paramtype">typename <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt;::difference_type&#160;</td>
+          <td class="paramname"><em>_n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iter &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_it</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00248">248</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="acc636f05d7b3cc94a8cd611a1e8a74d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc636f05d7b3cc94a8cd611a1e8a74d1">&#9670;&nbsp;</a></span>operator&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator1 , class Iterator2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool bstd::json::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00208">208</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="acba46d6daacd9dbb40203a7e1aace69e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba46d6daacd9dbb40203a7e1aace69e">&#9670;&nbsp;</a></span>operator&lt;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator1 , class Iterator2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool bstd::json::operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00216">216</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aae8117a26d34f8720bb43ee9e393b030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae8117a26d34f8720bb43ee9e393b030">&#9670;&nbsp;</a></span>operator==() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator1 , class Iterator2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool bstd::json::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00192">192</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa38c623467d14f85716c7c3698a45e45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38c623467d14f85716c7c3698a45e45">&#9670;&nbsp;</a></span>operator==() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +379,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="basic__json_8hpp.html#a720a2dfbc93c06f542d84c17e36b2fd4">BASIC_JSON_TEMPLATE_DECLARATION</a> bool bstd::json::operator== </td>
+          <td class="memname"><a class="el" href="basic__json_8hpp.html#a720a2dfbc93c06f542d84c17e36b2fd4">BASIC_JSON_TEMPLATE_DECLARATION</a> constexpr bool bstd::json::operator== </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="basic__json_8hpp.html#abf96fce0129827b2ac6e8d879993d575">BASIC_JSON_TEMPLATE</a> &amp;&#160;</td>
           <td class="paramname"><em>_json1</em>, </td>
@@ -184,7 +403,71 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="basic__json_8hpp_source.html#l00296">296</a> of file <a class="el" href="basic__json_8hpp_source.html">basic_json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="basic__json_8hpp_source.html#l00299">299</a> of file <a class="el" href="basic__json_8hpp_source.html">basic_json.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a54119fe4e523cb96f35444f3475520e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54119fe4e523cb96f35444f3475520e3">&#9670;&nbsp;</a></span>operator&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator1 , class Iterator2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool bstd::json::operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00224">224</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8886c995ea0623f9b030408ed6fb2817"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8886c995ea0623f9b030408ed6fb2817">&#9670;&nbsp;</a></span>operator&gt;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator1 , class Iterator2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool bstd::json::operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbstd_1_1json_1_1json__iterator.html">json_iterator</a>&lt; Iterator2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="json__iterator_8hpp_source.html#l00232">232</a> of file <a class="el" href="json__iterator_8hpp_source.html">json_iterator.hpp</a>.</p>
 
 </div>
 </div>

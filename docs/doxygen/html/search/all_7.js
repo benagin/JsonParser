@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['json',['json',['../namespacebstd_1_1json.html#a2bc0972a33d2fd32c7d849d2f2ca4077',1,'bstd::json']]],
-  ['json_5fexample_2ecpp',['json_example.cpp',['../json__example_8cpp.html',1,'']]],
-  ['json_5ffile_5futil_2ecpp',['json_file_util.cpp',['../json__file__util_8cpp.html',1,'']]],
-  ['json_5ffile_5futil_2ehpp',['json_file_util.hpp',['../json__file__util_8hpp.html',1,'']]]
+  ['invalid',['invalid',['../classbstd_1_1json_1_1parser_1_1token.html#a410293b5d93f6ba55e8f85421940720da2fb06e5b23210e89b3ac53087f6a22dd',1,'bstd::json::parser::token']]],
+  ['is_5fjson_5fextension',['is_json_extension',['../namespacebstd_1_1json_1_1utilities.html#a8fa4b2b24740e94f60abdaa45c5141fe',1,'bstd::json::utilities']]],
+  ['is_5fvalid',['is_valid',['../classbstd_1_1json_1_1parser_1_1token.html#a5333a4d5768ec2f72929cbc8a4eb6f1a',1,'bstd::json::parser::token']]],
+  ['is_5fvalue_5frequired',['is_value_required',['../classbstd_1_1json_1_1parser_1_1token.html#a34bd1b07b827882931a5e7d9cd16320c',1,'bstd::json::parser::token']]],
+  ['iterator_5fcategory',['iterator_category',['../classbstd_1_1json_1_1json__iterator.html#a19085c8e93bad7bca016a1d074f744aa',1,'bstd::json::json_iterator']]],
+  ['iterator_5ftype',['iterator_type',['../classbstd_1_1json_1_1json__iterator.html#a3101869cc2ce3b27a2f12f986da1fc2e',1,'bstd::json::json_iterator']]]
 ];
